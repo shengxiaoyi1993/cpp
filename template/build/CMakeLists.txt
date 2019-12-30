@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(cpp11thread)
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+add_executable(${PROJECT_NAME} "../src/main.cpp")
+message("PROJECT_SOURCE_DIR: "${PROJECT_SOURCE_DIR})
+target_link_libraries( cpp11thread pthread)

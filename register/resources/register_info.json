@@ -1,0 +1,33 @@
+{
+  "list":[
+    {
+      "name":"OP_ALEN",
+      "addr":10,
+      "mask":255,
+      "shift":0,
+      "signed":0
+    },
+    {
+      "name":"OP_RNW",
+      "addr":10,
+      "mask":256,
+      "shift":8,
+      "signed":0
+    },
+    {
+      "name":"ADDR_L_ADDR",
+      "addr":20,
+      "mask":4294967295,
+      "shift":0,
+      "signed":0
+    },
+    {
+      "name":"ADDR_H_ADDR",
+      "addr":24,
+      "mask":255,
+      "shift":0,
+      "signed":0
+    }
+  ]
+
+}

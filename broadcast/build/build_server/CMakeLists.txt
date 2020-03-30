@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project(server_multibroadcast)
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+add_executable(${PROJECT_NAME} "../../src/src_server/server_multibroadcast.cpp")
+target_link_libraries( server_multibroadcast )

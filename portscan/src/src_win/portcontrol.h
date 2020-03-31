@@ -35,11 +35,11 @@ inline bool setFirewallRule(
    +" localport="+integerToString(port)
    +"   action="+action;
   char result[512]={0};
-  cout<<"cmd_add:"<<cmd_add<<endl;
+  // cout<<"cmd_add:"<<cmd_add<<endl;
   // return -1;
 
   int flag =executeCMD(cmd_add.c_str(),result);
-  cout<<"result:"<<result<<endl;
+  // cout<<"result:"<<result<<endl;
 
   if(flag!=0){
     return true;
@@ -78,9 +78,9 @@ inline bool delPortToFirewall(int port,const string &port_type){
   "delete rule "
    "name="+name;
   char result[512]={0};
-  cout<<"cmd_add:"<<cmd_add<<endl;
+  // cout<<"cmd_add:"<<cmd_add<<endl;
   int flag =executeCMD(cmd_add.c_str(),result);
-  cout<<"result:"<<result<<endl;
+  // cout<<"result:"<<result<<endl;
 
   if(flag!=0){
     return true;
@@ -109,9 +109,9 @@ inline bool setPortToFirewall(int port,const string &port_type,bool isable){
   "set rule "
    "name="+name+ " new enable="+setable;
   char result[512]={0};
-  cout<<"cmd_add:"<<cmd_add<<endl;
+  // cout<<"cmd_add:"<<cmd_add<<endl;
   int flag =executeCMD(cmd_add.c_str(),result);
-  cout<<"result:"<<result<<endl;
+  // cout<<"result:"<<result<<endl;
 
   if(flag!=0){
     return true;

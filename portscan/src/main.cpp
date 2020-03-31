@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#ifdef WIN32
+#ifdef __WIN32
 #include "src_win/portcontrol.h"
 #elif __linux
 #include "src_linux/portcontrol.h"
@@ -19,7 +19,7 @@ testPortScan();
 
 
 
-#ifdef WIN32
+#ifdef __WIN32
 
 void testPortScan(){
   //   int port =777;

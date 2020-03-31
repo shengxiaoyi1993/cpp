@@ -32,5 +32,5 @@ port is not allowed
 
 - windows执行结果
 ```
-
+addPortToFirewall succeed                                                                        setPortToFirewall able succeed                                                                        setPortToFirewall disable succeed                                                                        delPortToFirewall succeed 
 ```

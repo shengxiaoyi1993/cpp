@@ -2,30 +2,14 @@
 #ifndef PORTCONTROL_H_
 #define PORTCONTROL_H_
 #include <iostream>
-#include <sstream>
-#include <fstream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
 #include <string>
-#include <future>
-#include <cstring>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <arpa/inet.h>
 #include <unistd.h>
+#include "../common/executecmd.h"
+#include "../common/basic.h"
 
-#include "executecmd.h"
 
 using namespace std;
-inline std::string integerToString(int num){
-    stringstream ss;
-    string tmps;
-    ss<<num;
-    ss>>tmps;
-    return tmps;
-}
-
+namespace portcontrol_linux{
 
 //测试某个断口是否被防火墙允许
 //input: port
@@ -62,7 +46,6 @@ inline bool addPortToFirewall(int port,const string &port_type){
   +integerToString(port)+"/"+port_type+" --permanent";
   char result[512]={0};
   int flag =executeCMD(cmd_add.c_str(),result);
-  // cout<<"cmd_add:"<<cmd_add<<endl;
 
   if(flag!=0){
     return true;
@@ -97,13 +80,14 @@ inline bool reLoadFirewall(){
 }
 
 
+
 inline bool delPortToFirewall(int port,const string &port_type){
   string cmd_add="sudo firewall-cmd --zone=public --remove-port="
   +integerToString(port)+"/"+port_type+" --permanent";
   char result[512]={0};
   int flag =executeCMD(cmd_add.c_str(),result);
-  cout<<"cmd_add:"<<cmd_add<<endl;
-  printf("result:%s\n",result);
+  // cout<<"cmd_add:"<<cmd_add<<endl;
+  // printf("result:%s\n",result);
 
   if(flag!=0){
     return true;
@@ -119,5 +103,5 @@ inline bool delPortToFirewall(int port,const string &port_type){
 }
 
 
-
+}
 #endif

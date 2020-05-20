@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8)
+project(example)
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+add_executable(${PROJECT_NAME} "../src/main.cpp" "../src/export.cpp")
+message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
+target_link_libraries( example )

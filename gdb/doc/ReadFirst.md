@@ -12,7 +12,7 @@
 
 - 了解主要部分的目的，要求和设计
 ```
-design/design.md
+design/design.md(null)
 ```
 - 了解主要部分的使用方法
 ```
@@ -20,7 +20,7 @@ manuals/manuals.md
 ```
 - 了解主要部分的编译方法
 ```
-build/build.md
+build/build.md(null)
 ```
 - 主要部分的参考文献
 ```

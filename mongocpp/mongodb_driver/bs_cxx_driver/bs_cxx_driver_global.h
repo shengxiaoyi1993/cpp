@@ -1,0 +1,12 @@
+#ifndef BS_CXX_DRIVER_GLOBAL_H
+#define BS_CXX_DRIVER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(BS_CXX_DRIVER_LIBRARY)
+#  define BS_CXX_DRIVERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define BS_CXX_DRIVERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // BS_CXX_DRIVER_GLOBAL_H

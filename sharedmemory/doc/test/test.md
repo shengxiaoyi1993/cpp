@@ -1,0 +1,6 @@
+## producer
+
+- shmget
+- shmat
+- 
+

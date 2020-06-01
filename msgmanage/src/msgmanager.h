@@ -12,8 +12,11 @@
 #include <string>
 
 
-
-
+#define MSG_BUFFER_LEN 256
+#define SERVER_SEND_FLAG 100
+#define SERVER_RECV_FLAG 200
+#define CLIENT_SEND_FLAG 200
+#define CLIENT_RECV_FLAG 100
 
 union semun
 {
@@ -23,12 +26,6 @@ union semun
     struct seminfo *__buf;
 };
 
-#define MSG_BUFFER_LEN 256
-#define SERVER_SEND_FLAG 100
-#define SERVER_RECV_FLAG 200
-
-#define CLIENT_SEND_FLAG 200
-#define CLIENT_RECV_FLAG 100
 
 typedef struct Msg
 {
@@ -63,6 +60,7 @@ public:
     MsgManager(MsgManager_Mode v_mode,void (*func_cb)(Msg ));
     ~MsgManager();
     int writeData(char* v_data,int v_len);
+    int writeData_test(char* v_data,int v_len);
 
 
 private:

@@ -9,13 +9,14 @@ int main() {
 
     MsgManager msgmanager_c(MsgManager_Mode::Client,recv);
     while (1) {
-        char *str="hello from client";
-        msgmanager_c.writeData(str,static_cast<int>(strlen(str)+1));
+        // char *str="hello from client";
+        // msgmanager_c.writeData(str,static_cast<int>(strlen(str)+1));
     }
 
     getchar();
     return 0;
 }
+
 
 
 

@@ -1,0 +1,15 @@
+>>start to build channel!fork_path:/ id: 4098 mode:customer
+>>Ftok Succeed!
+>>msgget Succeed!__msgid:98307
+init threadpara.v_type:100
+init threadpara.v_msgid:98307
+>>create Recv Thread Succeed！
+>>succeed to connect to channnel！
+>>Recv data:
+<data>
+{"timecode":112233,"path":"ggfdfgdf","iswait":true}
+</data>
+>>Recv data:
+<data>
+{"timecode":112233,"path":"gghfghfghf","iswait":true}
+</data>

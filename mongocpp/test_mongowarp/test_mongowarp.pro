@@ -1,6 +1,6 @@
 QT -= gui
 
-CONFIG += c++11 console
+CONFIG += c++11
 CONFIG -= app_bundle
 
 # The following define makes your compiler emit warnings if you use
@@ -19,10 +19,15 @@ SOURCES += \
 #       ../lib/hex/hex.cpp \
 #       ../lib/cjsonobject/CJsonObject.cpp \
 #       ../lib/cjsonobject/cJSON.cpp \
+        ../../mysql/src/sha512.cpp \
+        ../../mysql/src/basic.cpp
 
 
 
-#HEADERS += \
+HEADERS += \
+        ../../mysql/src/sha512.h \
+        ../../mysql/src/basic.h
+
 #       ../lib/hex/hex.h \
 #       ../lib/cjsonobject/CJsonObject.hpp \
 #       ../lib/cjsonobject/cJSON.h \

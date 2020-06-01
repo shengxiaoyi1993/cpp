@@ -1,0 +1,9 @@
+new data recv:u^]
+MGMsgFromMsg error!
+>> succeed to build channel！
+>> customer mode
+>> recv func set 
+new data recv:{"timecode":112233,"path":"ggfdfgdf","iswait":true}
+succeed to upload data!
+new data recv:{"timecode":112233,"path":"gghfghfghf","iswait":true}
+succeed to upload data!

@@ -23,8 +23,13 @@
  //下载相应系统和版本的mongo
  sudo mkdir /usr/local/mongodb/data -p
  sudo touch /usr/local/mongodb/logs
- sudo ./mongod --dbpath=/usr/local/mongodb/data --logpat/usr/local/mongodb/logs  --port=27017 
- 
+ sudo ./mongod --dbpath=/usr/local/mongodb/data --logpath=/usr/local/mongodb/logs  --port=27017
+
+mkdir /home/sxy/mongodb/data -p
+touch /home/sxy/mongodb/logs
+sudo ./mongod --dbpath=/home/sxy/mongodb/data --logpath=/home/sxy/mongodb/logs  --port=27017
+
+
 ```
 
-- ###### 
+- ######

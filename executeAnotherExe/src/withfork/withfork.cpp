@@ -24,6 +24,8 @@ int main(int argc, char const *argv[])
         else{
           printf("para wrong!\n");
         }
+        // execlp("sh","sh","/home/sxy/Github/cpp/executeAnotherExe/bin/launch_cycleapp.sh",nullptr);// 1
+
         break;
     default:
         // 这是在父进程中，输出相关提示信息

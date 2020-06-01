@@ -1,0 +1,1 @@
+/home/sxy/Github/cpp/msgchannel/build/build_mg/build-producer-Desktop_Qt_5_9_7_GCC_64bit-Default/CMakeFiles/producer.dir

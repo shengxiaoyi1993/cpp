@@ -1,0 +1,1 @@
+/home/sxy/Github/cpp/msgmanage/build/build_server/build/CMakeFiles/server.dir

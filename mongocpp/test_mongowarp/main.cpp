@@ -1,12 +1,17 @@
 #include "bs_cxx_driver_export.h"
 #include <iostream>
+#include "../../mysql/src/sha512.h"
+#include "../../mysql/src/basic.h"
+#include <sstream>
 
 
 using namespace std;
 
 
-int main(int argc, char *argv[])
-{
+
+
+void api_test(){
+
     mongo::Init();
     //    char * newid=NewObjectId();
     //    cout<<"newid:"<<newid<<endl;
@@ -71,5 +76,69 @@ int main(int argc, char *argv[])
 
 
     mongo::Cleanup();
+}
+
+
+void mongo_insertdata(uint v_quentity){
+    mongo::Init();
+    char ptable[]="tb_search_450k";
+
+    for(uint i=0;i<v_quentity;i++){
+        string tmp=getSha512ForUint(i);
+        string query_insert="{\"id\":"+integerToString(i)+",\"condi\":\""
+                +tmp+"\",\"description\":\"hhh\""
+                     "}";
+
+        char* pid_insert= Add((char*)query_insert.c_str(),ptable);
+        //        cout<<"pid_insert:"<<query_insert<<endl;
+
+    }
+
+    //    char pdoc0[]="{\"name\":\"sxy\"}";
+    //    char* pid_insert= Add(pdoc0,ptable);
+    //    cout<<"pid_insert:"<<pid_insert<<endl;
+
+    mongo::Cleanup();
+
+}
+
+
+
+void mongo_searchdata(uint v_repeat,uint v_quentity){
+
+    mongo::Init();
+    char ptable[]="tb_search_450k";
+    vector<string> list= getNumFrom(10000,v_quentity);
+    time_t record_time = time(0);
+
+
+    for(uint i=0;i<v_repeat;i++){
+        for(uint j=0;j<v_quentity;j++){
+//            stringstream  logcout("/home/sxy/Github/cpp/mongocpp/build-test_mongowarp-Desktop_Qt_5_9_7_GCC_64bit-Debug/mongo_search.log");
+
+            string query_tmp="{\"condi\":\""+list[j]+
+                    "\"}";
+
+//            logcout<<"query_tmp:"<<query_tmp<<endl;
+            cout<<"query_tmp:"<<query_tmp<<endl;
+
+
+            char* result=FindMany((char*)query_tmp.c_str(),0,0,ptable);
+            cout<<"result:"<<result<<endl;
+            time_t current_time = time(0);
+            cout<<"ONE search:"<<current_time-record_time<<endl;
+        }
+    }
+
+
+    mongo::Cleanup();
+
+}
+
+int main(int argc, char *argv[])
+{
+    //    api_test();
+//        mongo_insertdata(4361168);
+    mongo_searchdata(1000,1000);
     return 0;
 }

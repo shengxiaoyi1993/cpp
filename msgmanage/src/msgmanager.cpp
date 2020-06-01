@@ -16,8 +16,11 @@ MsgManager::MsgManager(MsgManager_Mode v_mode,void (*func_cb)(Msg )):
     __mode(v_mode),__addr_cts(0x6666),__addr_stc(0x8888)
 {
     Msg msg;
-    func_cb(msg);
-    fun_callback=func_cb;
+    if(func_cb!=nullptr){
+        func_cb(msg);
+        fun_callback=func_cb;
+    }
+
     __ket_stc=Ftok("/",__addr_stc);
     __ket_cts=Ftok("/",__addr_cts);
 
@@ -30,14 +33,12 @@ MsgManager::MsgManager(MsgManager_Mode v_mode,void (*func_cb)(Msg )):
     printf("__msgid_cts:%d\n",__msgid_cts);
 
     fflush(stdout);
-    //    pthread_t tid;
 
-     __recvid;
+    //     __recvid;
     switch (v_mode) {
     case Client:{
         __recvid=__msgid_stc;
         break;
-
     }
     case Server:{
         __recvid=__msgid_cts;
@@ -45,19 +46,16 @@ MsgManager::MsgManager(MsgManager_Mode v_mode,void (*func_cb)(Msg )):
     }
     }
 
+    //将接收过程放在另一线程中
 
-        //将接收过程放在另一线程中
+    pthread_t tid;
 
-        pthread_t tid;
-
-        //参数依次是：创建的线程id，线程参数，调用的函数，传入的函数参数
-        int ret = pthread_create(&tid, NULL, &setReceiver, (void*)&__recvid);
-        if (ret != 0)
-        {
-            cout << "pthread_create error: error_code=" << ret << endl;
-        }
-
-
+    //参数依次是：创建的线程id，线程参数，调用的函数，传入的函数参数
+    int ret = pthread_create(&tid, NULL, &setReceiver, (void*)&__recvid);
+    if (ret != 0)
+    {
+        cout << "pthread_create error: error_code=" << ret << endl;
+    }
 
 }
 
@@ -72,7 +70,7 @@ MsgManager::~MsgManager(){
 
 
 int MsgManager::writeData(char* v_data,int v_len){
-    printf("%s\n",__func__);
+    // printf("%s\n",__func__);
 
     int writeid;
     switch (__mode) {
@@ -89,7 +87,7 @@ int MsgManager::writeData(char* v_data,int v_len){
     Msg msg_tmp;
     msg_tmp.msg_type= SERVER_SEND_FLAG;
     memcpy(msg_tmp.msg_text,v_data,static_cast<uint>(v_len));
-    msgsnd(writeid,&msg_tmp,strlen(msg_tmp.msg_text)+ 1,0);
+    msgsnd(writeid,&msg_tmp,strlen(msg_tmp.msg_text)+ 1,IPC_NOWAIT);
     msgrcv(writeid,&msg_tmp,MSG_BUFFER_LEN,SERVER_RECV_FLAG,0);
 
 }
@@ -100,18 +98,37 @@ void *MsgManager::setReceiver(void *p_msgid){
     Msg msg_tmp;
     int v_msgid=*((int*)p_msgid);
     while(1){
-        printf("%s\n",__func__);
+//        printf("%s\n",__func__);
         int flag= msgrcv(v_msgid,&msg_tmp,MSG_BUFFER_LEN,CLIENT_RECV_FLAG,0);
         printf("v_msgid:%d\n",v_msgid);
         printf("flag:%d\n",flag);
-        (*fun_callback)(msg_tmp);
+        if(fun_callback!=nullptr){
+            (*fun_callback)(msg_tmp);
+        }
         msg_tmp.msg_type= CLIENT_SEND_FLAG;
         memcpy(msg_tmp.msg_text,response_ok,strlen(response_ok));
-        msgsnd(v_msgid,&msg_tmp,strlen(msg_tmp.msg_text)+ 1,0);
+//        msgsnd(v_msgid,&msg_tmp,strlen(msg_tmp.msg_text)+ 1,IPC_NOWAIT);
         fflush(stdout);
     }
 
-
 }
 
+int MsgManager::writeData_test(char* v_data,int v_len){
+    int writeid;
+    switch (__mode) {
+    case Client:{
+        writeid=__msgid_cts;
+        break;
+    }
+    case Server:{
+        writeid=__msgid_stc;
+        break;
+    }
+    }
+
+    Msg msg_tmp;
+    msg_tmp.msg_type= SERVER_SEND_FLAG;
+    memcpy(msg_tmp.msg_text,v_data,static_cast<uint>(v_len));
+    return msgsnd(writeid,&msg_tmp,strlen(msg_tmp.msg_text)+ 1,IPC_NOWAIT);
+}
 

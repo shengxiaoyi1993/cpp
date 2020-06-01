@@ -17,7 +17,8 @@ int main(int argc,char *argv[])
     while(1)
     {
         printf("Ser:");
-        scanf("%s",msg.msg_text);
+        // scanf("%s",msg.msg_text);
+        memcpy(msg.msg_text,"test",strlen("test")+1);
         msg.msg_type= SERVER_SEND_FLAG;
         printf(">>wait server send:\n");
 

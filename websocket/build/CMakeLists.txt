@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(example)
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+file(GLOB USER_LIBS_PATH ../src/websocket/*.cpp)
+add_executable(${PROJECT_NAME} "../src/main.cpp" ${USER_LIBS_PATH})
+message("PROJECT_SOURCE_DIR: " ${USER_LIBS_PATH})
+target_link_libraries( example )

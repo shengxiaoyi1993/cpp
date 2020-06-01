@@ -20,8 +20,8 @@
  THE SOFTWARE.
  */
 
-#ifndef cJSON_com_clinet__h
-#define cJSON_com_clinet__h
+#ifndef CJSONCPP_H
+#define CJSONCPP_H
 
 namespace neb {
 
@@ -135,4 +135,3 @@ extern void cJSON_ReplaceItemInObject(cJSON *object, const char *string,
 }
 
 #endif
-

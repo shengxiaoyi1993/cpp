@@ -2,7 +2,6 @@
 #define RESPONSE_DATA_H
 
 #include <iostream>
-// #include "cjsonobject/CJsonObject.hpp"
 
 /**
  * 负责把服务器的返回值解密成明文

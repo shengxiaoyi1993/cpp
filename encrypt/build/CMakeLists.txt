@@ -3,4 +3,6 @@ project(example)
 set( CMAKE_CXX_FLAGS "-std=c++11" )
 add_executable(${PROJECT_NAME} "../src/main.cpp""../src/export.cpp")
 message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
+message("LD_LIBRARY_PATH: " ${LD_LIBRARY_PATH})
+
 target_link_libraries( example )

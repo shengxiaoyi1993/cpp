@@ -126,9 +126,9 @@ int mongo_searchdata(uint v_repeat,uint v_quentity,uint v_total,string v_tablena
 
 
             char* result=FindMany((char*)query_tmp.c_str(),0,0,(char*)v_tablename.c_str());
-//            cout<<"result:"<<result<<endl;
-//            time_t current_time = time(0);
-//            cout<<"ONE search:"<<current_time-record_time<<endl;
+//                        cout<<"result:"<<result<<endl;
+            //            time_t current_time = time(0);
+            //            cout<<"ONE search:"<<current_time-record_time<<endl;
         }
     }
 
@@ -150,17 +150,17 @@ int main(int argc, char *argv[])
 
     vector<uint> list_total;
     vector<string> list_table;
-    list_total.push_back(10000);
-    list_table.push_back("tb_10k");
+    //    list_total.push_back(10000);
+    //    list_table.push_back("tb_10k");
 
-    list_total.push_back(100000);
-    list_table.push_back("tb_100k");
+    //    list_total.push_back(100000);
+    //    list_table.push_back("tb_100k");
 
-    list_total.push_back(500000);
-    list_table.push_back("tb_500k");
+    //    list_total.push_back(500000);
+    //    list_table.push_back("tb_500k");
 
-    list_total.push_back(1000000);
-    list_table.push_back("tb_1m");
+    //    list_total.push_back(1000000);
+    //    list_table.push_back("tb_1m");
 
     list_total.push_back(5000000);
     list_table.push_back("tb_5m");
@@ -175,36 +175,36 @@ int main(int argc, char *argv[])
     //    list_table.push_back("tb_100m");
 
 
-//    //   insert
-//    for(uint ntab=0;ntab<list_table.size();ntab++){
-//        int flag_insert=mongo_insertdata(list_total[ntab],list_table[ntab]);
-//        if(flag_insert == 0){
-//            cout<<list_table[ntab]<<" create succeed"<<endl;
-//        }
-//        else{
-//            cout<<list_table[ntab]<<" create failed"<<endl;
-//        }
-//    }
+    //    //   insert
+    //    for(uint ntab=0;ntab<list_table.size();ntab++){
+    //        int flag_insert=mongo_insertdata(list_total[ntab],list_table[ntab]);
+    //        if(flag_insert == 0){
+    //            cout<<list_table[ntab]<<" create succeed"<<endl;
+    //        }
+    //        else{
+    //            cout<<list_table[ntab]<<" create failed"<<endl;
+    //        }
+    //    }
 
 
+    //search
+    uint times = 1;
+    uint quentity=10;
+    cout<<"| total |"<<" times |"<<" quentity |"<<" cost |"<<endl;
+    logcout<<"| total |"<<" times |"<<" quentity |"<<" cost |"<<endl;
+    for(uint ntab=0;ntab<list_table.size();ntab++){
+        int time= mongo_searchdata(times,quentity,list_total[ntab],list_table[ntab]);
+        cout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
+        logcout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
+        time= mongo_searchdata(times,quentity,list_total[ntab],list_table[ntab]);
+        cout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
+        logcout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
+        time= mongo_searchdata(times,quentity,list_total[ntab],list_table[ntab]);
+        cout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
+        logcout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
+        cout<<endl;
+    }
 
-        //search
-        uint times = 1;
-        uint quentity=1000;
-        cout<<"| total |"<<" times |"<<" quentity |"<<" cost |"<<endl;
-        logcout<<"| total |"<<" times |"<<" quentity |"<<" cost |"<<endl;
-        for(uint ntab=0;ntab<list_table.size();ntab++){
-            int time= mongo_searchdata(times,quentity,list_total[ntab],list_table[ntab]);
-            cout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
-            logcout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
-            time= mongo_searchdata(times,quentity,list_total[ntab],list_table[ntab]);
-            cout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
-            logcout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
-            time= mongo_searchdata(times,quentity,list_total[ntab],list_table[ntab]);
-            cout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
-            logcout<<"| "<<list_total[ntab]<<" | "<<times<<" | "<<quentity<<" | "<<time<<" | "<<endl;
-            cout<<endl;
-        }
 
     return 0;
 }

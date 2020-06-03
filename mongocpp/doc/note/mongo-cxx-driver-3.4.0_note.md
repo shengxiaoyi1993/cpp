@@ -31,5 +31,3 @@ sudo ./mongod --dbpath=/home/sxy/mongodb/data --logpath=/home/sxy/mongodb/logs  
 
 
 ```
-
-- ######

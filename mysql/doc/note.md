@@ -7,7 +7,7 @@ mysql     2592  2395  0 14:23 ?        00:00:00 /usr/sbin/mysqld --basedir=/usr 
 sxy       6485  5556  0 14:44 pts/2    00:00:00 grep --color=auto mysqld
 
 
-[sxy@localhost Content]$ sudo mv /var/lib/mysql /home/sxy/Content
+[sxy@localhost Content]$ sudo mv /var/lib/mysql /home/
 [sxy@localhost Content]$ ls
 mysql  tftproot
 

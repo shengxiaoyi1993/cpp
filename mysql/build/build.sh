@@ -21,10 +21,12 @@
 
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
-sudo yum update
+#sudo yum update
+sudo groupadd mysql
+sudo useradd -s /sbin/nologin -g mysql -M mysq
 sudo yum install mysql-server
-  sudo chown mysql:mysql -R /var/lib/mysql
-sudo mysqld --initialize --user=root //电脑重启了
+sudo chown mysql:mysql -R /var/lib/mysql
+sudo mysqld --initialize --user=root #电脑重启了
 sudo systemctl start mysqld
 sudo systemctl status mysqld
 mysql //start mysql-client

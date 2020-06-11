@@ -23,6 +23,7 @@ std::string getSha512ForUint(uint v_num);
 
 vector<string> getNumFrom(uint v_limit,uint v_quentity);
 
+vector<string> getRangeNumList(uint v_low,uint v_high);
 
 
 #endif // SHA512_H

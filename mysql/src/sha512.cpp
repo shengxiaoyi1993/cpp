@@ -137,11 +137,19 @@ vector<string> getNumFrom(uint v_limit,uint v_quentity){
     vector<string> list;
     for(uint i=0;i<v_quentity;i++){
         uint num=getRandom(0,v_limit);
-//        cout<<"num:"<<num<<endl;
         list.push_back(getSha512ForUint(num));
-//        cout<<"getSha512ForUint(num):"<<getSha512ForUint(num)<<endl;
-//        cout<<"getSha512ForUint(num):"<<getSha512ForUint(num)<<endl;
 
+    }
+    return list;
+
+}
+
+
+vector<string> getRangeNumList(uint v_low,uint v_high)
+{
+    vector<string> list;
+    for(uint i=v_low;i<=v_high;i++){
+        list.push_back(getSha512ForUint(i));
     }
     return list;
 

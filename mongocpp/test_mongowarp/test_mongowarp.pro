@@ -16,9 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-#       ../lib/hex/hex.cpp \
-#       ../lib/cjsonobject/CJsonObject.cpp \
-#       ../lib/cjsonobject/cJSON.cpp \
+       ../lib/hex/hex.cpp \
+       ../lib/cjsonobject/CJsonObject.cpp \
+       ../lib/cjsonobject/cJSON.cpp \
         ../../mysql/src/sha512.cpp \
         ../../mysql/src/basic.cpp
 
@@ -26,11 +26,10 @@ SOURCES += \
 
 HEADERS += \
         ../../mysql/src/sha512.h \
-        ../../mysql/src/basic.h
-
-#       ../lib/hex/hex.h \
-#       ../lib/cjsonobject/CJsonObject.hpp \
-#       ../lib/cjsonobject/cJSON.h \
+        ../../mysql/src/basic.h \
+       ../lib/hex/hex.h \
+       ../lib/cjsonobject/CJsonObject.hpp \
+       ../lib/cjsonobject/cJSON.h \
 
 
 # Default rules for deployment.

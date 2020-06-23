@@ -1,20 +1,58 @@
  #include   <gtk/gtk.h>
  #include  <stdio.h>
-
+ #include <stdio.h>
+ #include <sys/mman.h>
+ #include <fcntl.h>
+ #include <errno.h>
 
 static GtkWidget *image_global=NULL;
+
+
+static int readBuferInRam(
+								unsigned int v_addr,
+								unsigned int v_size,
+								unsigned char** ppdata){
+								int fd;
+								*ppdata=(char *)malloc(v_size*sizeof(unsigned char));
+								memset(*ppdata,'\0',v_size*sizeof(unsigned char));
+								fd = open("/dev/mem",O_RDWR);
+								if(fd< 0)
+								{
+																printf("open /dev/mem failed.\n");
+																return 0;
+								}
+
+								ssize_t size=read(fd,*ppdata,v_size);
+								close(fd);
+							  return size;
+}
+
 
 gboolean key_press (GtkWidget *widget)
 {
 
+  int width=512;
+  int height=512;
+
 
     static int i=0;
     if(NULL != widget){
-        gint v_datalength=1024*3*sizeof(char);
-        char *pdata=(char*)malloc(v_datalength);
-        memset(pdata,i,v_datalength);
-        GBytes * gbyte3=g_bytes_new(pdata,v_datalength);
-        GdkPixbuf* src_frombuffer = gdk_pixbuf_new_from_bytes(gbyte3,0,FALSE,8,32,32,96);
+        // gint v_datalength=1024*3*sizeof(char);
+        // char *pdata=(char*)malloc(v_datalength);
+        // memset(pdata,i,v_datalength);
+
+
+         char *pdata=NULL;
+        int size= readBuferInRam(0,width*height*3,&pdata);
+        printf("key_press size:%d\n",size);
+        fflush(stdout);
+        if(pdata == NULL){
+          printf("FAIL TO  GET ARM\n");
+          fflush(stdout);
+        }
+
+        GBytes * gbyte3=g_bytes_new(pdata,width*height*3);
+        GdkPixbuf* src_frombuffer = gdk_pixbuf_new_from_bytes(gbyte3,0,FALSE,8,width,height,width*3);
 //        image_global = gtk_image_new_from_pixbuf(src_frombuffer);	// 通过pixbuf创建图片控件
         gtk_image_set_from_pixbuf(widget,src_frombuffer);
         g_object_unref(src_frombuffer);	// pixbuf使用完，需要人为释放资源
@@ -134,4 +172,3 @@ gint CloseAppWindow (GtkWidget *widget, gpointer data)
 
 
  }
-

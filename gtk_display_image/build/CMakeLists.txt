@@ -11,9 +11,10 @@
 cmake_minimum_required (VERSION 2.8)
 project (hello-gtk)
 # set( CMAKE_CXX_FLAGS "-std=c++11" )
-set(CMAKE_SYSROOT /home/sxy/ultra96_v1/ultra96/images/bsp2018.3/build/ultra96v1_full_2018_3/images/linux/)
-set(CMAKE_FIND_ROOT_PATH
-/home/sxy/ultra96_v1/ultra96/images/bsp2018.3/build/ultra96v1_full_2018_3/images/linux/)
+
+# cross_compile_setting
+set(CMAKE_SYSROOT /home/sxy/Software/Petalinux_18_3/2018_3_ultra96v1/ultra96v1_rootfs)
+set(CMAKE_FIND_ROOT_PATH /home/sxy/Software/Petalinux_18_3/2018_3_ultra96v1/ultra96v1_rootfs)
 SET(COMBILEPATH "/home/sxy/Software/petalinux/tools/linux-i386/aarch64-linux-gnu/bin/" CACHE STRING "Some user-specified option")
 SET(CMAKE_SYSTEM_NAME Linux)
 SET(CMAKE_C_COMPILER ${COMBILEPATH}aarch64-linux-gnu-gcc)

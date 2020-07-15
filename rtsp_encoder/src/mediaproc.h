@@ -3,6 +3,7 @@
 
 
 #include<iostream>
+#include <vector>
 
 extern "C"
 {
@@ -12,17 +13,17 @@ extern "C"
 #include "libavdevice/avdevice.h"
 }
 
+using namespace std;
 
-namespace dm {
 
 #ifndef DEF_DeviceManagerErrorType
 #define DEF_DeviceManagerErrorType
 enum DeviceManagerErrorType{
-    Normal=1000,
-    CanNotConnect=1001,
-    CanNotGetInfo=1002,
-    OperateFail=1003,
-    QuitConnect=1004
+    Normal=0,
+    CanNotConnect=1,
+    CanNotGetInfo=2,
+    OperateFail=3,
+    QuitConnect=4
 };
 #endif
 
@@ -47,7 +48,7 @@ int SaveToH264(const char* rtsp_url,int time,const char* video_path);
  * @param rtsp_url
  * @param time          获取关键帧的时间长度
  * @param video_path    视频的保存路径
- * @param void (*callbak_getimage)(QImage) 传递图片的回调函数，由于从rtsp流中获取的图片需要被实时处理，因此使用回调函数的方式即时传递
+ * @param void (*callbak_getimage)(unsigned char *, unsigned int, unsigned int) 传递图片的回调函数，由于从rtsp流中获取的图片需要被实时处理，因此使用回调函数的方式即时传递
  *                      同时注意回调函数的的需要立即返回，否则会阻塞该函数的执行
  *                      该参数为NULL时不传递图片 ，只保留视频
  *
@@ -58,8 +59,9 @@ int saveRtspAsJpg(const char* rtsp_url, int time,
                   const char* video_path,
                  void (*callbak_getimage)(unsigned char *, unsigned int, unsigned int));
 
+int getSeq(vector<int> nums,vector<int>& seqs);
 
 
-}
+
 
 #endif // DM_MEDIA_H

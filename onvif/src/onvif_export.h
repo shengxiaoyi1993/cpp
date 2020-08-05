@@ -17,6 +17,11 @@
 #define ONVIF_OUT
 
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 
 /**
  * @brief ONVIF_GetDeviceInformation 获取IP指向的设备的信息
@@ -181,5 +186,8 @@ int ONVIF_GetSnapshotUri(const char *MediaXAddr,
                          const char* username,
                          const char* password
                          );
-
+  
+                         #ifdef __cplusplus
+                         }
+                         #endif
 #endif

@@ -3,7 +3,7 @@ project(onvif)
 #set( CMAKE_CXX_FLAGS "-std=c++11" )
 add_compile_options(-DWITH_OPENSSL -DWITH_DOM  -DWITH_NONAMESPACES)
 add_executable(${PROJECT_NAME}
-"../src/main.c"
+"../src/main.cpp"
 "../src/onvif_export.c"
 "../src/onvif/smdevp.c"
 "../src/onvif/wsseapi.c"

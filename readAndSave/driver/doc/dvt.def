@@ -1,0 +1,289 @@
+version 1
+group DVT, prefix GR_, hierarchical_field_names
+
+// byte address for regbank will be 16 bits
+// address gap will be 4 to use 32 bit size register
+// total register size will be 64KBytes
+// normally only use 4KBytes
+
+// **************************************************
+// System misc, 0x0000 ~ 0x0100
+// **************************************************
+// Version
+register VERSION at 0x0000, split, frame "SYSTEM"
+{version register, better match with svn version}
+field SVN             [31 ..  0], default 0x00000000, decimal
+{svn version of current compile}
+endf
+endr
+
+// company
+register COMPANY_DIGI at 0x0010, split, frame "SYSTEM"
+{company info, will use 4 word, DIGI VISI ON HZCN}
+field ASCII           [31 ..  0], default 0x44494749, decimal
+{ascii code for DIGI}
+endf
+endr
+
+// company
+register COMPANY_VISI at 0x0014, split, frame "SYSTEM"
+{company info, will use 4 word, DIGI VISI ON HZCN}
+field ASCII           [31 ..  0], default 0x56495349, decimal
+{ascii code for VISI}
+endf
+endr
+
+// company
+register COMPANY_ON at 0x0018, split, frame "SYSTEM"
+{company info, will use 4 word, DIGI VISI ON HZCN}
+field ASCII           [31 ..  0], default 0x4f4e0000, decimal
+{ascii code for ON}
+endf
+endr
+
+// company
+register COMPANY_HZCN at 0x001c, split, frame "SYSTEM"
+{company info, will use 4 word, DIGI VISI ON HZCN}
+field ASCII           [31 ..  0], default 0x485a434e, decimal
+{ascii code for HZCN}
+endf
+endr
+
+
+// **************************************************
+// Irq, 0x0100 ~ 0x0200
+// **************************************************
+// irq, must be something FPGA needs to info ARM to do
+// scenario 1: FPGA send ack to ARM, ack is one kind of scenario 2
+//    FPGA send Irq, with OP code and some sideband info
+//    ARM register all info, Clear Irq bit
+// scenario 2: FPGA command with words to ARM
+//    FPGA prepare data in reg
+//    FPGA send Irq, with OP code and some sideband info
+//    ARM read data, size of data
+//    ARM register all data, Clear Irq bit
+// scenario 3: FPGA command with large chunk of data to ARM
+//    FPGA prepare data in RAM
+//    FPGA prepare data in reg
+//    FPGA send Irq, with OP code and some sideband info(reg_addr of slot_table and wr_loc)
+//    ARM read address, size of data
+//    ARM register the Irq requirement, Clear Irq bit
+//    ARM process Irq requests, when finish, clear corresponding slot table(readout and writeback)
+//
+// OP Code:
+//  0x0?    Simple ack, use sideband to transfer extra info
+//  0x1?    FPGA send data through 4x32bits irq_d? registers
+//  0x4?    FPGA send large chunk of data to ARM
+// **************************************************
+// irq port status, same as dvt_irq pin, can be cleared by ARM
+register IRQ_PORT at 0x0100, split, external, frame "SYSTEM"
+{Interrupt port Status Register}
+field HIGH            [ 0 ..  0], default 0x0, decimal
+{Interrupt is high or not}
+endf
+endr
+
+// irq CMD, include op and side info
+register IRQ_CMD at 0x0110, split, readonly, frame "SYSTEM"
+{Interrupt command}
+field OP              [ 7 ..  0], default 0x00, decimal
+{Interrupt operation}
+endf
+field SIDE_INFO       [31 ..  8], default 0x000000, decimal
+{Interrupt command side info}
+endf
+endr
+
+// irq data size
+register IRQ_DATA_SIZE at 0x0114, split, readonly, frame "SYSTEM"
+{Interrupt transfer size in bytes}
+field BYTES           [31 ..  0], default 0x00000000, decimal
+{Interrupt data transfer size in bytes}
+endf
+endr
+
+// irq data0 or src addr_h
+register IRQ_D0 at 0x0118, split, readonly, frame "SYSTEM"
+{Interrupt transfer Data0 or src address high}
+field SRC_ADDR_H      [31 ..  0], default 0x00000000, decimal
+{Interrupt data0 or src address high}
+endf
+endr
+
+// irq data1 or src addr_l
+register IRQ_D1 at 0x011c, split, readonly, frame "SYSTEM"
+{Interrupt transfer Data1 or src address low}
+field SRC_ADDR_L      [31 ..  0], default 0x00000000, decimal
+{Interrupt data1 or src address low}
+endf
+endr
+
+// irq data2 or dest addr_h
+register IRQ_D2 at 0x0120, split, readonly, frame "SYSTEM"
+{Interrupt transfer Data2 or destination address high}
+field DEST_ADDR_H     [31 ..  0], default 0x00000000, decimal
+{Interrupt data2 or destination address high}
+endf
+endr
+
+// irq data3 or dest addr_l
+register IRQ_D3 at 0x0124, split, readonly, frame "SYSTEM"
+{Interrupt transfer Data3 or destination address low}
+field DEST_ADDR_L     [31 ..  0], default 0x00000000, decimal
+{Interrupt data3 or destiantion address low}
+endf
+endr
+
+
+// **************************************************
+// OS_Req, 0x0200 ~ 0x0300
+// **************************************************
+
+
+// **************************************************
+// Encryption, 0x0300 ~ 0x0400
+// **************************************************
+
+
+// **************************************************
+// CMOS, 0x0400 ~ 0x0500
+// **************************************************
+// cmos control register
+register MOS_CTRL at 0x0400, split, frame "SYSTEM"
+{cmos general control signal}
+field IIC_SL          [11 ..  8],default 0x1,decimal
+{iic communicate start line}
+endf
+field VS_HS_OEN       [ 4 ..  4], default 0x1, decimal
+{xvs and xhs output control}
+endf
+field SLAVE_MODE      [ 0 ..  0], default 0x1, decimal
+{set to slave mode, xvs and xhs output for slave mode}
+endf
+endr
+
+// cmos frame size control
+register MOS_FRAME at 0x0404, split, frame "SYSTEM"
+{cmos frame size control}
+field HS_INCK_CNT     [27 .. 16],default 0x1b0,decimal
+{number of inck per line, 10b10c mode min 420 inck, here set to 432}
+endf
+field VS_LINE_CNT     [15 ..  0], default 0x1388, decimal
+{for 25fps, here set to 5000 line, if 1000fps, set to 125 line}
+endf
+endr
+//0xFEFEFEFE
+//HS_INCK_CNT  1110 1111 1110
+//VS_LINE_CNT  1111 1110 1111 1110
+
+
+// RAW LOC H
+register RAW_LOC_H at 0x0408, split, frame "SYSTEM"
+{raw horizontal location}
+field OFFSET          [27 .. 16],default 0x00c,decimal
+{horizontal start point, remove 12 dead pixel}
+endf
+field SET_CNT         [11 ..  0],default 0x0f0,decimal
+{number of 8 pixel sets, 1920 pixels, 240(0x0f0) sets}
+endf
+endr
+
+// RAW LOC V
+register RAW_LOC_V at 0x040c, split, frame "SYSTEM"
+{raw vertical location}
+field OFFSET          [29 .. 16],default 0x000f,decimal
+{vertical start line, remove 15 lines, including 1 info frame, 6 ignored ob, 8 effective ob}
+endf
+field CNT             [13 ..  0],default 0x0438,decimal
+{1080 line store to raw, that is x438}
+endf
+endr
+
+
+// **************************************************
+// AE, 0x0500 ~ 0x0600
+// **************************************************
+// AE default setting
+register AE_MANU at 0x0500, split, frame "SYSTEM"
+{AE default value for exp and gain}
+field GAIN            [24 .. 16],default 0x0f0,decimal
+{set the default gain to 0x0f0, this is the max analoy gain, without digital gain}
+endf
+field EXP             [11 ..  0], default 0x300, decimal
+{set the default exp line to this value, will be used when ae off}
+endf
+endr
+
+
+// **************************************************
+// MEM, 0x0800 ~ 0x0900
+// **************************************************
+// RAW STRIDE
+register RAW_STRIDE at 0x0800, split, frame "SYSTEM"
+field GENERAL         [ 7 ..  0], default 0x10, decimal
+{general stride for 16 x 2048 gap, that is 16 x 256 = 4096 pixels}
+endf
+endr
+
+// Raw buffer control
+register RB_CTRL at 0x0810, split, frame "SYSTEM"
+field WR_INIT_IRQ     [ 8 ..  8], default 0x0, decimal
+{1 means when finish write in one frame, init irq to os}
+endf
+field WR_BLOCKING     [ 0 ..  0], default 0x0, decimal
+{0 means don not needs to block write in}
+endf
+endr
+
+//WR_INIT_IRQ 0000 0001 0000 0001 |0x0101
+
+
+
+// address here map to 40 bits address
+// 2048 bits, 256 bytes aligned address, corresponding to 40 bits address is (39 downto 8)
+// MEM RB(Raw Buffer), <0x0 0x60000000 0x0 0x08000000> 128MB
+register RB_ADDR at 0x0814, split, frame "SYSTEM"
+field BASE            [31 ..  0], default 0x00600000, decimal
+{256 bytes aligned base address for mem program logic buffer, of raw buffer}
+endf
+endr
+
+// Raw buffer, 4 sets
+// Raw buffer size, can save 4k*4k*8bit image or 4k*2k*16bit image
+// Raw buffer save space, define offset as 0x010000
+register RB_STRIDE at 0x0818, split, frame "SYSTEM"
+field FRAME           [23 ..  0], default 0x010000, decimal
+{256 bytes aligned raw buffer address offset based on plb}
+endf
+endr
+
+// Raw buffer slot op loc index
+register RB_LOC at 0x081c, readonly, split, frame "SYSTEM"
+field WR              [ 1 ..  0], default 0x0, decimal
+{write location for next write in slot}
+endf
+endr
+
+// Raw buffer slot table
+register RB_SLOT at 0x0820, external, split, frame "SYSTEM"
+field TABLE           [ 3 ..  0], default 0x0, decimal
+{when bit in table is 1, means corresponding slot have data valid}
+endf
+endr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endg

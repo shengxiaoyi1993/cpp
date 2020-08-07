@@ -2107,6 +2107,17 @@ mysql> select @@session.transaction_isolation ;
 ## user_manage
 
 
+```
+delete tb_uvsslabel as a
+from tb_uvsslabel as a,
+(select * from tb_uvsslabel group by small having count(1)>1) as b
+where a.small=b.small
+and a.id > b.id;
+```
+
+```
+DELETE FROM tb_uvsslabel where id not in (select id from (select min(id) as id from tb_uvsslabel group by small) as b ) ;
+```
 
 
 

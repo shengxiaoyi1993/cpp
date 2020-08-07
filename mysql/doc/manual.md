@@ -16,17 +16,20 @@ sxy       5789  4832  0 09:46 pts/2    00:00:00 grep --color=auto mysqld
 ```
 
 ### 1.2. change_password
+
 ```
 mysqladmin -u root password "new_password";
 ```
 
 ### 1.3. login
+
 ```
 [root@host]# mysql -u root -p
 Enter password:*******
 ```
 
 ### 1.4. shutdown   (测试失败)
+
 ```
 root@host# cd /usr/bin
 ./mysqladmin -u root -p shutdown
@@ -34,6 +37,7 @@ Enter password: ******
 ```
 
 ### 1.5. 插入用户
+
 ```
 mysql> create user 'joey'@'localhost' identified by 'joey';
 Query OK, 0 rows affected (0.00 sec)
@@ -61,6 +65,7 @@ mysql>  SELECT host, user, password FROM user WHERE user = 'joey';
 
 ```
 ### 1.6. operation
+
 ```
 mysql> use mysql
 Database changed

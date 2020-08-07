@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../lib/include/uvss_label_distance_interface.hpp
+
+/home/sxy/Github/cpp/mysql/test/src/main.cpp
+iostream
+-
+sys/time.h
+-
+uvss_label_distance_interface.hpp
+/home/sxy/Github/cpp/mysql/test/src/uvss_label_distance_interface.hpp
+

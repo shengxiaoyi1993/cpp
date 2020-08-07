@@ -6,4 +6,4 @@ add_executable(${PROJECT_NAME}
   "../src/sha512.cpp"
    "../src/basic.cpp" )
 message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
-target_link_libraries( example -L/usr/lib64/mysql -lmysqlclient -lpthread -lm -ldl)
+target_link_libraries( example -L/usr/lib64/mysql -lmysqlclient -lmysqlcppconn -lpthread -lm -ldl)

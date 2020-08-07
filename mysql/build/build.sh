@@ -22,6 +22,8 @@
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 #sudo yum update
+sudo yum install mysql-community-client.i686
+sudo yum install mysql-community-devel
 sudo groupadd mysql
 sudo useradd -s /sbin/nologin -g mysql -M mysq
 sudo yum install mysql-server

@@ -1,0 +1,1 @@
+/usr/bin/g++  -std=c++11  -rdynamic CMakeFiles/example.dir/home/sxy/Github/cpp/common/src/main.cpp.o CMakeFiles/example.dir/home/sxy/Github/cpp/common/src/cpp/string_manipulation.cpp.o  -o example 

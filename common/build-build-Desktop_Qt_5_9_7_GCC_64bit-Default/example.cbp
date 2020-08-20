@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="example"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="example">
+				<Option output="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 example"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="example/fast">
+				<Option output="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 example/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sxy/Github/cpp/common/src/cpp/string_manipulation.cpp">
+			<Option target="example"/>
+		</Unit>
+		<Unit filename="/home/sxy/Github/cpp/common/src/cpp/string_manipulation.hpp">
+			<Option target="example"/>
+		</Unit>
+		<Unit filename="/home/sxy/Github/cpp/common/src/main.cpp">
+			<Option target="example"/>
+		</Unit>
+		<Unit filename="/home/sxy/Github/cpp/common/build/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

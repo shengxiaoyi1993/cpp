@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "../lib/common/string_manipulation.hpp"
 
 const vector<char> PNM::_list_writespace={0x20,0x09,0x0D,0x0A};
 const vector<char> PNM::_list_nextline={0x0A};
@@ -60,8 +61,7 @@ int PNM::loadFromFile(const string & v_filepath){
 }
 
 int PNM::saveToFile(const string & v_filepath,MagicNumber v_type) const{
-  saveDataToFile(v_filepath,v_type,_data,_width,_height,_range);
-
+  return saveDataToFile(v_filepath,v_type,_data,_width,_height,_range);
 }
 
 string PNM::formHeadString( MagicNumber v_type,
@@ -88,17 +88,37 @@ string PNM::stringFromNumber(int v_num){
 int PNM::saveDataToFile(const string & v_filepath,
                         MagicNumber v_type,
                         unsigned short * v_pdata,
-                        unsigned int _width,
-                        unsigned int _height,
-                        unsigned int _range
+                        unsigned int v_width,
+                        unsigned int v_height,
+                        unsigned int v_range
                         ){
-  string string_head=formHeadString(v_type,_width,_height,_range);
+  string string_head=formHeadString(v_type,v_width,v_height,v_range);
   cout<<"string_head:"<<string_head<<endl;
+
+  {
+  ofstream outpufile(v_filepath,ios::app);
+  outpufile<<string_head;
+  outpufile.close();
+  }
 
   string string_data;
   switch (v_type) {
     case MagicNumber_p5:{
       //8 pix as unit
+
+      using namespace common::string_manipulation;
+      BinaryData bidata(v_width*v_height,BinaryData::BinaryDataDirection_left);
+      for(size_t i=0;i<v_width*v_height;i++){
+        bidata.appendData<unsigned short>(v_pdata[i],8);
+      }
+      bidata.print();
+      bidata.endAppend(true);
+
+      {
+      ofstream outpufile(v_filepath,ios::app|ios::binary);
+      outpufile.write(static_cast<const char*>((char*)bidata._pdata),bidata._size_total);
+      outpufile.close();
+      }
 
       break;
     }
@@ -106,6 +126,8 @@ int PNM::saveDataToFile(const string & v_filepath,
     default:
       break;
   }
+
+
   return 0;
 
 }

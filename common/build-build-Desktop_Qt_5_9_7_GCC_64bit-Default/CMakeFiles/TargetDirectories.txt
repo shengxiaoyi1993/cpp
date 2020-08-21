@@ -1,3 +1,0 @@
-/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/CMakeFiles/rebuild_cache.dir
-/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/CMakeFiles/edit_cache.dir
-/home/sxy/Github/cpp/common/build-build-Desktop_Qt_5_9_7_GCC_64bit-Default/CMakeFiles/example.dir

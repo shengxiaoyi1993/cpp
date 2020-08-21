@@ -106,7 +106,7 @@ public:
       int remain=v_bits;
       int count=0;
       while(remain>0){
-        cout<<"remain:"<<remain<<endl;
+
         if(remain+_offset_cache>=8){
           T tmpsheld=getSheld<T>(remain-8+_offset_cache,remain-1,true);
           T value=tmpsheld&v_data;

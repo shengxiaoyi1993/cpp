@@ -20,6 +20,14 @@
 - correct format of Head
 - when magic_number is not power of 2,how to form the Data
 - if this is multi picture
+- how to save data: pointer of data and type  
+- when convert to other type should give src_type and dst_type
+  - P1=P4 P2=P5 P3=P6
+  - data is saved in (unsigned short*) pointer with type
+  - when convert to certain type, from the data with BinaryData ,
+  then convert to file
+
+
 
 ## 2 basic module
 - Head

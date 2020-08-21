@@ -1,1 +1,0 @@
-/usr/bin/g++  -std=c++11  -rdynamic CMakeFiles/example.dir/home/sxy/Github/cpp/portableImage/src/main.cpp.o CMakeFiles/example.dir/home/sxy/Github/cpp/portableImage/src/export.cpp.o CMakeFiles/example.dir/home/sxy/Github/cpp/portableImage/src/pnm.cpp.o CMakeFiles/example.dir/home/sxy/Github/cpp/portableImage/lib/common/string_manipulation.cpp.o  -o example 

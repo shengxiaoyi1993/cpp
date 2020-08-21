@@ -2,22 +2,22 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-#include "../lib/portable/pnm.hpp"
+#include "../lib/pnm/pnm.h"
 
  ImageConverter::ImageConverter(const string&v_path,ImageType v_imagetype):
- _prgb(nullptr),_py(nullptr),_pu(nullptr),_pv(nullptr)
+   _pimagebufer(nullptr)
 {
+
   switch ( v_imagetype ) {
     case ImageType_JPEG:{
       loadFromJPEG(v_path);
       break;
     }
-    case ImageType_PPM:{
+    case ImageType_PNM:{
+      PNM tmppnm(v_path);
+      _pimagebufer=new ImageBuffer(tmppnm._range,tmppnm._range,tmppnm._width,tmppnm._height);
+
       loadFromPPM(v_path);
-      break;
-    }
-    case ImageType_PGM:{
-      loadFromPGM(v_path);
       break;
     }
     default:
@@ -37,14 +37,11 @@ int ImageConverter::saveToFile(const string&v_path,ImageType v_imagetype){
       saveToJPEG(v_path);
       break;
     }
-    case ImageType_PPM:{
+    case ImageType_PNM:{
       saveToPPM(v_path);
       break;
     }
-    case ImageType_PGM:{
-      saveToPGM(v_path);
-      break;
-    }
+
     default:
     break;
   }
@@ -52,32 +49,46 @@ int ImageConverter::saveToFile(const string&v_path,ImageType v_imagetype){
 }
 
 int ImageConverter::loadFromPPM(const string & v_file){
-  PNM::Info info;
-  std::ifstream( v_file, std::ios_base::binary ) >> PNM::load( _prgb, info );
-  if( true == info.valid() )
- {
-  std::cout << "width   = "  << info.width ()    << std::endl;
-  std::cout << "height  = "  << info.height()    << std::endl;
-  std::cout << "max     = "  << info.max()       << std::endl;
-  std::cout << "channel = "  << info.channel()   << std::endl;
-  std::cout << "type    = "  << (int)info.type() << std::endl;
-  // data contain valid information allocated by my_allocator
- }
+
   return 0;
 }
 int ImageConverter::loadFromPGM(const string & v_file){
+  throw string(__FUNCTION__)+" not support";
   return 0;
 }
 int ImageConverter::loadFromJPEG(const string & v_file){
+  throw string(__FUNCTION__)+" not support";
 
   return 0;
 }
 int ImageConverter::saveToPPM(const string & v_file) const{
+  throw string(__FUNCTION__)+" not support";
+
   return 0;
 }
 int ImageConverter::saveToPGM(const string & v_file) const{
+  throw string(__FUNCTION__)+" not support";
+
   return 0;
 }
 int ImageConverter::saveToJPEG(const string & v_file) const{
+  throw string(__FUNCTION__)+" not support";
+
+  return 0;
+}
+int loadFromPNM(const string & v_file){
+  throw string(__FUNCTION__)+" not support";
+  return 0;
+
+
+}
+
+int loadFromOutputFile(const string & v_file){
+  throw string(__FUNCTION__)+" not support";
+  return 0;
+}
+
+int loadFromRaw(const string & v_file){
+  throw string(__FUNCTION__)+" not support";
   return 0;
 }

@@ -3,7 +3,7 @@ project(example)
 set( CMAKE_CXX_FLAGS "-std=c++11" )
 add_executable(${PROJECT_NAME} "../src/main.cpp"
   "../src/export.cpp"
-  "../src/pnm.cpp"
+  "../src/pnm/pnm.cpp"
   "../lib/common/string_manipulation.cpp"
   )
 message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})

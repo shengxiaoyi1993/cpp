@@ -21,7 +21,7 @@ PNM::PNM(const string & v_filepath):
 {
   int rload= loadFromFile(v_filepath);
   if( rload < 0){
-    throw "Error(bad_input):";
+    throw string(__func__)+"Error(bad_input):";
   }
   else{
     print();
@@ -31,6 +31,8 @@ PNM::PNM(const string & v_filepath):
 
 PNM::~PNM(){
 
+  free(_data);
+  _data=nullptr;
 }
 
 int PNM::loadFromFile(const string & v_filepath){
@@ -40,6 +42,7 @@ int PNM::loadFromFile(const string & v_filepath){
     cout<<"open failed"<<endl;
     return -1;
   }
+  //load all data from file
   std::string str((std::istreambuf_iterator<char>(infile)),
                   std::istreambuf_iterator<char>());
 
@@ -48,6 +51,7 @@ int PNM::loadFromFile(const string & v_filepath){
   int rgethead=getHeadInfo(str);
   print();
   if(rgethead <=0){
+    cout<<"getHeadInfo fail"<<endl;
     return rgethead;
   }
 
@@ -80,8 +84,17 @@ string PNM::formHeadString( MagicNumber v_type,
   tmpstr+=stringFromNumber(static_cast<int>(_height))+"\n";
   tmpstr+=stringFromNumber(static_cast<int>(_range))+"\n";
   return tmpstr;
-
 }
+string PNM::formHeadStringWithoutRange( MagicNumber v_type,
+                                        unsigned int v_width,
+                                        unsigned int v_height){
+  string tmpstr;
+  tmpstr+=_list_magic_number[v_type]+"\n";
+  tmpstr+=stringFromNumber(static_cast<int>(v_width))+"\n";
+  tmpstr+=stringFromNumber(static_cast<int>(v_height))+"\n";
+  return tmpstr;
+}
+
 
 
 string PNM::stringFromNumber(int v_num){
@@ -101,8 +114,14 @@ int PNM::saveDataToFile(const string & v_filepath,
                         unsigned int v_height,
                         unsigned int v_range_dst
                         ){
-  string string_head=formHeadString(v_type_dst,v_width,v_height,v_range_dst);
-  cout<<"string_head:"<<string_head<<endl;
+
+  string string_head;
+  if(v_type_dst == MagicNumber_p1||v_type_dst==MagicNumber_p4){
+    string_head=formHeadStringWithoutRange(v_type_dst,v_width,v_height);
+  }
+  else{
+    string_head=formHeadString(v_type_dst,v_width,v_height,v_range_dst);
+  }
 
   {
     ofstream outpufile(v_filepath);
@@ -114,9 +133,6 @@ int PNM::saveDataToFile(const string & v_filepath,
   int bits=getLogOf2(v_range_dst);
   int pix_store_space = bits>8?16:8;
 
-  //bi gray rgb -> bi gray rgb
-  //buffer_tmp bi gray rgb
-  //G=0.30*R+0.59*G+0.11*B
 
   //if v_type_dst == p2 p5 ->gray
   //if v_type_dst == p3 p6 ->rgb
@@ -124,15 +140,45 @@ int PNM::saveDataToFile(const string & v_filepath,
   switch (v_type_dst) {
     case MagicNumber_p1:
     case MagicNumber_p4:{
-      throw "Error:Save Type not support!";
-      //      break;
+      switch (v_type_src) {
+        case DataType_binary:{
+          buffer_tmp =new unsigned short[v_width*v_height];
+          memcpy(buffer_tmp,v_pdata, sizeof(unsigned short)*v_width*v_height);
+          break;
+        }
+        case DataType_gray:{
+          buffer_tmp =new unsigned short[v_width*v_height];
+          memcpy(buffer_tmp,v_pdata, sizeof(unsigned short)*v_width*v_height);
+          for(size_t i=0;i<v_width*v_height;i++){
+            buffer_tmp[i]=buffer_tmp[i]>0x8000?0:0xffff;
+          }
+          break;
+        }
+        case DataType_rgb:{
+          buffer_tmp =new unsigned short[v_width*v_height];
+
+          for(size_t i=0;i<v_width*v_height;i++){
+
+            buffer_tmp[i]=static_cast<unsigned short>(v_pdata[i*3]*0.3+v_pdata[i*3+1]*0.59+v_pdata[i*3+2]*0.11);
+            buffer_tmp[i]=buffer_tmp[i]>0x8000?0:0xffff;
+          }
+
+          break;
+        }
+        default:
+          throw "[FUNC]: "+string(__FUNCTION__)+" [LINE: ]"+common::string_manipulation::stringFromInt(__LINE__)
+              +" [Error]: unsupport";
+      }
+      break;
+
+
     }
     case MagicNumber_p2:
     case MagicNumber_p5:{
 
       switch (v_type_src) {
         case DataType_binary:{
-          throw "unsupport";
+          throw string(__func__)+"unsupport";
           //          break;
         }
         case DataType_gray:{
@@ -148,7 +194,7 @@ int PNM::saveDataToFile(const string & v_filepath,
           break;
         }
         default:
-          throw "unsupport";
+          throw string(__func__)+"unsupport";
       }
 
       break;
@@ -158,7 +204,7 @@ int PNM::saveDataToFile(const string & v_filepath,
       switch (v_type_src) {
         case DataType_binary:{
 
-          throw "unsupport";
+          throw string(__func__)+"unsupport";
           //          break;
         }
         case DataType_gray:{
@@ -183,14 +229,42 @@ int PNM::saveDataToFile(const string & v_filepath,
       break;
     }
     default:
-      throw "Error:Save Type not support!";
+      throw string(__func__)+"Error:Save Type not support!";
   }
 
-  cout<<"hhh"<<endl;
 
-
+  //save to file
   switch (v_type_dst) {
+    case MagicNumber_p4:{
+      //8 pix as unit
+      unsigned int size=v_width*v_height;
+      unsigned buffersize=(v_width+8)*v_height/8+1;
+      cout<<"buffersize:"<<buffersize<<endl;
 
+      using namespace common::string_manipulation;
+      BinaryData bidata(buffersize,BinaryData::BinaryDataDirection_left);
+      //when bits of cols is not multiple of 8,supple it to
+      int supple=8-v_width%8;
+      supple=(supple==8)?0:supple;
+      for(size_t i=0;i<v_height;i++){
+        for(size_t j=0;j<v_width;j++){
+          bidata.appendData<unsigned short>(buffer_tmp[i*v_width+j]>>15,1);
+        }
+        bidata.appendData<unsigned short>(0,supple);
+      }
+
+      bidata.endAppend(true);
+//          bidata.print();
+      cout<<"bidata._size_used:"<<bidata._size_used<<endl;
+      cout<<"bidata._size_total:"<<bidata._size_total<<endl;
+
+      {
+        ofstream outpufile(v_filepath,ios::app|ios::binary);
+        outpufile.write(static_cast<const char*>((char*)bidata._pdata),bidata._size_used);
+        outpufile.close();
+      }
+      break;
+    }
     case MagicNumber_p5:{
       //8 pix as unit
       unsigned int size=v_width*v_height;
@@ -203,7 +277,7 @@ int PNM::saveDataToFile(const string & v_filepath,
       for(size_t i=0;i<v_width*v_height;i++){
         bidata.appendData<unsigned short>(buffer_tmp[i]>>offset,pix_store_space);
       }
-//      bidata.print();
+      //    bidata.print();
       bidata.endAppend(true);
       {
         ofstream outpufile(v_filepath,ios::app|ios::binary);
@@ -225,8 +299,6 @@ int PNM::saveDataToFile(const string & v_filepath,
         bidata.appendData<unsigned short>(static_cast<unsigned short>(buffer_tmp[i]>>offset),pix_store_space);
       }
       bidata.endAppend(true);
-      cout<<"pix_store_space:"<<pix_store_space<<endl;
-      cout<<"bits:"<<bits<<endl;
 
       {
         ofstream outpufile(v_filepath,ios::app|ios::binary);
@@ -238,7 +310,7 @@ int PNM::saveDataToFile(const string & v_filepath,
     }
 
     default:
-      throw "Error:Save Type not support!";
+      throw string(__func__)+"Error:Save Type not support!";
   }
   delete[] buffer_tmp;
 
@@ -248,34 +320,90 @@ int PNM::saveDataToFile(const string & v_filepath,
 
 
 int PNM::loadData(const string & v_pdata,  MagicNumber v_type){
-
+  unsigned size;
   switch (v_type) {
+    case MagicNumber_p4:{
+      size=_width*_height;
+      break;
+    }
     case MagicNumber_p5:{
-      unsigned size=_width*_height;
-      _data =(unsigned short*) malloc(size*sizeof (unsigned short));
-      for (size_t i=0;i<size;i++) {
-        _data[i]=static_cast<unsigned short>(v_pdata[i]<<8);
-      }
+      size=_width*_height;
       break;
     }
     case MagicNumber_p6:{
-      unsigned size=_width*_height*3;
-      _data =(unsigned short*) malloc(size*sizeof (unsigned short));
-      for (size_t i=0;i<size;i++) {
-        _data[i]=static_cast<unsigned short>(v_pdata[i]<<8);
-      }
+      size=_width*_height*3;
       break;
     }
     default:
       return -1;
   }
-  return 0;
+
+
+  //adopt different method to load data at different type
+  switch (v_type) {
+
+    case MagicNumber_p1: case MagicNumber_p2: case MagicNumber_p3:{
+      //load as ASCII format
+      throw string(__func__)+"Error:not support";
+    }
+    case MagicNumber_p4:{
+      //one bit per pix
+      _data = new unsigned short[size];
+
+      unsigned int supple=8-_width%8;
+      supple=(supple==8)?0:supple;
+
+      for(size_t i=0;i<_height;i++){
+        for(size_t j=0;j<_width;j++){
+          uint remain=j%8;
+          _data[i*_width+j]=(v_pdata[(i*(_width+supple)+j)/8]&common::string_manipulation::getSheld<unsigned char>(7-remain,7-remain,true))<<(8+remain);
+        }
+      }
+
+//      for(size_t i=0;i<size;i++){
+//        //        cout<<"sheld:"<<hex<<(uint)(common::string_manipulation::getSheld<unsigned char>(i%8,i%8,true))<<endl;
+//        uint remain=i%8;
+//      }
+      return 0;
+
+    }
+    case MagicNumber_p5: case MagicNumber_p6:{
+      if(size>v_pdata.size() ){
+        throw string(__func__)+"Error:size error";
+      }
+
+      int bits=getLogOf2(_range);
+      _data = new unsigned short[size];
+      unsigned offset=16-bits;
+
+      if(_range >255 && _range <65536){
+        //small-end
+        memcpy(_data,v_pdata.c_str(),size*sizeof(unsigned short));
+        for (size_t i=0;i<size;i++) {
+          //collect order of bits,resulted from small-end order when copy
+          _data[i]=static_cast<unsigned short>(_data[i]<<8)
+              |static_cast<unsigned short>(_data[i]>>8);
+          _data[i]=_data[i]<<offset;
+        }
+      }
+      else if(_range<=255){
+        for (size_t i=0;i<size;i++) {
+          _data[i]=static_cast<unsigned short>(v_pdata[i])<<offset;
+        }
+      }
+      else{
+        throw string(__func__)+"Error:range overlap 1!";
+      }
+      return 0;
+    }//end of case MagicNumber_p5: case MagicNumber_p6:
+    default:
+      return -1;
+  }//end of switch (v_type)
 
 }
 
 
-
-bool PNM::isWhitespace(char v_ch) const{
+bool PNM::isWhitespace(char v_ch) {
   for(size_t i=0;i<_list_writespace.size();i++){
     if(v_ch == _list_writespace[i]){
       return true;
@@ -284,7 +412,7 @@ bool PNM::isWhitespace(char v_ch) const{
   return false;
 }
 
-bool PNM::isNextline(char v_ch) const{
+bool PNM::isNextline(char v_ch) {
   for(size_t i=0;i<_list_nextline.size();i++){
     if(v_ch == _list_nextline[i]){
       return true;
@@ -314,7 +442,7 @@ int PNM::getHeadInfo(const string& v_str){
 
     //judge if two writespace is adjacent
     if(isWhitespace(v_str[i])){
-      if(record+1 == i){
+      if(record+1 == i &&  !commentstart ){
         record=i;
         continue;
       }
@@ -363,30 +491,35 @@ int PNM::getHeadInfo(const string& v_str){
           break;
         }
         case 2:{
+          //get height
           string tmp=v_str.substr(record+1,i-record-1);
           int integer_tmp = integerFromString(tmp);
           if(isInteger(tmp)&&(integer_tmp>0)){
             _height=static_cast<unsigned>(integer_tmp);
+            if(_magic_number == MagicNumber_p1||_magic_number==MagicNumber_p4){
+              return static_cast<int>(i+1);
+            }
+
           }
           else{
             return -1;
           }
 
-          //get height
           break;
         }
         case 3:{
+          //get limit
           string tmp=v_str.substr(record+1,i-record-1);
           int integer_tmp = integerFromString(tmp);
           if(isInteger(tmp)&&(integer_tmp>0 && integer_tmp<65536)){
             _range=static_cast<unsigned short>(integer_tmp);
+            return static_cast<int>(i+1);
           }
           else{
             return -1;
           }
           bheadend=true;
 
-          //get limit
           break;
         }
         default:
@@ -395,17 +528,9 @@ int PNM::getHeadInfo(const string& v_str){
       ++step;
       record=i;
 
-      //get pos of datablock start
-      if(bheadend){
-        if(!isWhitespace(v_str[i+1])){
-          return static_cast<int>(i+1);
-        }
-      }
-
     }
   }
   return -1;
-
 
 }
 
@@ -464,8 +589,3 @@ unsigned short PNM::uint16FromUint8(unsigned char v_val){
   return ret;
 
 }
-
-
-
-
-

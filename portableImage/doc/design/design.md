@@ -27,8 +27,6 @@
   - when convert to certain type, from the data with BinaryData ,
   then convert to file
 
-
-
 ## 2 basic module
 - Head
   - magic_number
@@ -40,7 +38,6 @@
     - rgbrgb...
   - ascii
     - r g b r g b...
-
 
 
 ## 3 design
@@ -78,7 +75,7 @@ class PNM{
 ```
 
 
-### 3.2 realize
+### 3.2 realization
 
 - loadFromFile
 

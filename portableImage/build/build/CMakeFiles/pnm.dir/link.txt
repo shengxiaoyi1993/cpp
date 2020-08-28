@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11  -rdynamic CMakeFiles/pnm.dir/home/sxy/Github/cpp/portableImage/src/main.cpp.o CMakeFiles/pnm.dir/home/sxy/Github/cpp/portableImage/src/pnm/pnm.cpp.o CMakeFiles/pnm.dir/home/sxy/Github/cpp/portableImage/lib/common/string_manipulation.cpp.o  -o pnm 

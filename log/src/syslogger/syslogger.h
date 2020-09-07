@@ -25,6 +25,15 @@
 
 using namespace std;
 
+#ifndef DEBUG_SYSLOGGER
+#define LOG_INFO_NOLOCK(format, ...)
+#define SOCKET_DEBUG(format, ...)
+#define LOG_DEBUG(format, ...)
+#define LOG_INFO(format, ...)
+#define LOG_WARNING(format, ...)
+#define LOG_ERROR(format, ...)
+
+#else
 #define LOG_INFO_NOLOCK(format, ...) \
     SysLogger::GetInstance()->WriteLogNoLock(LEVEL_INFO, \
                                         __FILE__, __LINE__, gettid(), \
@@ -54,6 +63,9 @@ using namespace std;
     SysLogger::GetInstance()->WriteLog(LEVEL_ERROR, \
                                         __FILE__, __LINE__, gettid(), \
                                         format, ##__VA_ARGS__)
+
+#endif
+
 
 // Pthread trylock, lock, unlock
 #define MUTEX_LOCK(mutex) {int oldstate;\
@@ -99,9 +111,7 @@ class SysLogger
 public:
     SysLogger();
     ~SysLogger();
-
     static SysLogger* GetInstance();
-
     bool InitLogger(const char* file_name, int min_level);
     void WriteLog(int level, const char* exec_file, int exec_line, int tid, const char* format, ...);
     void WriteLogNoLock(int level, const char* exec_file, int exec_line, int tid, const char* format, ...);

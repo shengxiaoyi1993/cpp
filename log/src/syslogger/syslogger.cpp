@@ -6,6 +6,7 @@ SysLogger* SysLogger::GetInstance()
 {
     if (instance_ == NULL) {
         instance_ = new SysLogger();
+        instance_->InitLogger("default.log",0);
     }
 
     return instance_;
@@ -45,7 +46,8 @@ SysLogger::~SysLogger()
         delete mutex_;
     }
 }
-
+//open file
+//set level
 bool SysLogger::InitLogger(const char* file_name, int min_level)
 {
     strncpy(log_file_, file_name, MAX_FILENAME_LEN - 1);
@@ -62,7 +64,7 @@ bool SysLogger::InitLogger(const char* file_name, int min_level)
 
     return true;
 }
-
+//add log data
 void SysLogger::WriteLog(int level, const char* exec_file, int exec_line, int tid, const char* format, ...)
 {
     if (level < min_level_) {

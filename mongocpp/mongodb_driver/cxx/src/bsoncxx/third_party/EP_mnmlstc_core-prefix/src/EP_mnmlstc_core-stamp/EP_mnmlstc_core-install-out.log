@@ -1,0 +1,19 @@
+make[4]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build'
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/share/cmake/core/core-config-version.cmake
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/share/cmake/core/core-config.cmake
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/variant.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/optional.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/utility.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/range.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/type_traits.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/functional.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/iterator.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/algorithm.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/memory.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/string.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/any.hpp
+-- Installing: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/numeric.hpp
+make[4]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build'

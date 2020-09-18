@@ -1782,7 +1782,7 @@ mysql> SET @sum=0;
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> INSERT INTO tb_student
-    -> VALUES(20,'2000-5-8','helo',0,'peach');
+    -> VALUES(20,'2000-5-8','INTOhelo',0,'peach');
 Query OK, 1 row affected (0.01 sec)
 
 mysql> SELECT @sum;
@@ -1940,6 +1940,7 @@ CREATE EVENT [IF NOT EXISTS] event_name
     [COMMENT 'comment']
     DO event_body;
 ```
+
 #### show_event
 ```
 mysql> SELECT * FROM  information_schema.events\G;
@@ -1998,8 +1999,6 @@ collation_connection: utf8_general_ci
 ERROR:
 No query specified
 ```
-
-
 
 #### change_event
 
@@ -2116,7 +2115,7 @@ and a.id > b.id;
 ```
 
 ```
-DELETE FROM tb_uvsslabel where id not in (select id from (select min(id) as id from tb_uvsslabel group by small) as b ) ;
+DELETE FROM tb_uvsslabel where id not in (select id from (select min(id) as id from tb_uvsslabel group by key) as b ) ;
 ```
 
 

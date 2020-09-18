@@ -1,0 +1,6 @@
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/install/strip.dir
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/install/local.dir
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/install.dir
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/list_install_components.dir
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/edit_cache.dir

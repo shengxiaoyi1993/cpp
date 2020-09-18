@@ -1,0 +1,792 @@
+The system is: Linux - 3.10.0-1127.10.1.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/3.14.5/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6d16b/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_6d16b.dir/build.make CMakeFiles/cmTC_6d16b.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6d16b.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6d16b.dir/testCCompiler.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_6d16b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d16b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6d16b.dir/testCCompiler.c.o  -o cmTC_6d16b 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8c09f/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_8c09f.dir/build.make CMakeFiles/cmTC_8c09f.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1 -quiet -v /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccQs47xw.s
+GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-39) (x86_64-redhat-linux)
+	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-39), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include
+ /usr/local/include
+ /usr/include
+End of search list.
+GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-39) (x86_64-redhat-linux)
+	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-39), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: edd9a53947039836c859e437e8c9af72
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o /tmp/ccQs47xw.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-43.base.el7_8.1
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_8c09f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c09f.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o  -o cmTC_8c09f 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8c09f' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/4.8.5/collect2 --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8c09f /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../.. CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include]
+    add: [/usr/local/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include;/usr/local/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_8c09f/fast ]
+  ignore line: [gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_8c09f.dir/build.make CMakeFiles/cmTC_8c09f.dir/build]
+  ignore line: [gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1 -quiet -v /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccQs47xw.s]
+  ignore line: [GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-39) (x86_64-redhat-linux)]
+  ignore line: [	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-39), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../x86_64-redhat-linux/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C (GCC) version 4.8.5 20150623 (Red Hat 4.8.5-39) (x86_64-redhat-linux)]
+  ignore line: [	compiled by GNU C version 4.8.5 20150623 (Red Hat 4.8.5-39), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: edd9a53947039836c859e437e8c9af72]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o /tmp/ccQs47xw.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-43.base.el7_8.1]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_8c09f]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c09f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o  -o cmTC_8c09f ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/lto-wrapper]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-languages=c,c++,objc,obj-c++,java,fortran,ada,go,lto --enable-plugin --enable-initfini-array --disable-libgcj --with-isl=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/isl-install --with-cloog=/builddir/build/BUILD/gcc-4.8.5-20150702/obj-x86_64-redhat-linux/cloog-install --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/4.8.5/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8c09f' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/4.8.5/collect2 --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8c09f /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../.. CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/4.8.5/collect2] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8c09f] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../..]
+    arg [CMakeFiles/cmTC_8c09f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5] ==> [/usr/lib/gcc/x86_64-redhat-linux/4.8.5]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/4.8.5;/usr/lib64;/lib64;/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6fdea/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_6fdea.dir/build.make CMakeFiles/cmTC_6fdea.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6fdea.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_6fdea.dir/feature_tests.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6fdea
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fdea.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6fdea.dir/feature_tests.c.o  -o cmTC_6fdea 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_91306/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_91306.dir/build.make CMakeFiles/cmTC_91306.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_91306.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_91306.dir/feature_tests.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/feature_tests.c
+Linking C executable cmTC_91306
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91306.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_91306.dir/feature_tests.c.o  -o cmTC_91306 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a09e4/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_a09e4.dir/build.make CMakeFiles/cmTC_a09e4.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a09e4.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_a09e4.dir/feature_tests.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a09e4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a09e4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a09e4.dir/feature_tests.c.o  -o cmTC_a09e4 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5a19f/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_5a19f.dir/build.make CMakeFiles/cmTC_5a19f.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5a19f.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_5a19f.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_5a19f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a19f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5a19f.dir/CheckIncludeFile.c.o  -o cmTC_5a19f 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_24923/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_24923.dir/build.make CMakeFiles/cmTC_24923.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24923.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_24923.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_24923
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24923.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_24923.dir/CheckIncludeFile.c.o  -o cmTC_24923 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_23a52/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_23a52.dir/build.make CMakeFiles/cmTC_23a52.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_23a52.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_23a52.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_23a52
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23a52.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_23a52.dir/CheckIncludeFile.c.o  -o cmTC_23a52 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c1226/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c1226.dir/build.make CMakeFiles/cmTC_c1226.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c1226.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c1226.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTC_c1226
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1226.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c1226.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_c1226 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3790f/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_3790f.dir/build.make CMakeFiles/cmTC_3790f.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3790f.dir/TestEndianess.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3790f.dir/TestEndianess.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_3790f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3790f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3790f.dir/TestEndianess.c.o  -o cmTC_3790f 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the snprintf exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3c8c0/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_3c8c0.dir/build.make CMakeFiles/cmTC_3c8c0.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3c8c0.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3c8c0.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_3c8c0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c8c0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3c8c0.dir/CheckSymbolExists.c.o  -o cmTC_3c8c0 /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef snprintf
+  return ((int*)(&snprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test BSON_HAVE_TIMESPEC succeeded with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_bf00c/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_bf00c.dir/build.make CMakeFiles/cmTC_bf00c.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf00c.dir/src.c.o
+/usr/bin/cc   -DBSON_HAVE_TIMESPEC   -o CMakeFiles/cmTC_bf00c.dir/src.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_bf00c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf00c.dir/link.txt --verbose=1
+/usr/bin/cc  -DBSON_HAVE_TIMESPEC    -rdynamic CMakeFiles/cmTC_bf00c.dir/src.c.o  -o cmTC_bf00c /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <time.h>
+
+int main()
+{
+   (void)sizeof(((struct timespec *)0)->tv_sec);
+   return 0;
+}
+
+Determining if the gmtime_r exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f7a30/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_f7a30.dir/build.make CMakeFiles/cmTC_f7a30.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7a30.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f7a30.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f7a30
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7a30.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f7a30.dir/CheckSymbolExists.c.o  -o cmTC_f7a30 /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef gmtime_r
+  return ((int*)(&gmtime_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function rand_r exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_85eed/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_85eed.dir/build.make CMakeFiles/cmTC_85eed.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_85eed.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=rand_r   -o CMakeFiles/cmTC_85eed.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_85eed
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85eed.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=rand_r    -rdynamic CMakeFiles/cmTC_85eed.dir/CheckFunctionExists.c.o  -o cmTC_85eed /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_138e6/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_138e6.dir/build.make CMakeFiles/cmTC_138e6.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_138e6.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_138e6.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_138e6
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_138e6.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_138e6.dir/CheckIncludeFile.c.o  -o cmTC_138e6 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the clock_gettime exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_06297/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_06297.dir/build.make CMakeFiles/cmTC_06297.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06297.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_06297.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_06297
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06297.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_06297.dir/CheckSymbolExists.c.o  -o cmTC_06297 /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef clock_gettime
+  return ((int*)(&clock_gettime))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strnlen exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4144d/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_4144d.dir/build.make CMakeFiles/cmTC_4144d.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4144d.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4144d.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_4144d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4144d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_4144d.dir/CheckSymbolExists.c.o  -o cmTC_4144d /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strnlen
+  return ((int*)(&strnlen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the include file stdbool.h exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_052a8/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_052a8.dir/build.make CMakeFiles/cmTC_052a8.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_052a8.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_052a8.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_052a8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_052a8.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_052a8.dir/CheckIncludeFile.c.o  -o cmTC_052a8 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the SYS_gettid exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c7885/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c7885.dir/build.make CMakeFiles/cmTC_c7885.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c7885.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c7885.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c7885
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7885.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c7885.dir/CheckSymbolExists.c.o  -o cmTC_c7885 /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/syscall.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SYS_gettid
+  return ((int*)(&SYS_gettid))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the syscall exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6e749/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_6e749.dir/build.make CMakeFiles/cmTC_6e749.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6e749.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6e749.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_6e749
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e749.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6e749.dir/CheckSymbolExists.c.o  -o cmTC_6e749 /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef syscall
+  return ((int*)(&syscall))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_ATOMIC_32_ADD_AND_FETCH succeeded with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_e8c7d/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_e8c7d.dir/build.make CMakeFiles/cmTC_e8c7d.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e8c7d.dir/src.c.o
+/usr/bin/cc   -DHAVE_ATOMIC_32_ADD_AND_FETCH   -o CMakeFiles/cmTC_e8c7d.dir/src.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e8c7d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8c7d.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_ATOMIC_32_ADD_AND_FETCH    -rdynamic CMakeFiles/cmTC_e8c7d.dir/src.c.o  -o cmTC_e8c7d /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+   #include <stdint.h>
+
+   int
+   main ()
+   {
+      int32_t v = 1;
+      return __sync_add_and_fetch_4 (&v, (int32_t) 10);
+   }
+Performing C SOURCE FILE Test HAVE_ATOMIC_64_ADD_AND_FETCH succeeded with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c4905/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c4905.dir/build.make CMakeFiles/cmTC_c4905.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c4905.dir/src.c.o
+/usr/bin/cc   -DHAVE_ATOMIC_64_ADD_AND_FETCH   -o CMakeFiles/cmTC_c4905.dir/src.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c4905
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4905.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_ATOMIC_64_ADD_AND_FETCH    -rdynamic CMakeFiles/cmTC_c4905.dir/src.c.o  -o cmTC_c4905 /usr/lib64/librt.so 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+   #include <stdint.h>
+
+   int
+   main ()
+   {
+      int64_t v = 1;
+      return __sync_add_and_fetch_8 (&v, (int64_t) 10);
+   }
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7d5d4/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_7d5d4.dir/build.make CMakeFiles/cmTC_7d5d4.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7d5d4.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7d5d4.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_7d5d4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d5d4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_7d5d4.dir/CheckIncludeFile.c.o  -o cmTC_7d5d4 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if files unistd.h exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_21f3e/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_21f3e.dir/build.make CMakeFiles/cmTC_21f3e.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_21f3e.dir/HAVE_UNISTD_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_21f3e.dir/HAVE_UNISTD_H.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c
+Linking C executable cmTC_21f3e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21f3e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_21f3e.dir/HAVE_UNISTD_H.c.o  -o cmTC_21f3e 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if files stdarg.h exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_e09cc/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_e09cc.dir/build.make CMakeFiles/cmTC_e09cc.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e09cc.dir/HAVE_STDARG_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e09cc.dir/HAVE_STDARG_H.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CheckIncludeFiles/HAVE_STDARG_H.c
+Linking C executable cmTC_e09cc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e09cc.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e09cc.dir/HAVE_STDARG_H.c.o  -o cmTC_e09cc 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining size of socklen_t passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_003c6/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_003c6.dir/build.make CMakeFiles/cmTC_003c6.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_003c6.dir/HAVE_SOCKLEN.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_003c6.dir/HAVE_SOCKLEN.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CheckTypeSize/HAVE_SOCKLEN.c
+Linking C executable cmTC_003c6
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_003c6.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_003c6.dir/HAVE_SOCKLEN.c.o  -o cmTC_003c6 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the res_nsearch exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fee04/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_fee04.dir/build.make CMakeFiles/cmTC_fee04.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fee04.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fee04.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_fee04
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fee04.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_fee04.dir/CheckSymbolExists.c.o  -o cmTC_fee04 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <resolv.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef res_nsearch
+  return ((int*)(&res_nsearch))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the res_nclose exist passed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_42e9f/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_42e9f.dir/build.make CMakeFiles/cmTC_42e9f.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42e9f.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_42e9f.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_42e9f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42e9f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_42e9f.dir/CheckSymbolExists.c.o  -o cmTC_42e9f 
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <resolv.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef res_nclose
+  return ((int*)(&res_nclose))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

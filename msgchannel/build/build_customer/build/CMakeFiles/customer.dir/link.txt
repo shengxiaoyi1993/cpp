@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11    CMakeFiles/customer.dir/home/sxy/Github/cpp/msgchannel/src/main/msgchannel.cpp.o CMakeFiles/customer.dir/home/sxy/Github/cpp/msgchannel/src/example/customer/customer.cpp.o  -o customer -rdynamic -lpthread 

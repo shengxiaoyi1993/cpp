@@ -1,0 +1,124 @@
+Determining if the function reallocf exists failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b105b/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_b105b.dir/build.make CMakeFiles/cmTC_b105b.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b105b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=reallocf   -o CMakeFiles/cmTC_b105b.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b105b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b105b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=reallocf    -rdynamic CMakeFiles/cmTC_b105b.dir/CheckFunctionExists.c.o  -o cmTC_b105b /usr/lib64/librt.so 
+CMakeFiles/cmTC_b105b.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `reallocf'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [cmTC_b105b] Error 1
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_b105b/fast] Error 2
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0e6c3/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_0e6c3.dir/build.make CMakeFiles/cmTC_0e6c3.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e6c3.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0e6c3.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_0e6c3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e6c3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0e6c3.dir/CheckSymbolExists.c.o  -o cmTC_0e6c3 /usr/lib64/librt.so 
+/usr/bin/ld: CMakeFiles/cmTC_0e6c3.dir/CheckSymbolExists.c.o: undefined reference to symbol 'pthread_create@@GLIBC_2.2.5'
+//usr/lib64/libpthread.so.0: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [cmTC_0e6c3] Error 1
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_0e6c3/fast] Error 2
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the res_ndestroy exist failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_65141/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_65141.dir/build.make CMakeFiles/cmTC_65141.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_65141.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_65141.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘res_ndestroy’ undeclared (first use in this function)
+   return ((int*)(&res_ndestroy))[argc];
+                   ^
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/cmTC_65141.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_65141/fast] Error 2
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <resolv.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef res_ndestroy
+  return ((int*)(&res_ndestroy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the sched_getcpu exist failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_95479/fast 
+gmake[1]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_95479.dir/build.make CMakeFiles/cmTC_95479.dir/build
+gmake[2]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95479.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_95479.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘sched_getcpu’ undeclared (first use in this function)
+   return ((int*)(&sched_getcpu))[argc];
+                   ^
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[2]: *** [CMakeFiles/cmTC_95479.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_95479/fast] Error 2
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp'
+
+File /home/sxy/Github/cpp/mongocpp/mongodb_driver/c/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sched.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sched_getcpu
+  return ((int*)(&sched_getcpu))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

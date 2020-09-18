@@ -130,6 +130,7 @@ void ONVIF_init_header(struct soap *soap)
 void ONVIF_init_ProbeType(struct soap *soap, struct wsdd__ProbeType *probe)
 {
     struct wsdd__ScopesType *scope = NULL;// 用于描述查找哪类的Web服务
+    scope->__item;
 
     SOAP_ASSERT(NULL != soap);
     SOAP_ASSERT(NULL != probe);

@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/example-scram.dir/examples/example-scram.c.o  -o example-scram -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/src/libmongoc:/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/src/libbson libmongoc-1.0.so.0.0.0 -lrt -lresolv ../libbson/libbson-1.0.so.0.0.0 -lrt -lm -pthread 

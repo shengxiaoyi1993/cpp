@@ -29,7 +29,7 @@ void cb_getimage(unsigned char * pdata,unsigned int v_width ,unsigned int v_heig
     //RGBRGB->BGRBGR
     cv::cvtColor(mat,mat,cv::COLOR_RGB2BGR);
 
-    string path= integerToString(num)+"_imagefromexport.jpg";
+    string path= integerToString(num)+".jpg";
     cv::imwrite(path,mat);
     cout<<num<<" rows:"<<mat.rows<<"cols:"<<mat.cols<<endl;
     num++;
@@ -45,8 +45,8 @@ void test_getSeq();
 
 
 int main() {
-    //    testRtspEncoder();
-    testStaticFunc();
+       testRtspEncoder();
+    // testStaticFunc();
 
 
 
@@ -56,9 +56,9 @@ int main() {
 
 void testRtspEncoder(){
     //    test_getSnapShot();
-    //    test_getSnapShotV2();
+       test_getSnapShotV2();
     //    test_recordVideo();
-    test_getSnapShotAndVideo();
+    // test_getSnapShotAndVideo();
 
 }
 
@@ -163,7 +163,7 @@ void test_getSnapShotV2(){
 
     //参数
     int totaltime=10000;//ms
-    int intervaltime=500;//间隔时间
+    int intervaltime=200;//间隔时间
     int v_offsettime=-4000;//该值一般为非正数，其绝对值表示提前多少时间进行截图
 
     int ret=encoder.getSnapShotV2(cb_getimage,totaltime,intervaltime,v_offsettime);

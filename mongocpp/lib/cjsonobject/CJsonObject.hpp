@@ -16,7 +16,7 @@
 #include <malloc.h>
 #include <errno.h>
 #include <unistd.h>
-#include <io.h>
+#include <sys/io.h>
 //#include <process.h>
 #include <limits.h>
 #include <math.h>

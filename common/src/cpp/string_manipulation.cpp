@@ -1,5 +1,12 @@
 #include "string_manipulation.hpp"
 #include <iomanip>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
+
+
+
+using namespace std;
 
 namespace common{
   namespace string_manipulation{
@@ -23,8 +30,8 @@ namespace common{
 
       return pdata;
 
-
     }
+
 
 
 
@@ -38,6 +45,18 @@ namespace common{
       _pdata=new unsigned char[v_size_total];
       _bcomplete=false;
     }
+
+    BinaryData::BinaryData(unsigned char* v_pdata ,unsigned int v_size_total,BinaryDataDirection v_direction):
+    _pdata(nullptr),_size_total(v_size_total),
+    _size_used(0),_direction(v_direction),
+      _offset_cache(0),_cache(0)
+    {
+      _pdata=new unsigned char[v_size_total];
+      memcpy(_pdata,v_pdata,sizeof (unsigned char)*v_size_total);
+      _size_used=v_size_total;
+      _bcomplete=false;
+    }
+
 
     BinaryData::~BinaryData(){
       delete []_pdata;
@@ -60,11 +79,8 @@ namespace common{
         if(_cache != 0){
           _size_used--;
           _pdata[_size_used]=0;
-
         }
-
       }
-
     }
 
 
@@ -82,12 +98,10 @@ namespace common{
           cout<<" ";
         }
 
-
         cout<<hex<<setw(2)<<static_cast<int>(_pdata[i]);
 
       }
       cout<<endl<<endl;
-
 
       cout<<dec;
       cout<<"_offset_cache:"<<_offset_cache<<endl;
@@ -96,12 +110,7 @@ namespace common{
       cout<<dec;
       cout<<"//========================BinaryData END==========================//"<<endl;
 
-
     }
-
-
-
-
 
   }
 

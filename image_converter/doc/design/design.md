@@ -2,84 +2,23 @@
 
 ## Introdoce
 
-- image to buffer
-- buffer to image
+- this project is designed to convert image to another type
+- support imagetype
+  - PNM:Portable Image Format,but currently support P5(PGM binary),P6(PPM binary),(1~16 bits)
+  - RAW:currently only support default Format,(8/10/12/14/16 bits)
+  - output_file:will support it,(8/10/12/14/16 bits)
+  - JPEG: will support it (8 bits)
+- All supported image type can be load from local file and convert to another supported image type,except that raw image can not be load from other image type
+- this project consists of more basic project as `portableImage`,`rawImage`,`outputFile`,`JPEG`, all project will be coded with c/c++
 
-- imagetype
-  - ppm
-  - pgm(输出单通道数据)
-  - jpeg（8位）
-  - raw（可输出）
-  - output_file
+## Struct
+- Class  
+  - image will be saved in `class ImageBuffer`,which only hold RGB data or gray data(single channel data).For other types of data will be converted from or converted to this two types. Although some functions will cost more time.
 
-- buffertype
-  - rgb
-  - yuv
+- ImageConverter Constructor
+   - load local file and initialize parameters
+   - correct parameters should be provided,otherwise Error will be thrown and program exit directly
+   - it is not supported to change data in class once ImageBuffer has been set
 
-## module
-- PortableP
-
-
-## process
-
-
-- 从PGM获取R，G，B分量，输入的数据可能是8位，10位，12位
-```shell
-- ppm  
-  get rgb data
-- pgm(输出单通道数据)
-  get gray data or single channel of data
-- jpeg（8位）
-- raw（可输出）
-  - get raw data
-- output_file
-  - get
-```
-
-- 从rgb数据获取图片，8位，10位，12位
-```
-- getInfo magic_number rows cols bits
-- getData from ascii or binary
-```
-
-## design
-- loadfrom file
-- all type of data is saved in same pointer(with one flag to identify the type
-  ,as for the single type of data )
-
-
-## plan
-
-- analyse all the import data type
-- get inbuild buffer frame to save data
-  - some selection
-    - same pointer as rgb (when data is gray or binary is different to save)
-    - different data type with flag_id
-    - dynamic numbrt of types to save ,record all datatype
-    - similar method with opencv or Qt, with servel types of flag to fix the ImageType
-      - channels
-      - type (rgb gray yuv)
-      - valid_bits (<=16)
-- complete process to output data
-
-```shell
-- ImageBufer
-  - channels
-  - type (rgb gray yuv)
-  - valid_bits (<=16)
-```
-- import support PNM
-- export suport PNM
-- add test case
-- support import raw
-- support export raw
-- add test case
-- support import outputfile
-- support export outputfile
-- add test case
-- support import jpeg
-- support export jpeg
-- add test case
-- complete test
-- complete document
-- complete debug
+- saveToFile
+  - it is supported to convert ImageBuffer to different type of image as show in supprted imagetype list

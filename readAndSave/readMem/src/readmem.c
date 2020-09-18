@@ -60,6 +60,8 @@ if(size >0){
   else{
     printf("%s\n", ">>Error:fail to open file !");
   }
+  free(data);
+  data=NULL;
 }
 else{
   printf("%s\n", ">>Error:fail to get buffer !");

@@ -1,26 +1,78 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+
 #include "pnm/pnm.h"
 
 //tset case
-//to test the convertion of pnm image 
+//to test the convertion of pnm image
 //1. load image (PGM-BI PPM-BI 2~16 bits)
 //2. save image (PGM-BI PPM-BI 2~16 bits)
 void test_pnmconvert();
 void test_loadP4();
 void test_saveP4();
-
+void use_getimage();
 
 using namespace std;
 int main() {
 
-  test_pnmconvert();
+  // test_pnmconvert();
 //      test_loadP4();
   //  test_saveP4();
+  use_getimage();
 
   return 0;
 }
+
+void use_getimage(){
+  //读取图片 4096*4096 rgb unsigned char
+  //转换成图片 unsigned short
+  //保存成图片
+
+  string path_buffer="/home/sxy/Share/tftp/imagerecord_0_7.txt";
+  string path_buffer_save="/home/sxy/Share/tftp/imagerecord_0_7.ppm";
+
+
+  ifstream infile(path_buffer,ios::in);   //输入流
+  //load all data from file
+  std::string str((std::istreambuf_iterator<char>(infile)),
+                  std::istreambuf_iterator<char>());
+
+std::cout << "size_buffer:"<< str.size()<< '\n';
+if(str.size()<4096*4096*3){
+  std::cout << "imagebuffer is broken" << '\n';
+}
+else{
+  unsigned short *pdata=new unsigned short[4096*4096*3];
+  for (size_t i = 0; i < 4096*4096*3; i++) {
+    pdata[i]=static_cast<unsigned short>(str[i]);
+    pdata[i]<<=8;
+    // pdata[i]=pdata[i]<255?pdata[i]:255;
+  }
+
+// //以16个元素作为一个单元进行反转
+//   for (size_t i = 0; i < 4096*4096*3/16; i++) {
+//     for (size_t j = 0; j < 16/2; j++) {
+//       unsigned short tmp=pdata[i*16+16-j-1];
+//       pdata[i*16+16-j-1]=pdata[i*16+j];
+//       pdata[i*16+j]=tmp;
+//     }
+//     // pdata[i]=pdata[i]<255?pdata[i]:255;
+//   }
+
+
+
+  PNM::saveDataToFile(path_buffer_save,PNM::DataType_rgb,PNM::MagicNumber_p6,
+                      pdata,4096,4096,255);
+
+}
+
+
+
+
+}
+
 
 void test_loadP4(){
   try {

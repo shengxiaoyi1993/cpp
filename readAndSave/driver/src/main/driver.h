@@ -5,6 +5,10 @@
 #include "dvt-uio.h"
 #include "out_drv.h"
 #include "../../../lib/common/lib/channel_imagebuffer/channel_imagebuffer.h"
+#include "../../../lib_copy/syslogger/syslogger.h"
+
+
+#define SWITCH_LOG
 
 using namespace std;
 /**
@@ -23,7 +27,7 @@ public:
     DriverMode_IRQ_NOTBLOCK=0X0
   };
 
-  explicit Driver(const string & v_devfile,unsigned int mode);
+  explicit Driver(const string & v_devfile,unsigned int v_rawmode,unsigned v_rgbmode);
   void printPara();
   void setMode();
 
@@ -58,15 +62,27 @@ public:
   unsigned int _RB_STRIDE;
   unsigned int _RB_LOC;
   unsigned int _RB_SLOT;
-  unsigned int _mode;
 
-/**
+  unsigned int _RGB_STRIDE;
+  unsigned int _CB_CTRL_WR_BLOCKING;
+  unsigned int _CB_CTRL_WR_INIT_IRQ;
+  unsigned int _CB_ADDR;
+  unsigned int _CB_STRIDE;
+  unsigned int _CB_LOC;
+  unsigned int _CB_SLOT;
+
+
+  unsigned int _mode_raw;
+  unsigned int _mode_rgb;
+
+
+  /**
  * [getMsg listen the response of image Processing results]
  * @param v_data [description]
  * @param pdata  [Driver* transmit by void* ,to control the location the FPGA ouput image  ]
  */
   friend void getMsg(ImageBufferInArm v_data,void*pdata);
-/**
+  /**
  * [run run in sub thread to listen the signal of interrupt of FPGA]
  * @param  [name] [Driver* transmit by void* ]
  * @return        [description]
@@ -95,6 +111,11 @@ private:
   UIO_mmap _mmap_pb;
   //message is sent to displaydemo or imageproc module by this channel
   ImageBufferChannel* _ch;
+
+#ifdef SWITCH_LOG
+  SysLogger _syslog;
+#endif
+
 
 };
 

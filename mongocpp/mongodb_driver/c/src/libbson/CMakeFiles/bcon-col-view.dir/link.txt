@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/bcon-col-view.dir/examples/bcon-col-view.c.o  -o bcon-col-view -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/src/libbson libbson-1.0.so.0.0.0 -lrt -lm -pthread 

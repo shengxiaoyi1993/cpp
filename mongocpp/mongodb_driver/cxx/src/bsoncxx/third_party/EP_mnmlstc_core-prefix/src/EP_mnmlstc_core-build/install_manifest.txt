@@ -1,0 +1,14 @@
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/share/cmake/core/core-config-version.cmake
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/share/cmake/core/core-config.cmake
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/variant.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/optional.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/utility.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/range.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/type_traits.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/functional.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/iterator.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/algorithm.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/memory.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/string.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/any.hpp
+/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/usr/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/./core/numeric.hpp

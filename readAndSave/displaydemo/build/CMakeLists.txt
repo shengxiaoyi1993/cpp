@@ -1,5 +1,13 @@
 cmake_minimum_required (VERSION 2.8)
 project (displaydemo)
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+
+
+#debug
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 
 # cross_compile_setting
 set(CMAKE_SYSROOT /home/sxy/Software/Petalinux_18_3/2018_3_ultra96v1/ultra96v1_rootfs)
@@ -26,6 +34,8 @@ endif()
 add_executable (displaydemo
   ../../lib/common/lib/msgchannnel/msgchannel.cpp
   ../../lib/common/lib/channel_imagebuffer/channel_imagebuffer.cpp
+  ../../lib_copy/pnm/pnm.cpp
+  ../../lib_copy/common/string_manipulation.cpp
   ../src/displaydemo.cpp)
 
 target_link_libraries (displaydemo ${FC_DEP_LIBS} -pthread)

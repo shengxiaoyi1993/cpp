@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/bson-validate.dir/examples/bson-validate.c.o  -o bson-validate -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/src/libbson libbson-1.0.so.0.0.0 -lrt -lm -pthread 

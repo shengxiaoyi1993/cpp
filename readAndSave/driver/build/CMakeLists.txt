@@ -15,6 +15,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 add_executable (driver
 ../../lib/common/lib/msgchannnel/msgchannel.cpp
 ../../lib/common/lib/channel_imagebuffer/channel_imagebuffer.cpp
+../../lib_copy/syslogger/syslogger.cpp
 ../src/main/driver.cpp
 ../src/main/dvt-uio.cpp
 ../src/main/driverHolder.cpp

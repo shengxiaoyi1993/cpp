@@ -1,0 +1,5 @@
+2020-08-21 20:29:52 DEBUG main.c:16: log_debug
+2020-08-21 20:29:52 ERROR main.c:17: log_error
+2020-08-21 20:29:52 WARN  main.c:18: log_warn
+2020-08-21 20:29:52 FATAL main.c:19: log_fatal
+2020-08-21 20:29:52 INFO  main.c:20: log_info

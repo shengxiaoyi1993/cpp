@@ -1,7 +1,6 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <stdio.h>
-#include <sys/mman.h>
 #include <fcntl.h>
 #include <errno.h>
 #include <iostream>

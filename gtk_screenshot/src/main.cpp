@@ -1,7 +1,6 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <stdio.h>
-#include <sys/mman.h>
 #include <fcntl.h>
 #include <errno.h>
 #include <iostream>
@@ -11,8 +10,6 @@
 
 
 using namespace std;
-
-
 
 
 
@@ -45,8 +42,6 @@ gint CloseAppWindow (GtkWidget *widget, gpointer data)
 //3. 设置图片参数，显示图片
 
 
-
-
 int main(int argc, char *argv[])  {
   gtk_init(&argc,&argv);
 
@@ -56,9 +51,20 @@ int main(int argc, char *argv[])  {
   GdkWindow *root;
   GdkPixbuf *new_pixbuf;
 
-  root = gdk_get_default_root_window ();
-  new_pixbuf = gdk_pixbuf_get_from_drawable (NULL, root, NULL,
+
+  #ifdef _WIN32
+  std::cout << "this is win!" << '\n';
+
+    root = gdk_get_default_root_window ();
+
+  #else
+  std::cout << "this is not win!" << '\n';
+  new_pixbuf = gdk_pixbuf_get_from_surface (NULL, root, NULL,
                                              0, 0, 0, 0, width, height);
+  #endif
+
+
+  new_pixbuf =gdk_pixbuf_get_from_window(root,0,0,width,height);
   gdk_pixbuf_save(new_pixbuf, "screenshot.jpg", "jpeg", NULL, NULL);
 
   return 0;

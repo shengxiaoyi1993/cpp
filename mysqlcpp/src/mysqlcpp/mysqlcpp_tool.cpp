@@ -100,7 +100,7 @@ Table Table::loadFromJsonObj(const cJSON *v_obj){
       vret._name=obj_item->valuestring;
     }
     else{
-      throw string(__func__)+"Error: tb is null!";
+      throw string(__func__)+" Error: tb is null!";
     }//end of tb
 
     obj_item=cJSON_GetObjectItem(v_obj,"entries");
@@ -122,6 +122,14 @@ Table Table::loadFromJsonObj(const cJSON *v_obj){
     else{
       throw string(__func__)+"Error: entries is null!";
     }//end of entries
+
+    obj_item=cJSON_GetObjectItem(v_obj,"extra");
+    if(obj_item != nullptr){
+      vret._extra=obj_item->valuestring;
+    }
+    else{
+      throw string(__func__)+"Error: tb is null!";
+    }//end of tb
 
   }
   else{
@@ -199,14 +207,18 @@ Entry Entry::loadFromJsonObj(const cJSON *v_obj){
 
 
 
-
+//组合成基本表中的某一条目
+//处理："Field","Type","Null","Key","Default","Extra"
 static string formatEntry(const Entry &v_data){
   string ret;
+  string tkey=(v_data._key=="PRI")?"PRIMARY KEY":v_data._key;
+
   ret=v_data._field+" "
       +v_data._type+" "
       +v_data._null+" "
-      +v_data._key+" "
-//      +v_data._default+" "
+      +tkey+" "
+      //      +v_data._key+" "
+      //      +v_data._default+" "
       +v_data._extra;
   return ret;
 
@@ -231,7 +243,7 @@ int createDataBaseAccordingToConfig(const string& v_configpath,
   std::string vdata((std::istreambuf_iterator<char>(vfile)),
                     std::istreambuf_iterator<char>());
   DBConfig vconfig =DBConfig::loadFromJsonString(vdata);
-//  vconfig.print(0);
+  //  vconfig.print(0);
 
   //连接至DBMS
   MySqlCppWarpper sql(v_host,v_user,v_password);
@@ -247,25 +259,24 @@ int createDataBaseAccordingToConfig(const string& v_configpath,
       if(j==0){
         formatstring+=formatEntry(vconfig._tables[i]._entries[j]);
       }
+
       else{
         formatstring+=","+formatEntry(vconfig._tables[i]._entries[j]);
       }
     }
-    formatstring+=")";
+    if(vconfig._tables[i]._extra != ""){
+      formatstring+=","+vconfig._tables[i]._extra+")";
+    }
+    else{
+      formatstring+=")";
+    }
     cout<<"table "<<i<<" :"<<formatstring<<endl;
-//    sql.createTable(vconfig._db,vconfig._tables[i]._name,formatstring);
-
+    sql.createTable(vconfig._db,vconfig._tables[i]._name,formatstring);
 
   }
 
-
-
-
-
-
-
-
-//  throw string(__func__)+"Error: not complete!";
+  return 0;
+  //  throw string(__func__)+"Error: not complete!";
 }
 
 

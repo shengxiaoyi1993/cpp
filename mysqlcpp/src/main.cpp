@@ -56,7 +56,7 @@ int main(int argc, const char *argv[]) {
   //  test_DataBase();
   //  test_Table();
   //  test_DataEntryOperation();
-//  test_Index();
+  //  test_Index();
   test_tools_createDB();
 
 } // main()
@@ -606,9 +606,56 @@ void test_Index(){
 
 void test_tools_createDB(){
 
+  try {
+
+
+
+  cout<<"=====================1. 检测数据库初始状态 ====================="<<endl;
+  MySqlCppWarpper mysqlwarpper(DBHOST,USER,PASSWORD);
+  vector<string> dbs_before=mysqlwarpper.getDataBases();
+  copy(dbs_before.begin(),dbs_before.end(),ostream_iterator<string>(cout," | "));
+  cout<<endl;
+
+  cout<<"=====================2. 根据配置文件创建数据库 ====================="<<endl;
+  //根据配置文件创建数据库
   string spath_config="../resources/db.config";
   int vflag=mysqlcpp_tool::createDataBaseAccordingToConfig(spath_config,DBHOST,USER,PASSWORD);
 
+
+  cout<<"=====================检测创建结果 ====================="<<endl;
+  vector<string> dbs_aftercreate=mysqlwarpper.getDataBases();
+  cout<<"DBS: ";
+  copy(dbs_aftercreate.begin(),dbs_aftercreate.end(),ostream_iterator<string>(cout," | "));
+  cout<<endl;
+  for(auto item:dbs_aftercreate){
+    if(item != "DB_UVSS"){
+      continue;
+    }
+    vector<string> ttbs=mysqlwarpper.getTables(item);
+    cout<<"  DB_UVSS: ";
+    copy(ttbs.begin(),ttbs.end(),ostream_iterator<string>(cout," | "));
+    cout<<endl;
+    for(auto item_tb:ttbs){
+      vector<string> tpropertys=mysqlwarpper.getTableProperty("DB_UVSS",item_tb);
+      cout<<"    "<<item_tb<<
+            " Props: ";
+      copy(tpropertys.begin(),tpropertys.end(),ostream_iterator<string>(cout," | "));
+      cout<<endl;
+    }
+  }
+
+
+//  cout<<"=====================3. 删除数据库 ====================="<<endl;
+//  mysqlwarpper.deleteDataBase("DB_UVSS");
+
+//  cout<<"=====================检测创建结果 ====================="<<endl;
+//  vector<string> dbs_afterdel=mysqlwarpper.getDataBases();
+//  copy(dbs_afterdel.begin(),dbs_afterdel.end(),ostream_iterator<string>(cout," | "));
+//  cout<<endl;
+
+  } catch (string v_msg) {
+    cout<<"Throw Error:"<<v_msg<<endl;
+  }
 
 }
 

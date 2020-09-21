@@ -27,6 +27,8 @@ typedef struct Entry{
 typedef struct Table{
   string _name;
   vector<Entry> _entries;
+  string _extra;
+
 //  Table(const Table &);
   static Table loadFromJsonString(const string& v_str);
   static string stringFromStruct(const Table &v_data);
@@ -46,7 +48,7 @@ typedef struct DBConfig{
 
 
 /**
- * @brief createDataBaseAccordingToConfig 根据数据库配置文件时创建数据库
+ * @brief createDataBaseAccordingToConfig 根据数据库配置文件创建数据库
  * @param v_configpath 配置文件路径
  * @return    若返回0则创建成功
  */
@@ -54,6 +56,7 @@ int createDataBaseAccordingToConfig(const string& v_configpath, const string &v_
 
 /**
  * @brief generateStatisticalTableOfDataBase 根据数据配置文件查询数据库统计数据
+ *
  * @param v_configpath    配置文件路径
  * @param v_stat          统计文件保存路径
  * @return

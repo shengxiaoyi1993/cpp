@@ -44,9 +44,11 @@ void MySqlCppWarpper::setSchema(const string& v_db){
 }
 
 void MySqlCppWarpper::createDataBase(const string& v_db){
-  PreparedStatement *prep_stmt=con -> prepareStatement ("CREATE DATABASE IF NOT EXISTS "+v_db
-                                                        );
-  prep_stmt->executeUpdate();
+  Statement* stmt=con->createStatement();
+  string tquery="CREATE DATABASE IF NOT EXISTS "+v_db;
+  bool vret=stmt->execute(tquery);
+  cout<<"vret:"<<vret<<endl;
+
 }
 
 void MySqlCppWarpper::deleteDataBase(const string& v_db){
@@ -179,11 +181,11 @@ vector<vector<string>> MySqlCppWarpper::getTablePara(const string& v_db,const st
     ResultSet *rs_tmp=prep_stmt_tmp->getResultSet();
 
     vector<string>  params=explainResult(rs_tmp,table_desc[i]);
-//    cout<<"table_desc[i]:"<<table_desc[i]<<endl;
+    //    cout<<"table_desc[i]:"<<table_desc[i]<<endl;
 
-//    cout<<endl;
-//    copy(params.begin(),params.end(),ostream_iterator<string>(cout," | "));
-//    cout<<endl;
+    //    cout<<endl;
+    //    copy(params.begin(),params.end(),ostream_iterator<string>(cout," | "));
+    //    cout<<endl;
 
     for (uint j=0;j<params.size();j++) {
       ret[i][j]=params[j];
@@ -258,7 +260,7 @@ MySqlCppWarpper::~MySqlCppWarpper(){
 
 vector<string> MySqlCppWarpper::explainResult( ResultSet* v_res,const string& v_name) const{
   size_t rows= v_res -> rowsCount();
-//  cout<<"rows:"<<rows<<endl;
+  //  cout<<"rows:"<<rows<<endl;
   vector<string> v_list(rows);
 
   uint count=0;
@@ -278,7 +280,7 @@ vector<vector<string>> MySqlCppWarpper::explainResult( ResultSet* v_res,const ve
   while (v_res->next()) {
     for (uint i=0;i<v_names.size();i++) {
       ret_lists[count][i]=v_res -> getString(v_names[i]) ;
-//      cout<<ret_lists[count][i]<<endl;
+      //      cout<<ret_lists[count][i]<<endl;
     }
     count++;
   } // while

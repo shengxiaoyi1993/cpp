@@ -155,8 +155,8 @@
 {
   //包含的实体
   DATA_ID                    //唯一主键
-  DEVICE_GROUP_ID           
-  DEVICE_SN_CODE
+  DEVICE_GROUP_ID            //外键
+  DEVICE_SN_CODE             //外键
 
   //上图状态码
   BIG_IMAGE_OK
@@ -229,7 +229,7 @@
   PORT//确定一下需要用到哪些port
   HR_RTSP                //高分辨率rtsp流
   LR_RTSP                //低分辨率rtsp流
-  STATUS                 //连接状态
+  STATUS                 //连接状态 0未连接，1连接，2连接至其他服务器
   MANUFACTOR             //厂家
   VERSION                //版本号
   TYPE                   //三种类型：人脸(FACE),环周(SURROUNDING),车牌(PLATE) 添加到数字字典
@@ -256,7 +256,7 @@
 
   IS_ACTIVATE           //是否被激活
   FUN_BLACK_WHITE_LIST //记录黑白名单激活状态
-  FUN_FOD_DETECT       //记录FOD激活状态
+  FUN_FOD       //记录FOD激活状态
 
   STATUS                //实时连接状态
 
@@ -351,7 +351,7 @@
 ```
 //属性
 {
-  ID         //自动生成的ID，另外的表使用的是ID，然后根据ID查找到枚举类型
+  ENUM_ID         //自动生成的ID，另外的表使用的是ID，然后根据ID查找到枚举类型
   ENUM_TYPE  //实际指向的枚举类型
 }
 

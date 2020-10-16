@@ -1,0 +1,4 @@
+/home/sxy/Github/cpp/example_with_gtest/src/example/build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/example_with_gtest/src/example/build/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/example_with_gtest/src/example/build/CMakeFiles/cookproc.dir
+/home/sxy/Github/cpp/example_with_gtest/src/example/build/CMakeFiles/example.dir

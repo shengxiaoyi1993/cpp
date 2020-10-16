@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sxy/Github/cpp/example_with_gtest/src/example/example.cpp
+example.h
+/home/sxy/Github/cpp/example_with_gtest/src/example/example.h
+
+/home/sxy/Github/cpp/example_with_gtest/src/example/example.h
+

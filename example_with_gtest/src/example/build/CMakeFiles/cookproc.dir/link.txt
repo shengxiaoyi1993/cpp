@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcookproc.a  CMakeFiles/cookproc.dir/CookProc.o
-/usr/bin/ranlib libcookproc.a

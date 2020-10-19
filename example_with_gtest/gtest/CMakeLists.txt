@@ -13,7 +13,8 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/../src/example ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
+add_subdirectory(${PROJECT_SOURCE_DIR}/../src/example  ${CMAKE_BINARY_DIR}/example_output)
+add_subdirectory(${PROJECT_SOURCE_DIR}/../src/node ${CMAKE_BINARY_DIR}/node_output)
 
 include(cmake/googletest.cmake)
 fetch_googletest(

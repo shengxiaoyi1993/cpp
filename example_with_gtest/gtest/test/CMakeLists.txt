@@ -3,6 +3,7 @@ add_executable(
     example_add.cpp
     example_subtract.cpp
     cookproc_test.cpp
+    node_test.cpp
     )
 
 target_link_libraries(
@@ -10,6 +11,7 @@ target_link_libraries(
     gtest_main
     example
     cookproc
+    node
     )
 
 add_test(

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/decimal128.dir/decimal128.cpp.o  -o decimal128 -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx ../../src/bsoncxx/libbsoncxx.so.3.4.0 

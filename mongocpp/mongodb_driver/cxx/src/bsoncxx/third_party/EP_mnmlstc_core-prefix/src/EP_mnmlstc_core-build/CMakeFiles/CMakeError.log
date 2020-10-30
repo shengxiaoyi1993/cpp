@@ -1,0 +1,51 @@
+Performing C++ SOURCE FILE Test CAN_USE_STDLIB_LIBCXX failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c60ac/fast 
+gmake[4]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_c60ac.dir/build.make CMakeFiles/cmTC_c60ac.dir/build
+gmake[5]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c60ac.dir/src.cxx.o
+/usr/bin/c++    -DCAN_USE_STDLIB_LIBCXX   -stdlib=libc++ -o CMakeFiles/cmTC_c60ac.dir/src.cxx.o -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-stdlib=libc++'
+gmake[5]: *** [CMakeFiles/cmTC_c60ac.dir/src.cxx.o] Error 1
+gmake[5]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [cmTC_c60ac/fast] Error 2
+gmake[4]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test CAN_WARN_EVERYTHING failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_78caa/fast 
+gmake[4]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_78caa.dir/build.make CMakeFiles/cmTC_78caa.dir/build
+gmake[5]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_78caa.dir/src.cxx.o
+/usr/bin/c++    -DCAN_WARN_EVERYTHING   -Weverything -o CMakeFiles/cmTC_78caa.dir/src.cxx.o -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Weverything'
+gmake[5]: *** [CMakeFiles/cmTC_78caa.dir/src.cxx.o] Error 1
+gmake[5]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [cmTC_78caa/fast] Error 2
+gmake[4]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test CAN_WARN_ONE_LINE failed with the following output:
+Change Dir: /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_70630/fast 
+gmake[4]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_70630.dir/build.make CMakeFiles/cmTC_70630.dir/build
+gmake[5]: Entering directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_70630.dir/src.cxx.o
+/usr/bin/c++    -DCAN_WARN_ONE_LINE   -WL -o CMakeFiles/cmTC_70630.dir/src.cxx.o -c /home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-WL'
+gmake[5]: *** [CMakeFiles/cmTC_70630.dir/src.cxx.o] Error 1
+gmake[5]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+gmake[4]: *** [cmTC_70630/fast] Error 2
+gmake[4]: Leaving directory `/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core-build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

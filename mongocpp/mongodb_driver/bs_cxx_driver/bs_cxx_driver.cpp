@@ -51,7 +51,7 @@ namespace mongo {
     static mongocxx::pool *pool = nullptr ;//= mongocxx::pool{mongocxx::uri{}};
     static pthread_mutex_t mutex;
     const int kLimit = 20;
-         mongocxx::client conn = mongocxx::get_client();
+//         mongocxx::client conn = mongocxx::get_client();
 
     const std::string kDatabaseName = "uvss_database";
 }

@@ -27,7 +27,6 @@ please input params as below:
 ./readmem  [addr] [height] [width] [outputfile]
 note:   please run as root
 e.g.:   ./readmem 0x60000000 4096 4096 imagebuffer.txt
-
 ```
 
 ### 3.1. 本地使用

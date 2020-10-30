@@ -271,6 +271,65 @@ field TABLE           [ 3 ..  0], default 0x0, decimal
 endf
 endr
 
+//add in 20200910
+
+// RGB STRIDE
+register RGB_STRIDE at 0x0840, split, frame "SYSTEM"
+field GENERAL         [ 7 ..  0], default 0x30, decimal
+{general stride for RGB pixel, 3 x 16 x 2048 gap, that is 3 x 16 x 256 = 3 x 4096 pixels}
+endf
+endr
+
+// RGB Color buffer control
+register CB_CTRL at 0x0850, split, frame "SYSTEM"
+field WR_INIT_IRQ     [ 8 ..  8], default 0x0, decimal
+{1 means when finish write in one frame, init irq to os}
+endf
+field WR_BLOCKING     [ 0 ..  0], default 0x0, decimal
+{0 means don not needs to block write in}
+endf
+endr
+
+// address here map to 40 bits address
+// 2048 bits, 256 bytes aligned address, corresponding to 40 bits address is (39 downto 8)
+// MEM CB(RGB Buffer), <0x0 0x64000000 0x0 0x0C000000> 196MB
+register CB_ADDR at 0x0854, split, frame "SYSTEM"
+field BASE            [31 ..  0], default 0x00640000, decimal
+{256 bytes aligned base address for mem program logic buffer, of rgb buffer}
+endf
+endr
+
+// RGB buffer, 4 sets
+// RGB buffer size, can save 3*4k*4k*8bit image or 3*4k*2k*16bit image
+// RGB buffer save space, define offset as 0x030000
+register CB_STRIDE at 0x0858, split, frame "SYSTEM"
+field FRAME           [23 ..  0], default 0x030000, decimal
+{256 bytes aligned rgb buffer address offset based on plb}
+endf
+endr
+
+// RGB buffer slot op loc index
+register CB_LOC at 0x085c, readonly, split, frame "SYSTEM"
+field WR              [ 1 ..  0], default 0x0, decimal
+{write location for next write in rgb slot}
+endf
+endr
+
+// RGB buffer slot table
+register CB_SLOT at 0x0860, external, split, frame "SYSTEM"
+field TABLE           [ 3 ..  0], default 0x0, decimal
+{when bit in table is 1, means corresponding rgb slot have data valid}
+endf
+endr
+
+
+
+
+
+
+
+
+
 
 
 

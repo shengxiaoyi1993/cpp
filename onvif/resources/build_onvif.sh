@@ -13,6 +13,8 @@ elif [ $1 == 'start' ];then
   sudo yum install bison
   sudo yum install openssl-devel.x86_64
   sudo yum install -y byacc
+  sudo yum install openssl-devel.x86_64
+  sudo yum install libuuid-devel
   echo 'end to install tools ...'
 
 

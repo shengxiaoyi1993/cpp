@@ -12,10 +12,11 @@ using namespace std;
 int  main(int argc, char *argv[])
 {
     Driver driver("/dev/uio0",Driver::DriverMode::DriverMode_IRQ_BLOCK
+                  |Driver::DriverMode::DriverMode_IRQ_VALID,
+                  Driver::DriverMode::DriverMode_IRQ_NOTBLOCK
                   |Driver::DriverMode::DriverMode_IRQ_VALID);
     driver.printPara();
 
     getchar();
     return 0;
 }
-

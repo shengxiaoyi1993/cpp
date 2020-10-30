@@ -99,18 +99,36 @@ int mysql_insertData(const string & v_table,const string &v_dir,
   return 0;
 
 }
+//UPDATE tb_uvsslabel  set description='津E*M05K74'  WHERE id=1;
+int mysql_updateData_Description(const string &v_table, uint v_id,const string& v_desc){
+  //  //show variables like 'character_set_%';
+  //  string char_set_query="show variables like 'character_set_%';";
+  //  mysql_query(&g_conn,"set names 'latin1'");
+  //  MYSQL_RES *result_char;
+  //  result_char = mysql_store_result(&g_conn);
+
+  string insert_query="UPDATE "
+      +v_table+" SET description='"+v_desc+"' WHERE id="+integerToString(v_id)+";";
+  mysql_query(&g_conn,"set names 'utf8'");
+
+  cout<<"insert_query:"<<insert_query<<endl;
+
+  return mysql_query(&g_conn,insert_query.c_str());
+
+}
+
 
 
 
 MYSQL_RES* mysql_QueryOneEntry(const string & v_table ){
 
-  string insert_query="SELECT * FROM "+v_table;
+  string insert_query="SELECT * FROM "+v_table+"";
 
   //    cout<<"insert_query:"<<insert_query<<endl;
-
+  mysql_query(&g_conn,"set names 'utf8'");
   mysql_query(&g_conn,insert_query.c_str());
 
-//	printf("%d\n", numFields);
+  //	printf("%d\n", numFields);
 
   MYSQL_RES *result;
   result = mysql_store_result(&g_conn);
@@ -123,10 +141,93 @@ MYSQL_RES* mysql_QueryOneEntry(const string & v_table ){
     return result;
   }
 
+}
 
-  return 0;
+MYSQL_RES* mysql_Query(const string& v_query ){
+  mysql_query(&g_conn,"set names 'utf8'");
+  mysql_query(&g_conn,v_query.c_str());
+
+  //	printf("%d\n", numFields);
+
+  MYSQL_RES *result;
+  result = mysql_store_result(&g_conn);
+
+  if(result == nullptr){
+    cout<<"error"<<endl;
+    return nullptr;
+  }
+  else{
+    return result;
+  }
+}
+
+
+
+
+MYSQL_RES* mysql_QueryOneEntry(const string & v_table,const string& v_condi ){
+  string insert_query="SELECT * FROM "+v_table+" where description='"+v_condi+"'";
+  mysql_query(&g_conn,"set names 'utf8'");
+
+  mysql_query(&g_conn,insert_query.c_str());
+
+  //	printf("%d\n", numFields);
+
+  MYSQL_RES *result;
+  result = mysql_store_result(&g_conn);
+
+  if(result == nullptr){
+    cout<<"error"<<endl;
+    return nullptr;
+  }
+  else{
+    return result;
+  }
 
 }
+
+
+
+
+
+string getSelectQuery(const string& v_target,
+                      const string& v_tabel,
+                      const vector<string>& v_list_condi){
+  string ret="SELECT "+v_target+" FROM "+v_tabel+" ";
+  for(uint i=0;i<v_list_condi.size();i++){
+    ret+=v_list_condi[i];
+  }
+  ret+=";";
+  return ret;
+
+}
+
+string mkLabelQuery(const string& v_target,
+                    const string& v_tabel,
+                    float* v_labels
+                    ){
+  vector<string> list_condi;
+  for(uint i=0;i<128;i++){
+    string tmpcondi;
+    if(i == 0){
+      tmpcondi="WHERE label"+stringFromData<uint>(i)+">"+stringFromData<float>(v_labels[i]-0.1)
+          +" AND "+"label"+stringFromData<uint>(i)+"<"+stringFromData<float>(v_labels[i]+0.1) ;
+    }
+    else{
+      tmpcondi=" AND label"+stringFromData<uint>(i)+">"+stringFromData<float>(v_labels[i]-0.1)
+          +" AND "+"label"+stringFromData<uint>(i)+"<"+stringFromData<float>(v_labels[i]+0.1) ;
+    }
+    list_condi.push_back(tmpcondi);
+
+  }
+
+  return getSelectQuery(v_target,v_tabel,list_condi);
+
+
+}
+
+
+
+
 
 
 

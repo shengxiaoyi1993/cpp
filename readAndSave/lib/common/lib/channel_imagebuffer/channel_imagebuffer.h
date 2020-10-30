@@ -11,18 +11,28 @@ using namespace std;
 const unsigned int STRING_LENGTH=128;
 
 typedef struct ImageBufferInArm{
+  //内存中的地址
   unsigned int _paddr;
+  //宽
   unsigned int _width;
+  //高
   unsigned int _height;
+  //模式
+  //0:raw  1:rgb
   int _mode ;
+  //序号
   unsigned long _id;
+  //处理状态
   int _status;
+  //存储的分区位置
+  unsigned int _loc;
 
   ImageBufferInArm(
       unsigned int v_paddr,
       unsigned int v_width,
       unsigned int v_height,
       int v_mode,
+      unsigned int v_loc,
       unsigned long v_id,
       int v_status
       ){
@@ -32,6 +42,7 @@ typedef struct ImageBufferInArm{
     _mode=v_mode;
     _id=v_id;
     _status=v_status;
+    _loc=v_loc;
   }
 
   ImageBufferInArm(){
@@ -40,17 +51,19 @@ typedef struct ImageBufferInArm{
     _height=0;
     _mode=0;
     _id=0;
+    _loc=0;
     _status=-1;
   }
 
   static string getString(const ImageBufferInArm& v_buffer){
     char tmpstr[STRING_LENGTH];
     memset(tmpstr,0,STRING_LENGTH*sizeof(char));
-    sprintf(tmpstr,"%u %u %u %d %u %d",
+    sprintf(tmpstr,"%u %u %u %d %u %u %d",
             v_buffer._paddr,
             v_buffer._width,
             v_buffer._height,
             v_buffer._mode,
+            v_buffer._loc,
             v_buffer._id,
             v_buffer._status
             );
@@ -58,11 +71,12 @@ typedef struct ImageBufferInArm{
   }
 
   static int loadFromString(const string& v_str,ImageBufferInArm& v_buffer){
-    sscanf(v_str.c_str() ,"%u %u %u %d %u %d",
+    sscanf(v_str.c_str() ,"%u %u %u %d %u %u %d",
            &v_buffer._paddr,
            &v_buffer._width,
            &v_buffer._height,
            &v_buffer._mode,
+           &v_buffer._loc,
            &v_buffer._id,
            &v_buffer._status);
     return 0;
@@ -110,7 +124,6 @@ public:
      * @return
      */
   int addNewImageBufferInArm(ImageBufferInArm v_mgmsg);
-
 
 private:
   MsgChannel_Mode __mode;

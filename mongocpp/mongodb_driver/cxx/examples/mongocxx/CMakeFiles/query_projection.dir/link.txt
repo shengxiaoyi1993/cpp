@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/query_projection.dir/query_projection.cpp.o  -o query_projection -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/mongocxx:/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx ../../src/mongocxx/libmongocxx.so.3.4.0 ../../src/bsoncxx/libbsoncxx.so.3.4.0 

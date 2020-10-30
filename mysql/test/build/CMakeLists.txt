@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
 set( CMAKE_CXX_FLAGS "-std=c++11" )
+set(CMAKE_BUILD_TYPE "Debug")
+
 project(test_uvss_label)
 include_directories("${PROJECT_SOURCE_DIR}/../lib/uvss_label_distance/include/")
 link_directories("${PROJECT_SOURCE_DIR}/../lib/uvss_label_distance/lib/")
@@ -15,6 +17,8 @@ add_executable(${PROJECT_NAME}
     "../src/mysql.cpp"
 #    "../lib/clog/log.c"
     "../../../../opencv_cpp/learn/imagesort/src/basic/cJSON.c"
+    "../lib_copy/licenseGenerator/licensegenerator.cpp"
+    "../lib_copy/kmeans_cluster/kmeanscluster.cpp"
 
     )
 target_link_libraries(${PROJECT_NAME} -luvss_label_distance -L/usr/lib64/mysql

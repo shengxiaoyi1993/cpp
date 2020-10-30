@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g -DNDEBUG  -rdynamic CMakeFiles/example-pool.dir/examples/example-pool.c.o  -o example-pool -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/src/libmongoc:/home/sxy/Github/cpp/mongocpp/mongodb_driver/c/src/libbson libmongoc-1.0.so.0.0.0 -lrt -lresolv ../libbson/libbson-1.0.so.0.0.0 -lrt -lm -pthread 

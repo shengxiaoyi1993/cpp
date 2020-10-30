@@ -106,10 +106,21 @@ MsgChannel::~MsgChannel(){
 
 
 void *MsgChannel::setReceiver(void *ppara){
+#ifdef DEBUG_MSGCHANNEL
+            LogOut << __func__<<"start"<<endl;
+#endif
+
     Msg msg_tmp;
     msgchannel_recv_thread_para threadpara=*(static_cast<msgchannel_recv_thread_para*>(ppara));
     while(1){
+#ifdef DEBUG_MSGCHANNEL
+            LogOut << __func__<<">>ready to msgrcv"<<endl;
+#endif
         ssize_t flag= msgrcv(threadpara.v_msgid,&msg_tmp,MSG_BUFFER_LEN,threadpara.v_type,0);
+
+#ifdef DEBUG_MSGCHANNEL
+            LogOut << __func__<<">>succeed to msgrcv"<<endl;
+#endif
         if(flag == -1){
             // cout<<">>Recv data Error!"<<endl;
 #ifdef DEBUG_MSGCHANNEL
@@ -126,6 +137,7 @@ void *MsgChannel::setReceiver(void *ppara){
 
         }
     }
+
 }
 
 

@@ -1,5 +1,8 @@
 # design
 - 随机生成车牌号
+- 生成一个种类为n,总量为m,分布为L的样本库，随机获取样本库中的数据
+  - 分布可以是指定某几个车牌号的数量
+
 
 ## process
 - 车牌号的格式规范
@@ -10,7 +13,7 @@
     - 26个英文字母为大写，且不使用I和O
 
 
-{
+
 	string a[] = {
 			"京A","京C","京E","京F","京H","京G","京B","津A","津B", "津C", "津E",
 			"沪A", "沪B", "沪D", "沪C","渝A", "渝B", "渝C", "渝G", "渝H","冀A",
@@ -38,3 +41,24 @@
 			"川C","川D","川E","川F","川H","川J","川K","川L","川M","川Q","川R","川S","川T","川U","川V","川W","川X","川Y","川Z","宁A",
 			"宁B","宁C","宁D","琼A","琼B","琼C","琼D","琼E"
 	};
+
+## realize
+
+###  生成一个种类为n,总量为m,分布为L的样本库，随机获取样本库中的数据
+- struct
+
+```cpp
+//inner list
+list:plate quantity
+
+```
+
+- process
+```shell
+- init getPlateList
+- init size of Plate in list ,some are defined by user, others by average
+- push all plate to a platebufferlist
+
+//getElement
+- get random value from in a range,then get Plate in the platebufferlist, rm value from platebufferlist
+```

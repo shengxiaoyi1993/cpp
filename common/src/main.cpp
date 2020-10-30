@@ -1,9 +1,19 @@
 #include <iostream>
 #include "cpp/string_manipulation.hpp"
 
+
 using namespace common::string_manipulation;
 
+void test_BinaryData_input();
+void test_BinaryData_output();
+
  int main() {
+
+  return 0;
+}
+
+
+ void test_BinaryData_input(){
    BinaryData bdata(64,BinaryData::BinaryDataDirection_left);
    bdata.print();
    try {
@@ -27,8 +37,8 @@ using namespace common::string_manipulation;
    }
    bdata.print();
 //   unsigned int tmp= bdata.getSheld<unsigned>(7,9,true);
+ }
 
+ void test_BinaryData_output(){
 
-
-  return 0;
-}
+ }

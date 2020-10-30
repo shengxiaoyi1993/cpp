@@ -1,40 +1,30 @@
 # ReadFirst
 
-- 本文档是该项目的总括性文件，用以指引如何了解和使用该项目
+- this project a gather of basic and widely used functions
 
-## 项目说明
-
-- 本项目分为两部分
-
-  - 主要部分： 模拟CMOS模组生成文件
-
-### 主要部分
-
-- 了解主要部分的目的，要求和设计
-```
-design/design.md
-```
-- 了解主要部分的使用方法
-```
-manuals/manuals.md
-```
-- 了解主要部分的编译方法
-```
-build/build.md
-```
-- 主要部分的参考文献
-```
-refer/
-```
-- 已进行的测试编译环境
-```
-test/
-```
+## list
+- basicio (none)
+- string_manipulation
+  - StringConverter:use to convert string from and to other type of data
+  - BinaryData:
+    - to append binary data when bits of data are not multiple of 8,and form them to binary buffer
+    - two save direction is defined,this means you can fill the buffer from left or right
+    - data is appended by a basic data type and number of valid bits
 
 
-### 附加部分
 
-- 附加部分的用途、使用方法、编译方法
+## run the test case
+<has been test in centos
+
 ```
-simulateCameraModule/doc/doc_test/readme.md
+cd build
+mkdir build
+cd build
+cmake ../
+make
+./example
 ```
+
+## manual
+- if you want use function in this project ,copy the `*.h`and `*.cpp` to the lib of target project
+- It is suggested to modify file in this project and copy to target project again,other than modify in the target project directly

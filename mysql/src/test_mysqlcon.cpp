@@ -196,7 +196,7 @@ int main(int argc, const char *argv[]) {
         cout << "Executing the Query: \"SELECT * FROM tb_test\" .." << endl;
 
         /* run a query which returns exactly one result set */
-        res = stmt -> executeQuery ("SELECT * FROM tb_test");
+        res = stmt -> executeQuery ("SELECT * FROM tb_empl");
 
         cout << "Retrieving the result set .." << endl;
 

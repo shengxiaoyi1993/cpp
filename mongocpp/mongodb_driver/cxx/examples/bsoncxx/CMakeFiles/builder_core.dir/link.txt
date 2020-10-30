@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/builder_core.dir/builder_core.cpp.o  -o builder_core -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx ../../src/bsoncxx/libbsoncxx.so.3.4.0 

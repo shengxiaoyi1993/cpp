@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/document_validation.dir/document_validation.cpp.o  -o document_validation -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/mongocxx:/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx ../../src/mongocxx/libmongocxx.so.3.4.0 ../../src/bsoncxx/libbsoncxx.so.3.4.0 

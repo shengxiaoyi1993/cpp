@@ -239,6 +239,58 @@
 #define DVT_GR_RB_SLOT_TABLE_SHIFT                        0
 #define DVT_GR_RB_SLOT_TABLE_SIGNED                       0
 
+/*
+	Register GR_RGB_STRIDE
+*/
+#define DVT_DVT_GR_RGB_STRIDE                             0x0840
+#define DVT_GR_RGB_STRIDE_GENERAL_MASK                    0x000000FF
+#define DVT_GR_RGB_STRIDE_GENERAL_SHIFT                   0
+#define DVT_GR_RGB_STRIDE_GENERAL_SIGNED                  0
+
+/*
+	Register GR_CB_CTRL
+*/
+#define DVT_DVT_GR_CB_CTRL                                0x0850
+#define DVT_GR_CB_CTRL_WR_BLOCKING_MASK                   0x00000001
+#define DVT_GR_CB_CTRL_WR_BLOCKING_SHIFT                  0
+#define DVT_GR_CB_CTRL_WR_BLOCKING_SIGNED                 0
+
+#define DVT_GR_CB_CTRL_WR_INIT_IRQ_MASK                   0x00000100
+#define DVT_GR_CB_CTRL_WR_INIT_IRQ_SHIFT                  8
+#define DVT_GR_CB_CTRL_WR_INIT_IRQ_SIGNED                 0
+
+/*
+	Register GR_CB_ADDR
+*/
+#define DVT_DVT_GR_CB_ADDR                                0x0854
+#define DVT_GR_CB_ADDR_BASE_MASK                          0xFFFFFFFF
+#define DVT_GR_CB_ADDR_BASE_SHIFT                         0
+#define DVT_GR_CB_ADDR_BASE_SIGNED                        0
+
+/*
+	Register GR_CB_STRIDE
+*/
+#define DVT_DVT_GR_CB_STRIDE                              0x0858
+#define DVT_GR_CB_STRIDE_FRAME_MASK                       0x00FFFFFF
+#define DVT_GR_CB_STRIDE_FRAME_SHIFT                      0
+#define DVT_GR_CB_STRIDE_FRAME_SIGNED                     0
+
+/*
+	Register GR_CB_LOC
+*/
+#define DVT_DVT_GR_CB_LOC                                 0x085C
+#define DVT_GR_CB_LOC_WR_MASK                             0x00000003
+#define DVT_GR_CB_LOC_WR_SHIFT                            0
+#define DVT_GR_CB_LOC_WR_SIGNED                           0
+
+/*
+	Register GR_CB_SLOT
+*/
+#define DVT_DVT_GR_CB_SLOT                                0x0860
+#define DVT_GR_CB_SLOT_TABLE_MASK                         0x0000000F
+#define DVT_GR_CB_SLOT_TABLE_SHIFT                        0
+#define DVT_GR_CB_SLOT_TABLE_SIGNED                       0
+
 #endif /* _OUT_DRV_H_ */
 
 /*****************************************************************************

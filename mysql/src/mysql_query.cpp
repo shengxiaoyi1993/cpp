@@ -10,7 +10,7 @@ using namespace std;
 
 
 
-const string name_db="test_db";
+const string name_db="uvss";
 const string pw_db="123456";
 const string user_db="root";
 const string ip_db="127.0.0.1";

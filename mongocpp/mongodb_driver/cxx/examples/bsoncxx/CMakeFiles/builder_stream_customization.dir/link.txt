@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/builder_stream_customization.dir/builder_stream_customization.cpp.o  -o builder_stream_customization -Wl,-rpath,/home/sxy/Github/cpp/mongocpp/mongodb_driver/cxx/src/bsoncxx ../../src/bsoncxx/libbsoncxx.so.3.4.0 

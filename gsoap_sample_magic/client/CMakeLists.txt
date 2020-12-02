@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5)
+project(client)
+set(APP_SRC "magic.cpp")
+add_subdirectory(magicclient)
+add_executable(client ${APP_SRC})
+target_link_libraries(client libmagicclient)

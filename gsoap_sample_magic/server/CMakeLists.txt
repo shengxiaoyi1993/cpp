@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5)
+project(server)
+set(APP_SRC "magicserver.cpp")
+add_subdirectory(magicserver)
+add_executable(server ${APP_SRC})
+target_link_libraries(server libmagicserver pthread)

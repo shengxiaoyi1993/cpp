@@ -65,9 +65,6 @@ int generateStatisticalTableOfDataBase(const string& v_configpath,
                                        const string& v_stat);
 
 
-
-
-
 }
 
 

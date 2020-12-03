@@ -75,7 +75,6 @@ public:
   //获取某基本表中的所有索引
   vector<vector<string>> searchIndexInTable(const string& v_db,const string& v_tb,const vector<string>& v_prop);
 
-
   //  void setAutoCommit(bool v_flag);
 
 

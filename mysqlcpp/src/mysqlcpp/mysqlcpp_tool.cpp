@@ -1,5 +1,3 @@
-
-
 #include "mysqlcpp_tool.h"
 #include <iostream>
 #include <fstream>

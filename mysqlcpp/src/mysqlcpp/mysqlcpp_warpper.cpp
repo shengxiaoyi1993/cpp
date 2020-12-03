@@ -104,21 +104,41 @@ void MySqlCppWarpper::insertDataEntry(const string& v_db,const string& v_tb,cons
 //删
 //删除某个数据库数据表中的满足某一条件的所有条目
 void MySqlCppWarpper::deleteDataEntry(const string& v_db,const string& v_tb,const string& v_condi){
-  PreparedStatement* prep_stmt = con -> prepareStatement ("DELETE FROM "
-                                                          +v_db+"."+v_tb+
-                                                          " WHERE "+v_condi);
+
+  string query;
+  if(v_condi != ""){
+    query="DELETE FROM "
+        +v_db+"."+v_tb+
+        " WHERE "+v_condi;
+  }
+  else{
+    query="DELETE FROM "
+        +v_db+"."+v_tb;
+  }
+
+  PreparedStatement* prep_stmt = con -> prepareStatement (query);
   prep_stmt->executeUpdate();
 
 }
 
 //改
 void MySqlCppWarpper::updateDataEntry(const string& v_db,const string& v_tb,const string& v_target,const string& v_condi ){
-  PreparedStatement* prep_stmt = con -> prepareStatement ("UPDATE "
-                                                          +v_db+"."+v_tb+
-                                                          " SET "
-                                                          +v_target+
-                                                          " WHERE "+v_condi
-                                                          );
+  string query;
+  if(v_condi != ""){
+    query="UPDATE "
+        +v_db+"."+v_tb+
+        " SET "
+        +v_target+
+        " WHERE "+v_condi;
+  }
+  else{
+    query="UPDATE "
+        +v_db+"."+v_tb+
+        " SET "
+        +v_target;
+  }
+
+  PreparedStatement* prep_stmt = con -> prepareStatement (query);
   prep_stmt -> executeUpdate();
 }
 
@@ -270,6 +290,7 @@ vector<string> MySqlCppWarpper::explainResult( ResultSet* v_res,const string& v_
   } // while
   return  v_list;
 }
+
 
 
 vector<vector<string>> MySqlCppWarpper::explainResult( ResultSet* v_res,const vector<string>& v_names) const{

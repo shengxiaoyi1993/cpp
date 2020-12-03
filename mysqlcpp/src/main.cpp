@@ -3,9 +3,12 @@
 #include <mysql-cppconn/mysql/jdbc.h>
 #include "mysqlcpp/mysqlcpp_warpper.h"
 #include "mysqlcpp/mysqlcpp_tool.h"
+#include "mysqlcpp/mysqlcpp_instance.h"
 #include "../lib_copy/log/syslogger.h"
 
 #define DBHOST "tcp://127.0.0.1:3306"
+//#define DBHOST "192.168.1.100:3306"
+
 #define USER "root"
 #define PASSWORD "123456"
 #define DATABASE "admin"
@@ -48,16 +51,19 @@ void test_Index();
 //测试根据配置文件创建数据库
 void test_tools_createDB();
 
+void test_instance_initData();
+
 
 
 int main(int argc, const char *argv[]) {
 
   //  test_ConnectToDBMS();
-  //  test_DataBase();
+    test_DataBase();
   //  test_Table();
   //  test_DataEntryOperation();
   //  test_Index();
-  test_tools_createDB();
+//    test_tools_createDB();
+//  test_instance_initData();
 
 } // main()
 
@@ -78,7 +84,6 @@ void test_ConnectToDBMS(){
   //  MySqlCppWarpper 析构时即关闭与DBMS的连接
 
   cout<<"=====================主体部分 end====================="<<endl;
-
 
 
 }
@@ -379,7 +384,6 @@ void test_DataEntryOperation(){
 
   //  MySqlCppWarpper 析构时即关闭与DBMS的连接
 
-
 }
 
 //查询各个表的索引
@@ -610,51 +614,97 @@ void test_tools_createDB(){
 
 
 
+    cout<<"=====================1. 检测数据库初始状态 ====================="<<endl;
+    MySqlCppWarpper mysqlwarpper(DBHOST,USER,PASSWORD);
+    vector<string> dbs_before=mysqlwarpper.getDataBases();
+    copy(dbs_before.begin(),dbs_before.end(),ostream_iterator<string>(cout," | "));
+    cout<<endl;
+
+    cout<<"=====================2. 根据配置文件创建数据库 ====================="<<endl;
+    //根据配置文件创建数据库
+    string spath_config="../../resources/db.config";
+    int vflag=mysqlcpp_tool::createDataBaseAccordingToConfig(spath_config,DBHOST,USER,PASSWORD);
+
+
+    cout<<"=====================检测创建结果 ====================="<<endl;
+    vector<string> dbs_aftercreate=mysqlwarpper.getDataBases();
+    cout<<"DBS: ";
+    copy(dbs_aftercreate.begin(),dbs_aftercreate.end(),ostream_iterator<string>(cout," | "));
+    cout<<endl;
+    for(auto item:dbs_aftercreate){
+      if(item != "DB_UVSS"){
+        continue;
+      }
+      vector<string> ttbs=mysqlwarpper.getTables(item);
+      cout<<"  DB_UVSS: ";
+      copy(ttbs.begin(),ttbs.end(),ostream_iterator<string>(cout," | "));
+      cout<<endl;
+      for(auto item_tb:ttbs){
+        vector<string> tpropertys=mysqlwarpper.getTableProperty("DB_UVSS",item_tb);
+        cout<<"    "<<item_tb<<
+              " Props: ";
+        copy(tpropertys.begin(),tpropertys.end(),ostream_iterator<string>(cout," | "));
+        cout<<endl;
+      }
+    }
+
+
+//      cout<<"=====================3. 删除数据库 ====================="<<endl;
+//      mysqlwarpper.deleteDataBase("DB_UVSS");
+
+    cout<<"=====================检测创建结果 ====================="<<endl;
+    vector<string> dbs_afterdel=mysqlwarpper.getDataBases();
+    copy(dbs_afterdel.begin(),dbs_afterdel.end(),ostream_iterator<string>(cout," | "));
+    cout<<endl;
+
+  } catch (string v_msg) {
+    cout<<"Throw Error:"<<v_msg<<endl;
+  }
+
+}
+
+
+
+
+void test_instance_initData(){
+  cout<<"=====================0. 导入文本中的config数据 ====================="<<endl;
+
+  //导入config数据
+  string spath_dict="../../resources/DICTIONARY.config";
+  vector<mysqlcpp_instance::DictionaryEntry> rlist=mysqlcpp_instance::loadDictConfigFromFile(spath_dict);
+//  copy(rlist.begin(),rlist.end(),ostream_iterator<mysqlcpp_instance::DictionaryEntry>(cout," \n"));
+
+
   cout<<"=====================1. 检测数据库初始状态 ====================="<<endl;
   MySqlCppWarpper mysqlwarpper(DBHOST,USER,PASSWORD);
   vector<string> dbs_before=mysqlwarpper.getDataBases();
   copy(dbs_before.begin(),dbs_before.end(),ostream_iterator<string>(cout," | "));
   cout<<endl;
 
-  cout<<"=====================2. 根据配置文件创建数据库 ====================="<<endl;
-  //根据配置文件创建数据库
-  string spath_config="../resources/db.config";
-  int vflag=mysqlcpp_tool::createDataBaseAccordingToConfig(spath_config,DBHOST,USER,PASSWORD);
+  string v_db="DB_UVSS";
+  string v_tb="T_DATA_DICTIONARY";
 
-
-  cout<<"=====================检测创建结果 ====================="<<endl;
-  vector<string> dbs_aftercreate=mysqlwarpper.getDataBases();
-  cout<<"DBS: ";
-  copy(dbs_aftercreate.begin(),dbs_aftercreate.end(),ostream_iterator<string>(cout," | "));
-  cout<<endl;
-  for(auto item:dbs_aftercreate){
-    if(item != "DB_UVSS"){
-      continue;
-    }
-    vector<string> ttbs=mysqlwarpper.getTables(item);
-    cout<<"  DB_UVSS: ";
-    copy(ttbs.begin(),ttbs.end(),ostream_iterator<string>(cout," | "));
-    cout<<endl;
-    for(auto item_tb:ttbs){
-      vector<string> tpropertys=mysqlwarpper.getTableProperty("DB_UVSS",item_tb);
-      cout<<"    "<<item_tb<<
-            " Props: ";
-      copy(tpropertys.begin(),tpropertys.end(),ostream_iterator<string>(cout," | "));
-      cout<<endl;
-    }
+  //insert
+  for(auto item:rlist){
+    cout<<"insert:"<<item.toEntryString()<<endl;
+    mysqlwarpper.insertDataEntry(v_db,v_tb,item.toEntryString());
   }
 
+  //search
+  cout<<"afterinsert:"<<endl;
+  vector<string> v_props{"ENUM_ID","ENUM_TYPE"};
+  vector<vector<string>> ret_search=mysqlwarpper.searchDataEntries(v_db,v_tb,v_props,"");
+  for(auto item:ret_search){
+    copy(item.begin(),item.end(),ostream_iterator<string>(cout," | "));
+    cout<<endl;
+  }
+  //delete
+  mysqlwarpper.deleteDataEntry(v_db,v_tb,"");
 
-//  cout<<"=====================3. 删除数据库 ====================="<<endl;
-//  mysqlwarpper.deleteDataBase("DB_UVSS");
-
-//  cout<<"=====================检测创建结果 ====================="<<endl;
-//  vector<string> dbs_afterdel=mysqlwarpper.getDataBases();
-//  copy(dbs_afterdel.begin(),dbs_afterdel.end(),ostream_iterator<string>(cout," | "));
-//  cout<<endl;
-
-  } catch (string v_msg) {
-    cout<<"Throw Error:"<<v_msg<<endl;
+  vector<vector<string>> ret_afterdel=mysqlwarpper.searchDataEntries(v_db,v_tb,v_props,"");
+  cout<<"afterdel:"<<endl;
+  for(auto item:ret_afterdel){
+    copy(item.begin(),item.end(),ostream_iterator<string>(cout," | "));
   }
 
 }

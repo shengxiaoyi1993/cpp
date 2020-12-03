@@ -5,6 +5,8 @@
 - 数据库接入现有系统的可操作性 （虽然可以接入，但是用mysql替换mongodb数据结构上有较大差异，不建议）
 - 根据数据库配置表能够将数据库创建并部署
 - 数据库数据拷贝时的处理
+- 需要有一定的灵活性，配置一个简单的文件就能生成适应不同用户需求的的文档
+- 数据组字典插入初始数据
 
 ## 2 过程设计
 - 列举原数据结构
@@ -145,6 +147,22 @@
 - 车辆白名单(T_PLATE_WRITE_LIST)
 - 数据字典(T_DATA_DICTIONARY)   //用于保存数据库中出现的枚举类型定义
 ```
+```
+T_DATA_DICTIONARY  
+T_DATABASE_CONFIG
+T_COMMON_CAMERA
+T_UVSS_CAMERA
+T_DEVICE_GROUP
+T_FACE_BLACK_LIST
+T_FACE_WRITE_LIST
+T_PLATE_BLACK_LIST
+T_PLATE_WRITE_LIST
+
+
+T_USER //基于T_DEVICE_GROUP
+T_DATAITEM
+
+```
 
 ####  3.2.1 表属性
 
@@ -155,8 +173,8 @@
 {
   //包含的实体
   DATA_ID                    //唯一主键
-  DEVICE_GROUP_ID            //外键
-  DEVICE_SN_CODE             //外键
+  DEVICE_GROUP_ID            //对应设备组
+  DEVICE_SN_CODE             //对应UVSS设备
 
   //上图状态码
   BIG_IMAGE_OK
@@ -229,7 +247,7 @@
   PORT//确定一下需要用到哪些port
   HR_RTSP                //高分辨率rtsp流
   LR_RTSP                //低分辨率rtsp流
-  STATUS                 //连接状态 0未连接，1连接，2连接至其他服务器
+  STATUS                 //连接状态
   MANUFACTOR             //厂家
   VERSION                //版本号
   TYPE                   //三种类型：人脸(FACE),环周(SURROUNDING),车牌(PLATE) 添加到数字字典
@@ -256,7 +274,7 @@
 
   IS_ACTIVATE           //是否被激活
   FUN_BLACK_WHITE_LIST //记录黑白名单激活状态
-  FUN_FOD       //记录FOD激活状态
+  FUN_FOD_DETECT       //记录FOD激活状态
 
   STATUS                //实时连接状态
 
@@ -273,10 +291,10 @@
   PASSWORD
   TYPE                      //共两种类型:ADMIN ORIDINARY,保存至数据字典
   STATUS_LIVE               //该用户的生命周期，是否被删除：若需要删除原有用户，就将用户状态设置为不可用状态；这是为了搜索数据时有对应的条目
-  #BEGIN//创建时间
-  #END //终止时间，被置为不可用时间；若处于可用状态，则该数据无效
+  #BEGIN                    //创建时间
+  #END                      //终止时间，被置为不可用时间；若处于可用状态，则该数据无效
   STATUS_LOG                //用户的登陆状态：同一时间，只能有一个用户登陆
-  IP_LOG                    //用户以客户端方式登陆，当前登陆的IP，若用户未登陆，则该位置无效
+  IP_LOG                    //用户以客户端方式登陆，当前登陆的客户端IP，若用户未登陆，则该位置无效
   LIST_DEVICE_GROUP[]       //具有权限的设备组列表，当某一设备组设置为不可用时，应该循环遍历更新该状态
 }
 ```
@@ -307,43 +325,31 @@
 
 ```
 {
-  TOP_DIR //数据条目的文件保存路径
+  TOP_DIR               //数据条目的文件保存路径
 }
 ```
 
-- T_FACE_BLACK_LIST
+- T_FACE_BLACK_WRITE_LIST
 
 ```
 {
   NAME
   LABELS[]
+  TYPE //在数据字典中定义类型， IN_FACE_BLACK_LIST IN_FACE_WRITE_LIST NOT_IN_FACE_LIST
 }
 ```
 
-- T_FACE_WRITE_LIST
 
-```
-{
-  NAME
-  LABELS[]
-}
-```
-
-- T_PLATE_BLACK_LIST
+- T_PLATE_BLACK_WRITE_LIST
 
 ```
 {
   PLATE_LICENSE[]
+  TYPE //在数据字典中定义类型， IN_PLATE_BLACK_LIST IN_PLATE_WRITE_LIST NOT_IN_PLATE_LIST
 }
 ```
 
-- T_PLATE_WRITE_LIST
 
-```
-{
-  PLATE_LICENSE[]
-}
-```
 
 
 - T_DATA_DICTIONARY
@@ -351,7 +357,7 @@
 ```
 //属性
 {
-  ENUM_ID         //自动生成的ID，另外的表使用的是ID，然后根据ID查找到枚举类型
+  ID         //自动生成的ID，另外的表使用的是ID，然后根据ID查找到枚举类型
   ENUM_TYPE  //实际指向的枚举类型
 }
 
@@ -361,7 +367,7 @@
   PLATE_DIRECTION_OUT
   PLATE_DIRECTION_BIDIRECTION
 
-  COMMON_CAMERA_TYPE_FACE
+  COMMON_CAMERA_TYPE_FACE  
   COMMON_CAMERA_TYPE_SURROUNDING
   COMMON_CAMERA_TYPE_PLATE
 
@@ -372,6 +378,13 @@
   USER_TYPE_ADMIN
   USER_TYPE_ORIDINARY
 
+  NOT_IN_FACE_LIST
+  IN_FACE_BLACK_LIST
+  IN_FACE_WRITE_LIST
+
+  NOT_IN_PLATE_LIST
+  IN_PLATE_BLACK_LIST
+  IN_PLATE_WRITE_LIST
 }
 ```
 
@@ -381,10 +394,14 @@
 
 ```
 
+## 拓展性设置
+- 使用分层方法增加框架的灵活性
+  - 提供一个基本和详尽的数据库配置文件，根据该文件可以生成所有类型的数据库和设置基本表之间的关系
+  - 提供自动生成以上`数据库配置文件`的方法,该方法只提供若干种常用的参数修改，如某些列表的数量环周相机的数量；或者找到一种方法能够快速生成配置文件，而不修改表间的关系
+
 
 
 ## 讨论条目
-
 
 - 设备组与UVSS的关系：有限制的n:1关系
   - 1:1

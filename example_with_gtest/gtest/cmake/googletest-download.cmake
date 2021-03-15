@@ -9,10 +9,11 @@ ExternalProject_Add(
   googletest
   SOURCE_DIR "@GOOGLETEST_DOWNLOAD_ROOT@/googletest-src"
   BINARY_DIR "@GOOGLETEST_DOWNLOAD_ROOT@/googletest-build"
-  GIT_REPOSITORY
-    https://github.com/google/googletest.git
-  GIT_TAG
-    release-1.8.0
+  URL
+    ftp://pub:9900@192.168.1.238/lib/googletest-release-1.8.0.zip
+    # https://github.com/google/googletest.git
+  # GIT_TAG
+  #   release-1.8.0
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
   INSTALL_COMMAND ""

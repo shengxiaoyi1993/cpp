@@ -4,16 +4,22 @@
 > change the file frame from https://github.com/bast/gtest-demo.git
 
 
-## run the app
+## 项目说明
+- 本项目说明gtest的使用范例和文件组织形式
+- 每个被测试的类/或者模块使用各自的cmake编译成动态库，gtest调用动态库的接口进行测试
 
-- run app
+
+
+## run the app
+- 暂时没有写
+<!-- - run app
 ```bash
 cd build
 cmake ../
 make
 ./xxx
 
-```
+``` -->
 
 ## run gtest
 

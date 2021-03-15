@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+
+project(gtest-demo CXX)
+
+# place binaries and libraries according to GNU standards
+include(GNUInstallDirs)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
+
+# # we use this to get code coverage
+# if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+#     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+# endif()
+
+# add_subdirectory(${PROJECT_SOURCE_DIR}/../src/example  ${CMAKE_BINARY_DIR}/example_output)
+# add_subdirectory(${PROJECT_SOURCE_DIR}/../src/node ${CMAKE_BINARY_DIR}/node_output)
+
+include(cmake/googlelog.cmake)
+fetch_googlelog(
+    ${PROJECT_SOURCE_DIR}/cmake
+    ${PROJECT_BINARY_DIR}/googlelog
+    )
+message("after fetch_googlelog")
+enable_testing()
+message("after enable_testing")
+#
+# add_subdirectory(test)
+# message("after add_subdirectory")

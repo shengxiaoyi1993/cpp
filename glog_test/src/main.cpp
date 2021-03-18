@@ -67,7 +67,7 @@ void test_commonset(int argc,char*  argv[]){
 }
 
 void test_condition(int argc,char*  argv[]){
-  FLAGS_log_dir = "/home/sxy/Github/cpp/glog_test/build/build"  ;
+  FLAGS_log_dir = "/home/root"  ;
   FLAGS_logtostderr = false;
 
   google::InitGoogleLogging(argv[0]);

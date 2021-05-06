@@ -73,9 +73,14 @@
 ///  - rerturn
 ///   -0 ：请示的时间间隔结束。
 ///   -1：信号中断或失败，并设置errno
-///[clock_nanosleep()]
+/// 
+/// [clock_nanosleep()]
 ///  - 指定时钟进行睡眠
-///  - 可以指定相对时间与绝对时间进行睡眠
+///  - 可以指定相对时间与绝对时间进行睡眠 0(相对时间) TIMER_ABSTIME(绝对时间)
+/// 
+/// [clock_getcpuclockid()]
+/// 
+/// [timer_create()]
 ///
 
 void test_asctime(void);

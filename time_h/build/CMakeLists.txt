@@ -14,4 +14,4 @@ project (myproj VERSION 1.0 LANGUAGES C)
 add_executable(${PROJECT_NAME} "../src/main.c")
 
 # add_executable (${PROJECT_NAME} main.cpp)
-#target_link_libraries )
+target_link_libraries(${PROJECT_NAME} rt)

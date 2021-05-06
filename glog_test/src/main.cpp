@@ -39,8 +39,8 @@ void test_autorm(int argc,char*  argv[]);
 
 
 int main(int argc, char* argv[]) {
-      // test_commonset(argc,argv);
- test_condition(argc,argv);
+  // test_commonset(argc,argv);
+  test_condition(argc,argv);
   //  test_condition_debug(argc,argv);
   //  test_check(argc,argv);
   //  test_VLOG(argc,argv);
@@ -67,10 +67,33 @@ void test_commonset(int argc,char*  argv[]){
 }
 
 void test_condition(int argc,char*  argv[]){
-  FLAGS_log_dir = "/home/root"  ;
-  FLAGS_logtostderr = false;
+  //  FLAGS_log_dir = "/home/root"  ;
 
+
+  /// log文件输出路径，若路径错误则报错
+  /// 若不指定输出文件夹，则输出到/tmp
+  FLAGS_log_dir = "./"  ;
+
+  /// 1. 该语句只在InitGoogleLogging使用后生效
+  /// 2. 默认false状态，即不输出到标准输出
+  /// 3. 对于LOG(ERROR) 的信息总是会显示，不受log的影响
+  FLAGS_logtostderr = true;
+
+  FLAGS_minloglevel=google::GLOG_ERROR;
+
+//  /// 1. 不同等级的log为显示不同的颜色
+//  FLAGS_colorlogtostderr = true;
+
+
+  /// 1. 当该语句注释后，会打印到标准输出,不产生log文件
+  /// 2. 当该语句使用后，不输出到标准输出
   google::InitGoogleLogging(argv[0]);
+
+
+
+
+
+
 
   int num_cookies=1;
   LOG_IF(INFO, num_cookies > 10) <<"num_cookies:"<<num_cookies<< " Got lots of cookies";
@@ -106,7 +129,7 @@ void test_condition(int argc,char*  argv[]){
                                                  <<"times:"<<times;
 
   }
-  LOG(INFO) << "===LOG_IF_EVERY_N end===";
+  LOG(ERROR) << "===LOG_IF_EVERY_N end===";
 
 
 

@@ -12,23 +12,15 @@
 
 /// http://www.cplusplus.com/reference/ctime/strftime/
 /// 概念
-/// clock_t:程序开始运行后花费的时间;<>据说多线程中clock_t获取的的是多个核心一共走过的时间
-/// time_t:时间戳
-/// struct tm:时间格式化描述
-/// struct itimerspec: 时间片段，精确到ns
-/// clockid_t ：时钟类型
-///  CLOCK_REALTIME
-//System-wide realtime clock. Setting this clock requires appropriate privileges.
-//CLOCK_MONOTONIC
-//Clock that cannot be set and represents monotonic time since some unspecified starting point.
-//CLOCK_PROCESS_CPUTIME_ID
-//High-resolution per-process timer from the CPU.
-//CLOCK_THREAD_CPUTIME_ID
-//Thread-specific CPU-time clock.
-//CLOCK_REALTIME:系统实时时间,随系统实时时间改变而改变,即从UTC1970-1-1 0:0:0开始计时,中间时刻如果系统时间被用户该成其他,则对应的时间相应改变
-// CLOCK_MONOTONIC:从系统启动这一刻起开始计时,不受系统时间被用户改变的影响
-// CLOCK_PROCESS_CPUTIME_ID:本进程到当前代码系统CPU花费的时间
-// CLOCK_THREAD_CPUTIME_ID:本线程到当前代码系统CPU花费的时间
+/// [clock_t]:程序开始运行后花费的时间;<>据说多线程中clock_t获取的的是多个核心一共走过的时间
+/// [time_t]:时间戳
+/// [struct tm]:时间格式化描述
+/// [struct itimerspec]: 时间片段，精确到ns
+/// [clockid_t] ：时钟类型
+/// CLOCK_REALTIME:系统实时时间,随系统实时时间改变而改变,即从UTC1970-1-1 0:0:0开始计时,中间时刻如果系统时间被用户该成其他,则对应的时间相应改变
+/// CLOCK_MONOTONIC:从系统启动这一刻起开始计时,不受系统时间被用户改变的影响
+/// CLOCK_PROCESS_CPUTIME_ID:本进程到当前代码系统CPU花费的时间
+/// CLOCK_THREAD_CPUTIME_ID:本线程到当前代码系统CPU花费的时间
 /// timer_t :定时器，可以定义发送信号，再通过信号处理函数可以实现定期调用某个函数
 /// [time_t <> time_t] :difftime()
 /// [>>time_t ]:time()
@@ -73,10 +65,18 @@
 ///  - rerturn
 ///   -0 ：请示的时间间隔结束。
 ///   -1：信号中断或失败，并设置errno
-///[clock_nanosleep()]
-///  - 指定时钟进行睡眠
-///  - 可以指定相对时间与绝对时间进行睡眠
 ///
+/// [clock_nanosleep()]
+///  - 指定时钟进行睡眠
+///  - 可以指定相对时间与绝对时间进行睡眠 0(相对时间) TIMER_ABSTIME(绝对时间)
+///
+/// [clock_getcpuclockid()]
+///
+/// [timer_create()]:创建定时器，但不会自动启动
+/// [timer_delete()]:删除定时器
+/// [timer_settime()]:启动定时器
+/// [timer_gettime()]:获取定时器
+/// [timer_getoverrun()]:获取超时计数
 
 void test_asctime(void);
 

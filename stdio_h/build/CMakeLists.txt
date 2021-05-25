@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.0.2)
-project (stdarg_h VERSION 1.0 LANGUAGES C)
+project (stdio_h VERSION 1.0 LANGUAGES C)
 
 #find_package (glog 0.5.0 REQUIRED)
 

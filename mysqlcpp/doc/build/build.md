@@ -22,3 +22,15 @@ dc83dafd5c42
 [sxy@localhost ~]$sudo mysql -h 127.0.0.1 -u root -p
 //123456
 ```
+
+
+## 编译和运行程序
+```
+# 项目中携带了一个centos7下编译的静态库;脚本未做周全的检测，若有错误自行修改
+sh init.sh 
+cd build 
+mkdir build 
+cmake ../
+make
+ ./mysqlcpp_warpper 
+```

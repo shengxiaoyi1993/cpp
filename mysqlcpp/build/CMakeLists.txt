@@ -5,7 +5,8 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 include_directories(
   # /home/sxy/Desktop/install/include
-  /home/sxy/Downloads/mysql-connector-c++-8.0.20-src/build/install/include
+  # /home/sxy/Downloads/mysql-connector-c++-8.0.20-src/build/install/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/../lib/include/
   )
 
 add_executable(${PROJECT_NAME} "../src/main.cpp"
@@ -20,6 +21,5 @@ message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
 # target_link_libraries( ${PROJECT_NAME} -L/usr/lib64/mysql -lmysqlclient -lmysqlcppconn -lpthread -lm -ldl)
 
 target_link_libraries( ${PROJECT_NAME}
- -L/home/sxy/Downloads/mysql-connector-c++-8.0.20-src/build/install/lib64/debug  -lmysqlcppconn-static -lmysqlcppconn8-static
-
+ -L${CMAKE_CURRENT_SOURCE_DIR}/../lib/lib64/debug  -lmysqlcppconn-static -lmysqlcppconn8-static
  -lresolv -lutil -lpthread -lm -ldl)

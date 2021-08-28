@@ -28,4 +28,11 @@ echo "[succeed]:copy ${LIB_COPY_CJSON}"
 echo "[tree]   :"
 tree ${LIB_COPY}
 
+
+
 echo "//=======================INIT  END=========================//"
+
+mkdr lib 
+cp resources/mysql-connector-c++-8.0.20-lib.tar.gz lib
+tar -vxf mysql-connector-c++-8.0.20-lib.tar.gz
+rm mysql-connector-c++-8.0.20-lib.tar.gz

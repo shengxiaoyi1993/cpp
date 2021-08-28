@@ -6,8 +6,8 @@
 #include "mysqlcpp/mysqlcpp_instance.h"
 #include "../lib_copy/log/syslogger.h"
 
-#define DBHOST "tcp://127.0.0.1:3306"
-//#define DBHOST "192.168.1.100:3306"
+// #define DBHOST "tcp://127.0.0.1:3306"
+#define DBHOST "192.168.1.66:3306"
 
 #define USER "root"
 #define PASSWORD "123456"
@@ -58,11 +58,11 @@ void test_instance_initData();
 int main(int argc, const char *argv[]) {
 
   //  test_ConnectToDBMS();
-    test_DataBase();
+    // test_DataBase();
   //  test_Table();
   //  test_DataEntryOperation();
   //  test_Index();
-//    test_tools_createDB();
+   test_tools_createDB();
 //  test_instance_initData();
 
 } // main()
@@ -708,7 +708,3 @@ void test_instance_initData(){
   }
 
 }
-
-
-
-

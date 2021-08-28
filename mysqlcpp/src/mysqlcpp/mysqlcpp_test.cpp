@@ -10,7 +10,9 @@ using namespace sql;
 #define COLNAME 200
 
 
-const string url="127.0.0.1";
+// const string url="127.0.0.1";
+const string url="192.168.1.66";
+
 const string user="root";
 const string password="123456";
 const string database="mysqlcpp_test";

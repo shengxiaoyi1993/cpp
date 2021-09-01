@@ -39,7 +39,7 @@ wget https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.17.3.zip
     ├── libprotoc.so -> libprotoc.so.28.0.3
     ├── libprotoc.so.28 -> libprotoc.so.28.0.3
     ├── libprotoc.so.28.0.3
-    └── pkgconfig
+    └── pkgconfighis
         ├── protobuf-lite.pc
         └── protobuf.pc
 
@@ -49,6 +49,12 @@ wget https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.17.3.zip
 - build up project according to this project 
 
 ```
+# generate addressbook.pb.cc from addressbook.proto
+ 1011  [2021-08-31 21:06:00]$ cd ../src/
+ 1012  [2021-08-31 21:06:01]$ ls
+ 1013  [2021-08-31 21:06:46]$ ~/Software/protobuf/bin/protoc addressbook.proto --cpp_out=.
+
+
  1063  [2021-09-01 09:14:36]$ cd ../build/
  1064  [2021-09-01 09:14:38]$ mkdir build
  1065  [2021-09-01 09:14:41]$ cd build/

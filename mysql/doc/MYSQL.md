@@ -530,7 +530,6 @@ mysql> DESC tb_emp6;
 ```
 
 
-
 ### add_foreign_key
 
 ```

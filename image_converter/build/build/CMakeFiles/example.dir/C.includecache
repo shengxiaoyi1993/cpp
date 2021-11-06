@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sxy/Github/cpp/image_converter/lib/raw/bayer_convert.c
+bayer_convert.h
+/home/sxy/Github/cpp/image_converter/lib/raw/bayer_convert.h
+math.h
+/home/sxy/Github/cpp/image_converter/lib/raw/math.h
+string.h
+/home/sxy/Github/cpp/image_converter/lib/raw/string.h
+stdio.h
+-
+stdlib.h
+-
+
+/home/sxy/Github/cpp/image_converter/lib/raw/bayer_convert.h
+

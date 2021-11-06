@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/CMakeFiles/googletest.dir

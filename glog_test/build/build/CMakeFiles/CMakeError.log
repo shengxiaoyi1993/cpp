@@ -1,0 +1,409 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_62bde/fast 
+/bin/gmake -f CMakeFiles/cmTC_62bde.dir/build.make CMakeFiles/cmTC_62bde.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_62bde.dir/CheckSymbolExists.c.o
+/bin/cc    -o CMakeFiles/cmTC_62bde.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_62bde
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62bde.dir/link.txt --verbose=1
+/bin/cc      -rdynamic CMakeFiles/cmTC_62bde.dir/CheckSymbolExists.c.o  -o cmTC_62bde 
+CMakeFiles/cmTC_62bde.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_62bde] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_62bde/fast] Error 2
+
+File /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_87e38/fast 
+/bin/gmake -f CMakeFiles/cmTC_87e38.dir/build.make CMakeFiles/cmTC_87e38.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87e38.dir/CheckFunctionExists.c.o
+/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_87e38.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_87e38
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87e38.dir/link.txt --verbose=1
+/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_87e38.dir/CheckFunctionExists.c.o  -o cmTC_87e38 -lpthreads 
+/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_87e38] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_87e38/fast] Error 2
+
+
+Determining if the include file libunwind.h exists failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_d010b/fast 
+/bin/gmake -f CMakeFiles/cmTC_d010b.dir/build.make CMakeFiles/cmTC_d010b.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d010b.dir/CheckIncludeFile.c.o
+/bin/cc    -o CMakeFiles/cmTC_d010b.dir/CheckIncludeFile.c.o   -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:23: fatal error: libunwind.h: No such file or directory
+ #include <libunwind.h>
+                       ^
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_d010b.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_d010b/fast] Error 2
+
+
+Determining if the include file unordered_map exists failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_adc1b/fast 
+/bin/gmake -f CMakeFiles/cmTC_adc1b.dir/build.make CMakeFiles/cmTC_adc1b.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_adc1b.dir/CheckIncludeFile.cxx.o
+/bin/c++     -o CMakeFiles/cmTC_adc1b.dir/CheckIncludeFile.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+In file included from /usr/include/c++/4.8.2/unordered_map:35:0,
+                 from /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:
+/usr/include/c++/4.8.2/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+gmake[1]: *** [CMakeFiles/cmTC_adc1b.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_adc1b/fast] Error 2
+
+
+Determining if the include file unordered_set exists failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_db372/fast 
+/bin/gmake -f CMakeFiles/cmTC_db372.dir/build.make CMakeFiles/cmTC_db372.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_db372.dir/CheckIncludeFile.cxx.o
+/bin/c++     -o CMakeFiles/cmTC_db372.dir/CheckIncludeFile.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+In file included from /usr/include/c++/4.8.2/unordered_set:35:0,
+                 from /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:
+/usr/include/c++/4.8.2/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+gmake[1]: *** [CMakeFiles/cmTC_db372.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_db372/fast] Error 2
+
+
+Determining size of unsigned __int16 failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_ce0d9/fast 
+/bin/gmake -f CMakeFiles/cmTC_ce0d9.dir/build.make CMakeFiles/cmTC_ce0d9.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ce0d9.dir/HAVE___UINT16.c.o
+/bin/cc    -o CMakeFiles/cmTC_ce0d9.dir/HAVE___UINT16.c.o   -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: error: expected ‘)’ before ‘__int16’
+ #define SIZE (sizeof(unsigned __int16))
+                               ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:25:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: error: expected ‘)’ before ‘__int16’
+ #define SIZE (sizeof(unsigned __int16))
+                               ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:26:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 1000)%10)),
+            ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: error: expected ‘)’ before ‘__int16’
+ #define SIZE (sizeof(unsigned __int16))
+                               ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:27:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 100)%10)),
+            ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: error: expected ‘)’ before ‘__int16’
+ #define SIZE (sizeof(unsigned __int16))
+                               ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:28:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10)%10)),
+            ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: error: expected ‘)’ before ‘__int16’
+ #define SIZE (sizeof(unsigned __int16))
+                               ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:29:12: note: in expansion of macro ‘SIZE’
+   ('0' +  (SIZE    % 10)),
+            ^
+gmake[1]: *** [CMakeFiles/cmTC_ce0d9.dir/HAVE___UINT16.c.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_ce0d9/fast] Error 2
+
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(unsigned __int16))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function dladdr exists failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_62c1e/fast 
+/bin/gmake -f CMakeFiles/cmTC_62c1e.dir/build.make CMakeFiles/cmTC_62c1e.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_62c1e.dir/CheckFunctionExists.c.o
+/bin/cc   -DCHECK_FUNCTION_EXISTS=dladdr   -o CMakeFiles/cmTC_62c1e.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_62c1e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62c1e.dir/link.txt --verbose=1
+/bin/cc  -DCHECK_FUNCTION_EXISTS=dladdr    -rdynamic CMakeFiles/cmTC_62c1e.dir/CheckFunctionExists.c.o  -o cmTC_62c1e 
+CMakeFiles/cmTC_62c1e.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `dladdr'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_62c1e] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_62c1e/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_b2fc7/fast 
+/bin/gmake -f CMakeFiles/cmTC_b2fc7.dir/build.make CMakeFiles/cmTC_b2fc7.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b2fc7.dir/src.cxx.o
+/bin/c++    -DHAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS   -Wunnamed-type-template-args -o CMakeFiles/cmTC_b2fc7.dir/src.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wunnamed-type-template-args'
+gmake[1]: *** [CMakeFiles/cmTC_b2fc7.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_b2fc7/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Determining if the function get_static_proc_name exists in the unwind failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_06577/fast 
+/bin/gmake -f CMakeFiles/cmTC_06577.dir/build.make CMakeFiles/cmTC_06577.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06577.dir/CheckFunctionExists.c.o
+/bin/cc   -DCHECK_FUNCTION_EXISTS=get_static_proc_name   -o CMakeFiles/cmTC_06577.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_06577
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06577.dir/link.txt --verbose=1
+/bin/cc  -DCHECK_FUNCTION_EXISTS=get_static_proc_name    -rdynamic CMakeFiles/cmTC_06577.dir/CheckFunctionExists.c.o  -o cmTC_06577 -lunwind 
+/bin/ld: cannot find -lunwind
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_06577] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_06577/fast] Error 2
+
+
+Determining if the function UnDecorateSymbolName exists in the dbghelp failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_98d73/fast 
+/bin/gmake -f CMakeFiles/cmTC_98d73.dir/build.make CMakeFiles/cmTC_98d73.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98d73.dir/CheckFunctionExists.c.o
+/bin/cc   -DCHECK_FUNCTION_EXISTS=UnDecorateSymbolName   -o CMakeFiles/cmTC_98d73.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_98d73
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98d73.dir/link.txt --verbose=1
+/bin/cc  -DCHECK_FUNCTION_EXISTS=UnDecorateSymbolName    -rdynamic CMakeFiles/cmTC_98d73.dir/CheckFunctionExists.c.o  -o cmTC_98d73 -ldbghelp 
+/bin/ld: cannot find -ldbghelp
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_98d73] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_98d73/fast] Error 2
+
+
+Performing C SOURCE FILE Test HAVE_RWLOCK failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_8e12a/fast 
+/bin/gmake -f CMakeFiles/cmTC_8e12a.dir/build.make CMakeFiles/cmTC_8e12a.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e12a.dir/src.c.o
+/bin/cc   -DHAVE_RWLOCK   -o CMakeFiles/cmTC_8e12a.dir/src.c.o   -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8e12a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e12a.dir/link.txt --verbose=1
+/bin/cc  -DHAVE_RWLOCK    -rdynamic CMakeFiles/cmTC_8e12a.dir/src.c.o  -o cmTC_8e12a 
+CMakeFiles/cmTC_8e12a.dir/src.c.o: In function `main':
+src.c:(.text+0x15): undefined reference to `pthread_rwlock_init'
+src.c:(.text+0x21): undefined reference to `pthread_rwlock_rdlock'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_8e12a] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_8e12a/fast] Error 2
+
+Source file was:
+
+#define _XOPEN_SOURCE 500
+#include <pthread.h>
+int main(void)
+{
+  pthread_rwlock_t l;
+  pthread_rwlock_init(&l, NULL);
+  pthread_rwlock_rdlock(&l);
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE___DECLSPEC failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_a7d94/fast 
+/bin/gmake -f CMakeFiles/cmTC_a7d94.dir/build.make CMakeFiles/cmTC_a7d94.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7d94.dir/src.c.o
+/bin/cc   -DHAVE___DECLSPEC   -o CMakeFiles/cmTC_a7d94.dir/src.c.o   -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.c
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.c: In function ‘__declspec’:
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.c:3:16: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int main(void) { return 0; }
+                ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.c:2:27: error: declaration for parameter ‘a’ but no such parameter
+ __declspec(selectany) int a;
+                           ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.c:3:16: error: expected ‘{’ at end of input
+ int main(void) { return 0; }
+                ^
+gmake[1]: *** [CMakeFiles/cmTC_a7d94.dir/src.c.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_a7d94/fast] Error 2
+
+Source file was:
+
+__declspec(selectany) int a;
+int main(void) { return 0; }
+
+Performing C++ SOURCE FILE Test STL_NO_NAMESPACE failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_14681/fast 
+/bin/gmake -f CMakeFiles/cmTC_14681.dir/build.make CMakeFiles/cmTC_14681.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_14681.dir/src.cxx.o
+/bin/c++    -DSTL_NO_NAMESPACE   -o CMakeFiles/cmTC_14681.dir/src.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘vector’ does not name a type
+ vector<int> t; int main() { }
+ ^
+gmake[1]: *** [CMakeFiles/cmTC_14681.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_14681/fast] Error 2
+
+Source file was:
+
+#include <vector>
+vector<int> t; int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_MSVC_TLS failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_1c2f3/fast 
+/bin/gmake -f CMakeFiles/cmTC_1c2f3.dir/build.make CMakeFiles/cmTC_1c2f3.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1c2f3.dir/src.cxx.o
+/bin/c++    -DHAVE_MSVC_TLS   -o CMakeFiles/cmTC_1c2f3.dir/src.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx:2:11: error: expected constructor, destructor, or type conversion before ‘(’ token
+ __declspec(thread) int tls;
+           ^
+gmake[1]: *** [CMakeFiles/cmTC_1c2f3.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_1c2f3/fast] Error 2
+
+Source file was:
+
+__declspec(thread) int tls;
+int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_CXX11_TLS failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_a2d49/fast 
+/bin/gmake -f CMakeFiles/cmTC_a2d49.dir/build.make CMakeFiles/cmTC_a2d49.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a2d49.dir/src.cxx.o
+/bin/c++    -DHAVE_CXX11_TLS   -o CMakeFiles/cmTC_a2d49.dir/src.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx:2:1: error: ‘thread_local’ does not name a type
+ thread_local int tls;
+ ^
+gmake[1]: *** [CMakeFiles/cmTC_a2d49.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_a2d49/fast] Error 2
+
+Source file was:
+
+thread_local int tls;
+int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_ALIGNED_STORAGE failed with the following output:
+Change Dir: /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_6c13d/fast 
+/bin/gmake -f CMakeFiles/cmTC_6c13d.dir/build.make CMakeFiles/cmTC_6c13d.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6c13d.dir/src.cxx.o
+/bin/c++    -DHAVE_ALIGNED_STORAGE   -o CMakeFiles/cmTC_6c13d.dir/src.cxx.o -c /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx
+In file included from /usr/include/c++/4.8.2/type_traits:35:0,
+                 from /home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/include/c++/4.8.2/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp/src.cxx:3:1: error: ‘aligned_storage’ in namespace ‘std’ does not name a type
+ std::aligned_storage<sizeof(char), alignof(char)>::type data;
+ ^
+gmake[1]: *** [CMakeFiles/cmTC_6c13d.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/glog_test/build/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_6c13d/fast] Error 2
+
+Source file was:
+
+#include <type_traits>
+std::aligned_storage<sizeof(char), alignof(char)>::type data;
+int main() { }
+

@@ -1,0 +1,1 @@
+/bin/c++    -rdynamic CMakeFiles/logging_unittest.dir/src/logging_unittest.cc.o  -o ../../../../bin/logging_unittest ../../../../lib64/libglog.a -lpthread 

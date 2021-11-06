@@ -1,0 +1,119 @@
+\hypertarget{classRAW}{\section{R\-A\-W Class Reference}
+\label{classRAW}\index{R\-A\-W@{R\-A\-W}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries R\-A\-W\-Type} \{ \\*
+{\bfseries R\-A\-W\-Type\-\_\-\-R\-G\-G\-B} =0, 
+{\bfseries R\-A\-W\-Type\-\_\-\-B\-G\-G\-R}, 
+{\bfseries R\-A\-W\-Type\-\_\-\-G\-B\-R\-G}, 
+{\bfseries R\-A\-W\-Type\-\_\-\-G\-R\-B\-G}, 
+\\*
+{\bfseries R\-A\-W\-Type\-\_\-gray}
+ \}
+\item 
+enum {\bfseries Convert\-Type} \{ {\bfseries Convert\-Type\-\_\-\-A} =0, 
+{\bfseries Convert\-Type\-\_\-\-B}, 
+{\bfseries Convert\-Type\-\_\-\-H}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRAW_a9608d8a97fad45f19ef8316cd4e35524}{R\-A\-W} (const string \&v\-\_\-file, R\-A\-W\-Type v\-\_\-type, unsigned v\-\_\-total\-\_\-bits, unsigned int v\-\_\-valid\-\_\-bits, unsigned int v\-\_\-width, unsigned int v\-\_\-height)
+\item 
+\hypertarget{classRAW_a4b827deaa5c6b22c882ec9c26bebc351}{int {\bfseries save\-To\-File} (const string \&v\-\_\-file, int v\-\_\-bits) const }\label{classRAW_a4b827deaa5c6b22c882ec9c26bebc351}
+
+\item 
+unsigned short $\ast$ \hyperlink{classRAW_ae2f981724b4c1be2682e07ecc84890ed}{get\-R\-G\-B\-Data} (unsigned int \&v\-\_\-width, unsigned int \&v\-\_\-height)
+\begin{DoxyCompactList}\small\item\em get\-R\-G\-B\-Data get rgb data\-Data(3 channels) ,with size of v\-\_\-width and v\-\_\-height \end{DoxyCompactList}\item 
+unsigned short $\ast$ \hyperlink{classRAW_a887cdab46b22e9caa7fe27e024311224}{get\-Gary\-Data} (unsigned int \&v\-\_\-width, unsigned int \&v\-\_\-height)
+\begin{DoxyCompactList}\small\item\em get\-Gary\-Data to get gray data of raw image,with size of v\-\_\-width and v\-\_\-height \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRAW_ad51c75403f86d09e2e47bfd003543da5}{enum R\-A\-W\-::\-Convert\-Type {\bfseries Convert\-Type}}\label{classRAW_ad51c75403f86d09e2e47bfd003543da5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRAW_a9608d8a97fad45f19ef8316cd4e35524}{\index{R\-A\-W@{R\-A\-W}!R\-A\-W@{R\-A\-W}}
+\index{R\-A\-W@{R\-A\-W}!RAW@{R\-A\-W}}
+\subsubsection[{R\-A\-W}]{\setlength{\rightskip}{0pt plus 5cm}R\-A\-W\-::\-R\-A\-W (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{v\-\_\-file, }
+\item[{R\-A\-W\-Type}]{v\-\_\-type, }
+\item[{unsigned}]{v\-\_\-total\-\_\-bits, }
+\item[{unsigned int}]{v\-\_\-valid\-\_\-bits, }
+\item[{unsigned int}]{v\-\_\-width, }
+\item[{unsigned int}]{v\-\_\-height}
+\end{DoxyParamCaption}
+)}}\label{classRAW_a9608d8a97fad45f19ef8316cd4e35524}
+\hyperlink{classRAW}{R\-A\-W} constructor to initailize the class
+\begin{DoxyEnumerate}
+\item initailize the params. For file of rawimage lack of information, we need input the params mannully
+\item load data from file 
+\begin{DoxyParams}{Parameters}
+{\em v\-\_\-file} & path of src image; \\
+\hline
+{\em v\-\_\-type} & type \\
+\hline
+{\em v\-\_\-total\-\_\-bits} & bits of pix occupaied when save in v\-\_\-file \\
+\hline
+{\em v\-\_\-valid\-\_\-bits} & valid\-\_\-bits per pix,it occupy part or all bits of total\-\_\-bits; assume that valid pix always occupy the low space of bits \\
+\hline
+{\em v\-\_\-width} & width of image \\
+\hline
+{\em v\-\_\-height} & height of image \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+\subsection{Member Function Documentation}
+\hypertarget{classRAW_a887cdab46b22e9caa7fe27e024311224}{\index{R\-A\-W@{R\-A\-W}!get\-Gary\-Data@{get\-Gary\-Data}}
+\index{get\-Gary\-Data@{get\-Gary\-Data}!RAW@{R\-A\-W}}
+\subsubsection[{get\-Gary\-Data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short$\ast$ R\-A\-W\-::get\-Gary\-Data (
+\begin{DoxyParamCaption}
+\item[{unsigned int \&}]{v\-\_\-width, }
+\item[{unsigned int \&}]{v\-\_\-height}
+\end{DoxyParamCaption}
+)}}\label{classRAW_a887cdab46b22e9caa7fe27e024311224}
+
+
+get\-Gary\-Data to get gray data of raw image,with size of v\-\_\-width and v\-\_\-height 
+
+\begin{DoxyReturn}{Returns}
+Not nullptr\-:succeed;nullptr\-:fail to get data 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+after use this function ,return value should be free as {\ttfamily delete \mbox{[}\mbox{]} pdata} 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classRAW_ae2f981724b4c1be2682e07ecc84890ed}{\index{R\-A\-W@{R\-A\-W}!get\-R\-G\-B\-Data@{get\-R\-G\-B\-Data}}
+\index{get\-R\-G\-B\-Data@{get\-R\-G\-B\-Data}!RAW@{R\-A\-W}}
+\subsubsection[{get\-R\-G\-B\-Data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short$\ast$ R\-A\-W\-::get\-R\-G\-B\-Data (
+\begin{DoxyParamCaption}
+\item[{unsigned int \&}]{v\-\_\-width, }
+\item[{unsigned int \&}]{v\-\_\-height}
+\end{DoxyParamCaption}
+)}}\label{classRAW_ae2f981724b4c1be2682e07ecc84890ed}
+
+
+get\-R\-G\-B\-Data get rgb data\-Data(3 channels) ,with size of v\-\_\-width and v\-\_\-height 
+
+\begin{DoxyReturn}{Returns}
+Not nullptr\-:succeed;nullptr\-:fail to get data 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+after use this function ,return value should be free as {\ttfamily delete \mbox{[}\mbox{]} pdata} 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/raw/raw.\-h\end{DoxyCompactItemize}

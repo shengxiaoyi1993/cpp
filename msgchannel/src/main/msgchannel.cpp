@@ -12,14 +12,11 @@
 using namespace std;
 
 
-#define DEBUG_MSGCHANNEL
 
 static const char* fork_path="/";
 static FUNC_MSGCHANNEL_RECV fun_callback;
 
-#ifdef DEBUG_MSGCHANNEL
-static ofstream LogOut("msgchannel.log");
-#endif
+
 
 
 MsgChannel::MsgChannel(int v_projid,MsgChannel_Mode v_mode,void (*func_cb)(Msg )):
@@ -31,6 +28,7 @@ MsgChannel::MsgChannel(int v_projid,MsgChannel_Mode v_mode,void (*func_cb)(Msg )
         fun_callback=func_cb;
     }
 #ifdef DEBUG_MSGCHANNEL
+    LogOut.open("msgchannel.log");
     string modename=(__mode==customer)?"customer":"producer";
     LogOut<<">>start to build channel!fork_path:"<<fork_path
          <<" id: "<<__addr
@@ -70,6 +68,7 @@ MsgChannel::MsgChannel(int v_projid,MsgChannel_Mode v_mode,void (*func_cb)(Msg )
 
             threadpara.v_type=(__mode==customer)?100:200;
             threadpara.v_msgid=__msgid;
+            threadpara.__pclass=this;
             LogOut<<"init threadpara.v_type:"<<threadpara.v_type<<endl;
             LogOut<<"init threadpara.v_msgid:"<<threadpara.v_msgid<<endl;
 
@@ -106,10 +105,23 @@ MsgChannel::~MsgChannel(){
 
 }
 
+#ifdef DEBUG_MSGCHANNEL
+
+void MsgChannel::setLogFile(const string &v_file){
+  if (LogOut.is_open()) {
+    LogOut.close();
+    LogOut.open(v_file);
+  }
+
+}
+#endif
+
 
 void *MsgChannel::setReceiver(void *ppara){
     Msg msg_tmp;
     msgchannel_recv_thread_para threadpara_in=*(static_cast<msgchannel_recv_thread_para*>(ppara));
+    MsgChannel* pch=threadpara_in.__pclass;
+
     while(1){
         ssize_t flag= msgrcv(threadpara_in.v_msgid,&msg_tmp,MSG_BUFFER_LEN,threadpara_in.v_type,0);
         if(flag == -1){
@@ -117,9 +129,9 @@ void *MsgChannel::setReceiver(void *ppara){
 //            cout<<"threadpara_in.v_type:"<<threadpara_in.v_type<<endl;
 //            cout<<"threadpara_in.v_msgid:"<<threadpara_in.v_msgid<<endl;
 #ifdef DEBUG_MSGCHANNEL
-            LogOut<<"threadpara_in.v_type:"<<threadpara_in.v_type<<endl;
-            LogOut<<"threadpara_in.v_msgid:"<<threadpara_in.v_msgid<<endl;
-            LogOut << ">>Recv data Error!"<<errno<<endl;
+            pch->LogOut<<"threadpara_in.v_type:"<<threadpara_in.v_type<<endl;
+            pch->LogOut<<"threadpara_in.v_msgid:"<<threadpara_in.v_msgid<<endl;
+            pch->LogOut << ">>Recv data Error!"<<errno<<endl;
 #endif
         }
         else{
@@ -127,7 +139,7 @@ void *MsgChannel::setReceiver(void *ppara){
                 (*fun_callback)(msg_tmp);
             }
 #ifdef DEBUG_MSGCHANNEL
-            LogOut << ">>Recv data:\n<data>\n"<< msg_tmp.msg_text<<"\n</data>"<<endl;
+            pch->LogOut << ">>Recv data:\n<data>\n"<< msg_tmp.msg_text<<"\n</data>"<<endl;
 #endif
         }
     }
@@ -161,8 +173,6 @@ int MsgChannel::writeData(char* v_data,int v_len){
 
         return 0;
     }
-
-
 }
 
 

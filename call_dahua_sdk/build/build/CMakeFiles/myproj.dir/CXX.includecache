@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../lib/dahua/include/dhnetsdk.h
+windows.h
+-
+objc/objc.h
+../../lib/dahua/include/objc/objc.h
+../Platform/osIndependent.h
+../../lib/dahua/Platform/osIndependent.h
+
+/home/sxy/Github/cpp/call_dahua_sdk/src/main.cpp
+iostream
+-
+dahua/include/dhnetsdk.h
+/home/sxy/Github/cpp/call_dahua_sdk/src/dahua/include/dhnetsdk.h
+cstring
+-
+cstdio
+-
+unistd.h
+-
+

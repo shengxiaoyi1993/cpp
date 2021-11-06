@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sxy/Github/cpp/broadcast/src/src_server/server_multibroadcast.cpp
+iostream
+-
+stdio.h
+-
+sys/socket.h
+-
+netdb.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+sys/ioctl.h
+-
+net/if.h
+-
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+

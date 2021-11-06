@@ -722,5 +722,3 @@ void *run(void* v_pencoder){
         //        i_pkt.stream_index = 0;
     }
 }
-
-

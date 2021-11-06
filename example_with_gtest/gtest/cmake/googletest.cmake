@@ -17,6 +17,7 @@ macro(fetch_googletest _download_module_path _download_root)
         WORKING_DIRECTORY
             ${_download_root}
         )
+        #cmake --build . 代替make用于代替其他与make同级的命令
     execute_process(
         COMMAND
             "${CMAKE_COMMAND}" --build .

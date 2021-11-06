@@ -1,0 +1,51 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_32683/fast 
+/bin/gmake -f CMakeFiles/cmTC_32683.dir/build.make CMakeFiles/cmTC_32683.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_32683.dir/CheckSymbolExists.c.o
+/bin/cc    -o CMakeFiles/cmTC_32683.dir/CheckSymbolExists.c.o   -c /home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_32683
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32683.dir/link.txt --verbose=1
+/bin/cc      -rdynamic CMakeFiles/cmTC_32683.dir/CheckSymbolExists.c.o  -o cmTC_32683 
+CMakeFiles/cmTC_32683.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_32683] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_32683/fast] Error 2
+
+File /home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/bin/gmake cmTC_092b3/fast 
+/bin/gmake -f CMakeFiles/cmTC_092b3.dir/build.make CMakeFiles/cmTC_092b3.dir/build
+gmake[1]: Entering directory `/home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_092b3.dir/CheckFunctionExists.c.o
+/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_092b3.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_092b3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_092b3.dir/link.txt --verbose=1
+/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_092b3.dir/CheckFunctionExists.c.o  -o cmTC_092b3 -lpthreads 
+/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_092b3] Error 1
+gmake[1]: Leaving directory `/home/sxy/Github/cpp/example_with_gtest/gtest/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_092b3/fast] Error 2
+
+

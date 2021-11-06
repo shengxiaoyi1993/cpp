@@ -93,6 +93,10 @@ void test_stime();
 
 void test_clockid(void);
 
+///若以s为单位设置时间戳，时间间隔极短时，易造成数据重复
+/// 以ns为最小单位则不会
+void test_random();
+
 int main()
 {
 
@@ -102,7 +106,12 @@ int main()
 
   //  test_printDef();
   //  test_stime();
-  test_clockid();
+  //  test_clockid();
+
+    test_random();
+    test_random();
+    test_random();
+
 
 
   return(0);
@@ -159,6 +168,19 @@ void test_stime(){
 }
 
 
+void test_random(){
+
+  struct timespec tsp;
+  clock_gettime(CLOCK_REALTIME,&tsp);
+  long t_ns=tsp.tv_sec*1000000000+tsp.tv_nsec;
+
+  printf(__func__);
+
+  srandom(t_ns);
+  long num_random=random();
+  printf("num_random:%ld\n",num_random);
+
+}
 
 
 void test_printDef(void){
@@ -171,7 +193,6 @@ void test_printDef(void){
   printf("tzname[1]:%s\n",tzname[1]);
 
   setenv("TZ", "GMT-8", 1);
-
 
   tzset();
 

@@ -4,6 +4,18 @@
 
 #include "ThreadPool.h"
 
+
+class OP{
+  public :
+ static int download(int t){
+    std::cout<<__func__<<std::endl;
+    return 0;
+  }
+
+};
+
+
+
 int main()
 {
     

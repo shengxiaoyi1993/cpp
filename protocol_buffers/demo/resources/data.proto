@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message SimpleData {
+    string kry = 1;
+    string value = 2;
+}

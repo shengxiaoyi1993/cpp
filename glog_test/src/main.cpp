@@ -39,13 +39,13 @@ void test_autorm(int argc,char*  argv[]);
 
 
 int main(int argc, char* argv[]) {
-  // test_commonset(argc,argv);
+//   test_commonset(argc,argv);
   test_condition(argc,argv);
-  //  test_condition_debug(argc,argv);
-  //  test_check(argc,argv);
-  //  test_VLOG(argc,argv);
-  //  test_PCHECK(argc,argv);
-  //  test_syslog(argc,argv);
+//    test_condition_debug(argc,argv);
+//    test_check(argc,argv);
+//    test_VLOG(argc,argv);
+//    test_PCHECK(argc,argv);
+//    test_syslog(argc,argv);
 
 }
 
@@ -57,6 +57,8 @@ void test_commonset(int argc,char*  argv[]){
   LOG(INFO) << "file";
   // Most flags work immediately after updating values.
   FLAGS_logtostderr = 1;
+  FLAGS_minloglevel=google::GLOG_INFO;
+
   LOG(INFO) << "stderr";
   FLAGS_logtostderr = 0;
   // This won’t change the log destination. If you want to set this
@@ -70,16 +72,24 @@ void test_condition(int argc,char*  argv[]){
   //  FLAGS_log_dir = "/home/root"  ;
 
 
+
   /// log文件输出路径，若路径错误则报错
   /// 若不指定输出文件夹，则输出到/tmp
-  FLAGS_log_dir = "./"  ;
+//  FLAGS_log_dir = "./"  ;
+  FLAGS_log_dir = "/home/sxy/Github/cpp/glog_test/build/build"  ;
+//FLAGS_alsologtostderr
 
   /// 1. 该语句只在InitGoogleLogging使用后生效
   /// 2. 默认false状态，即不输出到标准输出
   /// 3. 对于LOG(ERROR) 的信息总是会显示，不受log的影响
-  FLAGS_logtostderr = true;
+  /// 4. 设置FLAGS_logtostderr = true后，不会保存导本地文件
+  ///
+//  FLAGS_logtostderr = true;
 
-  FLAGS_minloglevel=google::GLOG_ERROR;
+  /// 1. 设置后会输出标准错误输出。不影响输出到本地
+  FLAGS_alsologtostderr=true;
+
+//  FLAGS_minloglevel=google::GLOG_INFO;
 
 //  /// 1. 不同等级的log为显示不同的颜色
 //  FLAGS_colorlogtostderr = true;
@@ -88,11 +98,6 @@ void test_condition(int argc,char*  argv[]){
   /// 1. 当该语句注释后，会打印到标准输出,不产生log文件
   /// 2. 当该语句使用后，不输出到标准输出
   google::InitGoogleLogging(argv[0]);
-
-
-
-
-
 
 
   int num_cookies=1;
@@ -131,6 +136,7 @@ void test_condition(int argc,char*  argv[]){
   }
   LOG(ERROR) << "===LOG_IF_EVERY_N end===";
 
+  google::ShutdownGoogleLogging();
 
 
 }
@@ -203,7 +209,6 @@ void test_check(int argc,char*  argv[]){
   void* some_ptr=NULL;
   CHECK_NOTNULL(some_ptr);
   //  some_ptr->DoSomething()
-
 
 }
 

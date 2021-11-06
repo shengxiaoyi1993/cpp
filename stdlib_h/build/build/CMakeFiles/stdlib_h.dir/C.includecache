@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sxy/Github/cpp/stdlib_h/src/main.c
+stdlib.h
+-
+stdio.h
+-
+locale.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+

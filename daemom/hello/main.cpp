@@ -1,26 +1,18 @@
 #include <stdio.h>
 #include <unistd.h>
-
-#include "util-pidfile.h"
+#include <iostream>
+#include <fstream>
 
 int main()
 {
-    int result = 0;
+  while (true) {
+    std::ostream ostream("sayhello.log",std::ios::app);
+    ostream<<"hello "<<endl;
 
-    const char *pidfile = "/var/run/sayhello.pid";
 
-    if (PidfileTestRunning(pidfile) != 0)
-        return -1;
 
-    PidfileCreate(pidfile);
-
-    // while (1){
-        printf("hello !\n");
-    // }
-    sleep(15);
-
-    printf("i'm sleep !\n");
-
+    /* code */
+  }
     // PidfileRemove(pidfile);
     return 0;
 }

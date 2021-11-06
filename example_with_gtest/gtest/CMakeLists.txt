@@ -10,6 +10,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
 
 # we use this to get code coverage
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+    message("---------------------------------------------------")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
 
@@ -27,3 +28,5 @@ message("after enable_testing")
 
 add_subdirectory(test)
 message("after add_subdirectory")
+
+message(INCLUDE_DIRECTORIES":"${INCLUDE_DIRECTORIES})

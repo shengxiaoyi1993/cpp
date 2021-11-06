@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/tree/build/build/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/tree/build/build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/tree/build/build/CMakeFiles/myproj.dir

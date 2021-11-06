@@ -100,7 +100,6 @@ private:
 
   vector<vector<string>> explainResult( ResultSet* v_res,const vector<string>& v_nameS) const;
 
-
 };
 
 

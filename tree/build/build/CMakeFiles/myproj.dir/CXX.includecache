@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sxy/Github/cpp/tree/src/export.cpp
+export.h
+/home/sxy/Github/cpp/tree/src/export.h
+
+/home/sxy/Github/cpp/tree/src/export.h
+vector
+-
+iostream
+-
+
+/home/sxy/Github/cpp/tree/src/main.cpp
+cstdio
+-
+ext/pb_ds/tree_policy.hpp
+-
+ext/pb_ds/assoc_container.hpp
+-
+

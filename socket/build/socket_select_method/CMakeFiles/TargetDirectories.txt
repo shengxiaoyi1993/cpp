@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/socket/build/socket_select_method/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/socket/build/socket_select_method/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/socket/build/socket_select_method/CMakeFiles/example.dir

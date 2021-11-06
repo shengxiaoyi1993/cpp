@@ -1,0 +1,7 @@
+Log file created at: 2021/04/30 16:16:01
+Running on machine: DESKTOP-SXY
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0430 16:16:01.552175 10966 socket_channel.cpp:289] succeed to write
+I0430 16:16:01.553189 10966 socket_channel.cpp:322] select read change
+I0430 16:16:01.553234 10966 socket_channel.cpp:329] succeed to read:from server:response for msg from client:hello
+I0430 16:16:01.553278 10966 client.cpp:17] succeed to query:from server:response for msg from client:hello

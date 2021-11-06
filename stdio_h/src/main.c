@@ -204,6 +204,8 @@
 void test_freopen(void);
 int my_snprintf(char *s, int size, const char *fmt, ...);
 void test_my_snprintf(void);
+void executeCMD(const char *cmd, char *result);
+
 
 
 int main(int argc, char *argv[])
@@ -222,10 +224,21 @@ int main(int argc, char *argv[])
 
 //  test_freopen();
 
-  test_my_snprintf();
+//  test_my_snprintf();
   
-  printf("%s\n",ctermid(NULL));
+//  printf("%s\n",ctermid(NULL));
 
+
+  /// 测试执行命令
+  {
+    char result[1024]={0};
+
+    executeCMD("sh /home/sxy/Github/cpp/stdio_h/resources/test.sh",result);
+
+    printf("%s\n",result);
+
+
+  }
 
   return 0;
 }
@@ -252,6 +265,58 @@ void test_my_snprintf(void){
   char str[1024];
   my_snprintf( str, sizeof(str), "%d,%d,%d,%d",5,6,7,8);
   printf("%s\n",str);
+}
+
+
+/// 希望的功能
+
+
+///
+/// \brief executeCMD
+///  - 执行一条命令，返回命令行的所有输出(echo)
+///  - 若使正确获取脚本的请求，脚本的编写需要符合一定的规范/对输出也有一定的限制
+///  - 脚本输出字符串：fail |期望的数据，并且无其他输出
+///  - 解析脚本执行结果：
+///   - fail
+///   - 其他，则按照期望的格式读取数据
+///  - 注：
+///   - 对于执行需要长时间运行的脚本,脚本的输出可以即时输出
+///   - 对于
+///
+/// \param cmd
+/// \param result
+///  - result应申请合适的长度，且清空
+void executeCMD(const char *cmd, char *result)
+{
+
+  char buf_ps[1024];
+  char ps[1024]={0};
+  FILE *ptr;
+  strcpy(ps, cmd);
+  ///popen 函数的 输出流 默认是被全缓冲的.
+  if((ptr=popen(ps, "r"))!=NULL)
+  {
+    setbuf(ptr,NULL);
+
+
+    while(fgets(buf_ps, 1024, ptr)!=NULL)
+    {
+
+      strcat(result, buf_ps);
+      if(strlen(result)>1024)
+        break;
+      printf("buf_ps:%s\n",buf_ps);
+
+    }
+
+    pclose(ptr);
+    ptr = NULL;
+  }
+  else
+  {
+    printf("popen %s error\n", ps);
+  }
+
 }
 
 

@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/msgchannel/build/build_customer/build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/msgchannel/build/build_customer/build/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/msgchannel/build/build_customer/build/CMakeFiles/customer.dir

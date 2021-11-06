@@ -1,0 +1,31 @@
+#include "websocket_client.h"
+#include "constants.h"
+#include <iostream> 
+//#include <unistd.h>
+int main() {
+	int CLOSE = 0;
+	bool tag;
+	websocket::client::client ws_client;
+	std::string uri = "ws://192.168.1.25:60802/?q={\"secret_auth_param\":{\"authcode\":\"4843edce0ccc1498150d3c9e290f60c2d6ea36b87839c910fa0094521f07e581\",\"timecode\":\"1556433514\",\"username\":\"admmin\"},\"secret_data\":\"57991c7d7556d022c7715d2022b0cc35d9c110664a760e3ffe3752af06818af894da4620ce792c9e47b5a3d6636a78af\"}";//"ws://192.168.106.130:8080/echo";//
+	bool connect_tag = ws_client.ws_connect(uri);
+	std::string msg = "ws://192.168.106.130:8080/echo";
+	ws_client.ws_send(msg);
+	ws_client.ws_poll();
+	int i = 0;
+	while(ws_client.get_status() == 4){
+		std::string re_message = "NONE";
+		ws_client.ws_recv(re_message);
+		i++;
+		std::cout << "re_uri_send: " << "No: " << i << "/" << re_message << "/" << ws_client.get_status() <<std::endl;
+	}
+	//ws_client.ws_ping();
+	//tag = ws_client.ws_recv(re_uri);
+	//if(tag == true) std::cout << "re_uri_ping: " << re_uri << std::endl;
+	//ws_client.ws_ping();
+	//tag = ws_client.ws_recv(re_uri);
+	//if(tag == true) std::cout << "re_uri_ping: " << re_uri << std::endl;
+	//ws_client.ws_close();
+	//tag = ws_client.ws_recv(re_uri);
+	//if(tag == true) std::cout << "re_uri_close: " << re_uri << std::endl;
+	return 1;
+}

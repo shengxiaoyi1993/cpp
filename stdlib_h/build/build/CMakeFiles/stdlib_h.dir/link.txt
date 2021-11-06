@@ -1,0 +1,1 @@
+/bin/cc   -rdynamic CMakeFiles/stdlib_h.dir/home/sxy/Github/cpp/stdlib_h/src/main.c.o  -o stdlib_h 

@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/jpeg_merage/build/build/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/jpeg_merage/build/build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/jpeg_merage/build/build/CMakeFiles/myproj.dir

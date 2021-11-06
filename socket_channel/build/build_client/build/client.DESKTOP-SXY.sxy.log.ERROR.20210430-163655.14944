@@ -1,0 +1,4 @@
+Log file created at: 2021/04/30 16:36:55
+Running on machine: DESKTOP-SXY
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0430 16:36:55.696208 14944 client.cpp:20] fail to query

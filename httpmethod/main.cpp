@@ -1,9 +1,13 @@
 #include <iostream>
+#include "httpconnect.h"
 
 using namespace std;
 
+
 int main()
 {
-  cout << "Hello World!" << endl;
-  return 0;
+//  HttpConnect httpserver;
+//  //httpserver.getData();
+//  httpserver.postData("192.168.1.170", "/cgi-bin/UVSSapi.cgi","{\"cmd\":\"get\",\"key\":\"server ip\"}");
+//  cout<<"end"<<endl;
 }

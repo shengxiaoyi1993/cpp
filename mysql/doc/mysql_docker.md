@@ -15,7 +15,7 @@ dc83dafd5c42
 
 
 //LOGIN AS CLIENT
-[sxy@localhost ~]$ mysql -h 127.0.0.1 -u root -p
+[sxy@localhost ~]$ 3
 //123456
 
 

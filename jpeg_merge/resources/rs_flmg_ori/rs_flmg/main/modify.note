@@ -1,0 +1,19 @@
+# modify
+
+- 代码中所有修改部分均用`  //<> by SXY`进行标记
+
+- 简要说明
+
+  ```
+   - jpeg_header添加DRI段 SOS之前插入
+   -  添加RST
+      - 第一个restart interval之后,最后一个restart interval之前,每两个restart interval之间
+      - RST从0到7,如果RST乱序/丢失,解码器自动补上空白图片块
+      - RST之间MCU的数量为DRI规定的数量,如果丢失,,解码器自动补上空白图片块
+      - 最后一个RST标记为RST7,除非图片后面不再粘贴图片
+  - 编码熵编码(ECS)段时 (两个restart interval之间为1个ECS段)
+    - 注意每次开始时都需要时置零DC参考值,
+    - 结束时都需要填充未完整的字节
+  ```
+
+  

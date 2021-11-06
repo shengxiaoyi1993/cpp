@@ -1,0 +1,1 @@
+/bin/c++    -rdynamic CMakeFiles/signalhandler_unittest.dir/src/signalhandler_unittest.cc.o  -o ../../../../bin/signalhandler_unittest ../../../../lib64/libglog.a -lpthread 

@@ -1,0 +1,2 @@
+/bin/ar qc ../lib64/libexample.a  CMakeFiles/example.dir/example.cpp.o
+/bin/ranlib ../lib64/libexample.a

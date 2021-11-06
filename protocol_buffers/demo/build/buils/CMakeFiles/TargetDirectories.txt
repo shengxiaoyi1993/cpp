@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/protocol_buffers/demo/build/buils/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/protocol_buffers/demo/build/buils/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/protocol_buffers/demo/build/buils/CMakeFiles/demo.dir

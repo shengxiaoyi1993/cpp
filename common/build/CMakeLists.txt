@@ -6,3 +6,4 @@ add_executable(${PROJECT_NAME} "../src/main.cpp"
   "../src/cpp/string_manipulation.cpp")
 message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
 target_link_libraries( ${PROJECT_NAME} )
+set( CMAKE_BUILD_TYPE Debug )

@@ -87,6 +87,11 @@
 //}
 
 
+/// 向某一程序发送信号
+/// kill -s SIGRTMIN+15 [pid]
+/// <>等学习信号相关知识后再进行理解
+
+
 #include <stdio.h>
 #include <signal.h>
 #include <setjmp.h>

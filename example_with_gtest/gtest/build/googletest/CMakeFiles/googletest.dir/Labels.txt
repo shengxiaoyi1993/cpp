@@ -1,0 +1,14 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/CMakeFiles/googletest
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/CMakeFiles/googletest.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/CMakeFiles/googletest-complete.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-update.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/home/sxy/Github/cpp/example_with_gtest/gtest/build/googletest/googletest-prefix/src/googletest-stamp/googletest-test.rule

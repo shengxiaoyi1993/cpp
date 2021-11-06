@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/call_dahua_sdk/build/build/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/call_dahua_sdk/build/build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/call_dahua_sdk/build/build/CMakeFiles/myproj.dir

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sxy/Github/cpp/socket/src/export.cpp
+export.h
+/home/sxy/Github/cpp/socket/src/export.h
+
+/home/sxy/Github/cpp/socket/src/export.h
+vector
+-
+iostream
+-
+
+/home/sxy/Github/cpp/socket/src/main.cpp
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+fcntl.h
+-
+sys/select.h
+-
+sys/time.h
+-
+sys/un.h
+-
+errno.h
+-
+

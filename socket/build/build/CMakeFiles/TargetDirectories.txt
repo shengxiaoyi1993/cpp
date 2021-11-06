@@ -1,0 +1,3 @@
+/home/sxy/Github/cpp/socket/build/build/CMakeFiles/rebuild_cache.dir
+/home/sxy/Github/cpp/socket/build/build/CMakeFiles/edit_cache.dir
+/home/sxy/Github/cpp/socket/build/build/CMakeFiles/example.dir

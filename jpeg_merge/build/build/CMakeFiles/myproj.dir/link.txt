@@ -1,0 +1,1 @@
+/bin/c++    -rdynamic CMakeFiles/myproj.dir/home/sxy/Github/cpp/jpeg_merage/src/main.cpp.o CMakeFiles/myproj.dir/home/sxy/Github/cpp/jpeg_merage/src/export.cpp.o  -o myproj 

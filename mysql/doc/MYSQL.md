@@ -2088,7 +2088,7 @@ mysql> select @@transaction_isolation ;
 mysql> select @@global.transaction_isolation ;
 +--------------------------------+
 | @@global.transaction_isolation |
-+--------------------------------+
+   +--------------------------------+
 | REPEATABLE-READ                |
 +--------------------------------+
 1 row in set (0.00 sec)
@@ -2101,7 +2101,30 @@ mysql> select @@session.transaction_isolation ;
 +---------------------------------+
 1 row in set (0.00 sec)
 ```
+### max_prepared_stmt_count
+max_prepared_stmt_count 参数限制了同一时间在mysqld上所有session中prepared 语句的上限。 它的取值范围为“0 - 1048576”，默认为16382。
 
+```
+mysql> SHOW GLOBAL STATUS LIKE 'com_stmt%';
++-------------------------+--------+
+| Variable_name           | Value  |
++-------------------------+--------+
+| Com_stmt_execute        | 435289 |
+| Com_stmt_close          | 0      |
+| Com_stmt_fetch          | 0      |
+| Com_stmt_prepare        | 46000  |
+| Com_stmt_reset          | 0      |
+| Com_stmt_send_long_data | 0      |
+| Com_stmt_reprepare      | 0      |
++-------------------------+--------+
+7 rows in set (0.00 sec)
+```
+
+```
+mys
+ql> set global max_prepared_stmt_count=100000;
+Query OK, 0 rows affected (0.00 sec)
+```
 ## user_manage
 
 
@@ -2124,3 +2147,5 @@ DELETE FROM tb_uvsslabel where id not in (select id from (select min(id) as id f
 ```
 http://c.biancheng.net/mysql/
 ```
+
+

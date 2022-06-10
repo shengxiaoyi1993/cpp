@@ -1,7 +1,9 @@
+set -e
 
 if [ $# -eq 0 ];then
 echo 'para is needed: "'"start"'" or "'"continue"'"'
 elif [ $1 == 'start' ];then
+
 
   cd gsoap_bin/
   BIN_DIR=`pwd`
@@ -41,6 +43,11 @@ elif [ $1 == 'start' ];then
 elif [ $1 == 'continue' ];then
   cd OnvifFrameWork/level1/level2/GenerateSource/
   ./soapcpp2 -C -L onvif.h -x -I ../../../../gsoap-2.8/gsoap/import:../../../../gsoap-2.8/gsoap:../../../../gsoap-2.8/gsoap/plugin:../../../../gsoap-2.8/gsoap/custom
+  if [ -d "../FrameworkSource" ] 
+  then
+    rm "../FrameworkSource" -rf
+  fi
+  mkdir ../FrameworkSource
   cp soapC.c soapClient.c soapH.h soapStub.h wsdd.nsmap ../FrameworkSource/
   cd ../FrameworkSource
   cp ../../../../gsoap-2.8/gsoap/stdsoap2.c ../../../../gsoap-2.8/gsoap/stdsoap2.h .

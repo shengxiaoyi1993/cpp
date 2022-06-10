@@ -1,3 +1,0 @@
-repository='external project URL'
-module='ftp://pub:9900@192.168.1.238/lib/glog-0.4.0.zip'
-tag=''

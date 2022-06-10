@@ -1,1 +1,0 @@
-/bin/c++  -std=c++11  -rdynamic CMakeFiles/myproj.dir/home/sxy/Github/cpp/call_dahua_sdk/src/main.cpp.o CMakeFiles/myproj.dir/home/sxy/Github/cpp/call_dahua_sdk/src/export.cpp.o  -o myproj  -L/home/sxy/Github/cpp/call_dahua_sdk/build/../lib/dahua/lib -Wl,-rpath,/home/sxy/Github/cpp/call_dahua_sdk/build/../lib/dahua/lib -ldhnetsdk 

@@ -1,7 +1,0 @@
-Log file created at: 2021/04/30 16:36:54
-Running on machine: DESKTOP-SXY
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0430 16:36:54.694738 14944 socket_channel.cpp:304] succeed to write
-I0430 16:36:54.695137 14944 socket_channel.cpp:315] succeed to write end_msg
-I0430 16:36:55.696190 14944 socket_channel.cpp:342] select nothing
-E0430 16:36:55.696208 14944 client.cpp:20] fail to query

@@ -1,1 +1,0 @@
-/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/myproj.dir/home/sxy/Github/cpp/glog_test/src/main.cpp.o CMakeFiles/myproj.dir/home/sxy/Github/cpp/glog_test/src/export.cpp.o  -o myproj lib64/libglog.a -lpthread 

@@ -1,2 +1,0 @@
-/bin/ar qc ../lib64/libnode.a  CMakeFiles/node.dir/node.cpp.o
-/bin/ranlib ../lib64/libnode.a

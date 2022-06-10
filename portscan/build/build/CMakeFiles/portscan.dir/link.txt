@@ -1,1 +1,0 @@
-/bin/c++  -std=c++11  -rdynamic CMakeFiles/portscan.dir/home/sxy/Github/cpp/portscan/src/main.cpp.o  -o portscan 

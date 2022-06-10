@@ -1,1 +1,0 @@
-/bin/c++  -std=c++11  -rdynamic CMakeFiles/demo.dir/home/sxy/Github/cpp/protocol_buffers/demo/src/main.cpp.o CMakeFiles/demo.dir/home/sxy/Github/cpp/protocol_buffers/demo/src/resources/data.pb.cc.o  -o demo  -L/home/sxy/Software/protobuf/lib -Wl,-rpath,/home/sxy/Software/protobuf/lib -lprotobuf 

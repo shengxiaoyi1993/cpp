@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++11  -rdynamic CMakeFiles/client_multibroadcast.dir/home/sxy/Github/cpp/broadcast/src/src_client/client_multibroadcast_linux.cpp.o  -o client_multibroadcast 

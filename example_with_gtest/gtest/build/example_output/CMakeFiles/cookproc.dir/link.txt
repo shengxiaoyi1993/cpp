@@ -1,2 +1,0 @@
-/bin/ar qc ../lib64/libcookproc.a  CMakeFiles/cookproc.dir/CookProc.cpp.o
-/bin/ranlib ../lib64/libcookproc.a

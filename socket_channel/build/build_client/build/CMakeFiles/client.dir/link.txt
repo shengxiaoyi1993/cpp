@@ -1,1 +1,0 @@
-/bin/c++  -std=c++11  -rdynamic CMakeFiles/client.dir/home/sxy/Github/cpp/socket_channel/src/socket_channel/socket_channel.cpp.o CMakeFiles/client.dir/home/sxy/Github/cpp/socket_channel/src/client/client.cpp.o  -o client -lpthread /home/sxy/Github/clone/glog/build/libglog.a -lpthread 

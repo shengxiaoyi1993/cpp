@@ -1,1 +1,0 @@
-/bin/c++    -rdynamic CMakeFiles/stacktrace_unittest.dir/src/stacktrace_unittest.cc.o  -o ../../../../bin/stacktrace_unittest ../../../../lib64/libglog.a -lpthread 

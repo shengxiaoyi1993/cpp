@@ -1,3 +1,0 @@
-/home/sxy/Github/cpp/broadcast/build/build_server/build/CMakeFiles/rebuild_cache.dir
-/home/sxy/Github/cpp/broadcast/build/build_server/build/CMakeFiles/edit_cache.dir
-/home/sxy/Github/cpp/broadcast/build/build_server/build/CMakeFiles/server_multibroadcast.dir

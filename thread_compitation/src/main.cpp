@@ -3,6 +3,7 @@
 #include <mutex>
 #include <vector>
 #include <atomic>
+#include <map>
 
 std::mutex __mutex;
 
@@ -18,27 +19,27 @@ void test_atomic();
 class ThreadFunc
 {
 public:
-    void start()
+  void start()
+  {
+    mydo = true;
+    std::cout << "线程函数被启动" << std::endl;
+    mT = new std::thread(&ThreadFunc::doT,this,15);
+  }
+  void stop ()
+  {
+    std::cout << "线程函数被停止" << std::endl;
+    mydo = false;
+    mT->join();
+  }
+  void doT(int a)
+  {
+    while(mydo)
     {
-        mydo = true;
-        std::cout << "线程函数被启动" << std::endl;
-        mT = new std::thread(&ThreadFunc::doT,this,15);
+      std::cout<<"a:"<<a--<<std::endl;
+      std::this_thread::sleep_for(std::chrono::seconds(1));
     }
-    void stop ()
-    {
-        std::cout << "线程函数被停止" << std::endl;
-        mydo = false;
-        mT->join();
-    }
-    void doT(int a)
-    {
-        while(mydo)
-        {
-                    std::cout<<"a:"<<a--<<std::endl;
-                    std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-        std::cout<<"线程exit"<<std::endl;
-    }
+    std::cout<<"线程exit"<<std::endl;
+  }
 
 private:
   std::thread* mT;
@@ -46,10 +47,34 @@ private:
 
 };
 
+
+class BaseA{
+//  static int a=0;
+
+};
+
+class BaseB{
+  static const int a=0;
+//  static const double d=0;
+
+
+};
+
+class BaseC{
+  static constexpr int a=0;
+  static constexpr double d=0;
+};
+
+
 int main(int argc, char* argv[])
 {
-//  test_thread_compitation();
-  test_atomic();
+  //  test_thread_compitation();
+//  test_atomic();
+
+  /// 强制转换-1
+  size_t size=(size_t)-1;
+  std::cout<<"size:"<<size<<std::endl;
+  std::cout<<std::numeric_limits<size_t>::max();
 
 }
 
@@ -62,6 +87,20 @@ void test_atomic()
 
   std::cout<<"after atom_val:"<<atom_val.load()<<std::endl;
 
+//  std::atomic<std::map<std::string,std::string>> list;
+//  list.store({{
+//                "1","aas"
+//              },
+//              {
+//                "2","aas"
+//              },
+//             });
+
+//  std::atomic<std::string> string_atom;
+
+//  std::atomic<std::shared_ptr<std::string>> atom_sh_string;
+
+  std::atomic<std::shared_ptr<std::map<std::string,std::string>>> atom_sh_string;
 
 }
 

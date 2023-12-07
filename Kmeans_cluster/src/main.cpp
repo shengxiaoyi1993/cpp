@@ -43,7 +43,83 @@ vector<cv::Scalar> getColorList(int v_num){
 
 }
 
+// Lucas-Kanade method Optical Flow in OpenCV
+// BJTShang, 2016-12-13
 
+//#include <cv.h>
+//#include <cxcore.h>
+//#include <highgui.h>
+
+const int MAX_CORNERS = 500;
+
+//int main(int argc, char** argv){
+//  IplImage* imgA = cvLoadImage("/home/sxy/Work/com_repo/private_lib/ForeignObjectDetector/"
+//                               "demos/call_lib/build/build-build-not_config_default_compiler_5_9_7_GCC_64bit-Default/pre_src_resize.jpg",
+//                   CV_LOAD_IMAGE_GRAYSCALE);
+//  IplImage* imgB = cvLoadImage("/home/sxy/Work/com_repo/private_lib/ForeignObjectDetector/"
+//                               "demos/call_lib/build/build-build-not_config_default_compiler_5_9_7_GCC_64bit-Default/crt_src_resize.jpg",
+//                   CV_LOAD_IMAGE_GRAYSCALE);
+
+//  // image to show the optical flow vectors
+//  IplImage* imgC = cvLoadImage("/home/sxy/Work/com_repo/private_lib/ForeignObjectDetector/"
+//                               "demos/call_lib/build/build-build-not_config_default_compiler_5_9_7_GCC_64bit-Default/pre_src_resize.jpg",
+//                   CV_LOAD_IMAGE_UNCHANGED);
+
+//  CvSize img_size = cvGetSize(imgA);
+//  CvSize win_size = cvSize(50, 50);
+//  int corner_count = MAX_CORNERS;
+
+//  // get the features (detect corners) need to be tracked
+//  IplImage* imgEig = cvCreateImage(img_size, IPL_DEPTH_32F, 1);
+//  IplImage* imgTmp = cvCreateImage(img_size, IPL_DEPTH_32F, 1);
+
+//  CvPoint2D32f* cornersA = new CvPoint2D32f[corner_count];
+
+//  cvGoodFeaturesToTrack(imgA, imgEig, imgTmp, cornersA, &corner_count,
+//            0.02, 8.0, 0, 3, 0, 0.04);
+
+//  // find sub-pixel corners
+//  cvFindCornerSubPix(imgA, cornersA, corner_count,
+//             win_size, cvSize(-1,-1),
+//             cvTermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS, 20, 0.1));
+
+//  char features_found[MAX_CORNERS];
+//  float feature_errors[MAX_CORNERS];
+
+//  CvSize pyr_size = cvSize(imgA->width+8, imgB->height/3);
+
+//  IplImage* pyrA = cvCreateImage(pyr_size, IPL_DEPTH_32F, 1);
+//  IplImage* pyrB = cvCreateImage(pyr_size, IPL_DEPTH_32F, 1);
+
+//  CvPoint2D32f* cornersB = new CvPoint2D32f[MAX_CORNERS];
+
+//  cvCalcOpticalFlowPyrLK(imgA, imgB, pyrA, pyrB, cornersA, cornersB,
+//             corner_count, win_size,
+//             10, features_found, feature_errors,
+//             cvTermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS, 20, 0.1),
+//             0
+//  );
+
+//  for(int i=0; i<corner_count; i++){
+//    if(features_found[i]==0 || feature_errors[i] > 550){
+//      printf("Error is: %f\n", feature_errors[i]);
+//      continue;
+//    }
+//    //printf("Got it\n");
+//    CvPoint p1 = cvPoint(cvRound(cornersA[i].x), cvRound(cornersA[i].y));
+//    CvPoint p2 = cvPoint(cvRound(cornersB[i].x), cvRound(cornersB[i].y));
+//    cvLine(imgC, p1, p2, CV_RGB(255, 0, 0), 1);
+//  }
+//  cvNamedWindow("imgA", 0);
+//  cvNamedWindow("imgB", 0);
+//  cvNamedWindow("Optical_flow", 0);
+//  cvShowImage("imgA", imgA);
+//  cvShowImage("imgB", imgB);
+//  cvShowImage("Optical_flow", imgC);
+
+//  cvWaitKey(0);
+//  return 0;
+//}
 
 int main() {
 
@@ -51,6 +127,8 @@ int main() {
   return 0;
 
 }
+
+
 
 void printClusters(const vector<alg::Cluster<alg::PointEg> > &_list_cluster){
   //  for(uint i=0;i<_list_cluster.size();i++){

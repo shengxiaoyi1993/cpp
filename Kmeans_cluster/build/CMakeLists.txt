@@ -14,4 +14,4 @@ add_executable(${PROJECT_NAME} "../src/main.cpp"
 )
 
 message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
-target_link_libraries( example -lopencv_highgui -lopencv_core -lopencv_imgcodecs -lopencv_imgproc)
+target_link_libraries( example -lopencv_highgui -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_video)
